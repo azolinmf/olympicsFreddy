@@ -15,7 +15,6 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     var ret :  SKSpriteNode!
     
-    
     override func didMove(to view: SKView) {
         
         // Get label node from scene and store it for use later
@@ -30,7 +29,7 @@ class GameScene: SKScene {
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
         if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
+            spinnyNode.lineWidth = 2.4
             
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),

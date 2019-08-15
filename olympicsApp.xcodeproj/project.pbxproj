@@ -60,17 +60,57 @@
 		9D53181E23057BF800EEA671 /* olympicsApp */ = {
 			isa = PBXGroup;
 			children = (
-				9D53181F23057BF800EEA671 /* AppDelegate.swift */,
-				9D53182123057BF800EEA671 /* GameScene.sks */,
-				9D53182523057BF800EEA671 /* GameScene.swift */,
-				9D53182323057BF800EEA671 /* Actions.sks */,
-				9D53182723057BF800EEA671 /* GameViewController.swift */,
-				9D53182923057BF800EEA671 /* Main.storyboard */,
-				9D53182C23057BF900EEA671 /* Assets.xcassets */,
-				9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */,
 				9D53183123057BF900EEA671 /* Info.plist */,
+				9D53181F23057BF800EEA671 /* AppDelegate.swift */,
+				D198C3132305924D0085A238 /* Model */,
+				D198C317230592AE0085A238 /* Controller */,
+				D198C316230592A50085A238 /* View */,
 			);
 			path = olympicsApp;
+			sourceTree = "<group>";
+		};
+		D198C3132305924D0085A238 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D198C316230592A50085A238 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D53182C23057BF900EEA671 /* Assets.xcassets */,
+				9D53182123057BF800EEA671 /* GameScene.sks */,
+				9D53182323057BF800EEA671 /* Actions.sks */,
+				9D53182923057BF800EEA671 /* Main.storyboard */,
+				9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D198C317230592AE0085A238 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D198C319230593AE0085A238 /* Telas */,
+				D198C318230593A60085A238 /* Games */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D198C318230593A60085A238 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				9D53182523057BF800EEA671 /* GameScene.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		D198C319230593AE0085A238 /* Telas */ = {
+			isa = PBXGroup;
+			children = (
+				9D53182723057BF800EEA671 /* GameViewController.swift */,
+			);
+			path = Telas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

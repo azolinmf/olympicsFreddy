@@ -14,6 +14,7 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     var ret :  SKSpriteNode!
+    var controletimer = 0
     
     override func didMove(to view: SKView) {
         
@@ -38,6 +39,16 @@ class GameScene: SKScene {
             
         
         ret = childNode(withName: "ret") as? SKSpriteNode
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){_ in
+            if self.controletimer == 0 {
+                self.ret.texture = SKTextureAtlas(named: "Background").textureNamed("back1")
+                self.controletimer = 1
+            } else {
+                self.ret.texture = SKTextureAtlas(named: "Background").textureNamed("back2")
+                self.controletimer = 0
+            }
         }
     }
     
@@ -94,5 +105,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        
     }
 }

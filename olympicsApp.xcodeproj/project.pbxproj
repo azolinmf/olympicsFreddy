@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53181F23057BF800EEA671 /* AppDelegate.swift */; };
-		9D53182223057BF800EEA671 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182123057BF800EEA671 /* GameScene.sks */; };
+		9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182123057BF800EEA671 /* CanoingGameScene.sks */; };
 		9D53182423057BF800EEA671 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182323057BF800EEA671 /* Actions.sks */; };
-		9D53182623057BF800EEA671 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53182523057BF800EEA671 /* GameScene.swift */; };
+		9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53182523057BF800EEA671 /* CanoingGameScene.swift */; };
 		9D53182823057BF800EEA671 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53182723057BF800EEA671 /* GameViewController.swift */; };
 		9D53182B23057BF800EEA671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182923057BF800EEA671 /* Main.storyboard */; };
 		9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182C23057BF900EEA671 /* Assets.xcassets */; };
@@ -22,9 +22,9 @@
 /* Begin PBXFileReference section */
 		9D53181C23057BF800EEA671 /* olympicsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = olympicsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53181F23057BF800EEA671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D53182123057BF800EEA671 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9D53182123057BF800EEA671 /* CanoingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CanoingGameScene.sks; sourceTree = "<group>"; };
 		9D53182323057BF800EEA671 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		9D53182523057BF800EEA671 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9D53182523057BF800EEA671 /* CanoingGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingGameScene.swift; sourceTree = "<group>"; };
 		9D53182723057BF800EEA671 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9D53182A23057BF800EEA671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D53182C23057BF900EEA671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			children = (
 				9D53182C23057BF900EEA671 /* Assets.xcassets */,
 				9D53183E23059DD700EEA671 /* Background.atlas */,
-				9D53182123057BF800EEA671 /* GameScene.sks */,
+				9D53182123057BF800EEA671 /* CanoingGameScene.sks */,
 				9D53182323057BF800EEA671 /* Actions.sks */,
 				9D53182923057BF800EEA671 /* Main.storyboard */,
 				9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */,
@@ -106,7 +106,7 @@
 		D198C318230593A60085A238 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				9D53182523057BF800EEA671 /* GameScene.swift */,
+				9D53182523057BF800EEA671 /* CanoingGameScene.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 			files = (
 				9D53182B23057BF800EEA671 /* Main.storyboard in Resources */,
 				9D53183F23059DD700EEA671 /* Background.atlas in Resources */,
-				9D53182223057BF800EEA671 /* GameScene.sks in Resources */,
+				9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */,
 				9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */,
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
 				9D53182423057BF800EEA671 /* Actions.sks in Resources */,
@@ -193,7 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D53182623057BF800EEA671 /* GameScene.swift in Sources */,
+				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
 				9D53183C23059C5A00EEA671 /* SceneBackground.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,

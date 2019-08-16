@@ -15,6 +15,10 @@
 		9D53182B23057BF800EEA671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182923057BF800EEA671 /* Main.storyboard */; };
 		9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182C23057BF900EEA671 /* Assets.xcassets */; };
 		9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */; };
+		D120550723059E4700AF0C91 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550623059E4700AF0C91 /* GameCell.swift */; };
+		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
+		D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550A2305A34E00AF0C91 /* Esporte.swift */; };
+		D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		9D53182C23057BF900EEA671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D53182F23057BF900EEA671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D53183123057BF900EEA671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D120550623059E4700AF0C91 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
+		D120550A2305A34E00AF0C91 /* Esporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
+		D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndSportsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +77,20 @@
 			path = olympicsApp;
 			sourceTree = "<group>";
 		};
+		D120550523059DCE00AF0C91 /* Games Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D120550623059E4700AF0C91 /* GameCell.swift */,
+				D12055082305A2FC00AF0C91 /* Esportes.swift */,
+				D120550A2305A34E00AF0C91 /* Esporte.swift */,
+			);
+			path = "Games Cells";
+			sourceTree = "<group>";
+		};
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D120550523059DCE00AF0C91 /* Games Cells */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				9D53182723057BF800EEA671 /* GameViewController.swift */,
+				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -186,9 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */,
 				9D53182623057BF800EEA671 /* GameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
+				D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
+				D120550723059E4700AF0C91 /* GameCell.swift in Sources */,
+				D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

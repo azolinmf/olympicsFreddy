@@ -20,6 +20,8 @@
 		9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318452306D8B700EEA671 /* CanoingBackground.swift */; };
 		9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318472306EA0300EEA671 /* SpawningRocks.swift */; };
 		9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318492306EBC200EEA671 /* CanoingRocks.swift */; };
+		9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184C230830E100EEA671 /* SpawningFood.swift */; };
+		9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184E2308310B00EEA671 /* CanoingFood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9D5318452306D8B700EEA671 /* CanoingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingBackground.swift; sourceTree = "<group>"; };
 		9D5318472306EA0300EEA671 /* SpawningRocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawningRocks.swift; sourceTree = "<group>"; };
 		9D5318492306EBC200EEA671 /* CanoingRocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingRocks.swift; sourceTree = "<group>"; };
+		9D53184C230830E100EEA671 /* SpawningFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawningFood.swift; sourceTree = "<group>"; };
+		9D53184E2308310B00EEA671 /* CanoingFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingFood.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +91,23 @@
 			path = TileMap;
 			sourceTree = "<group>";
 		};
+		9D53184B230830AE00EEA671 /* CanoingGame */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
+				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
+				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
+				9D53184C230830E100EEA671 /* SpawningFood.swift */,
+				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
+			);
+			path = CanoingGame;
+			sourceTree = "<group>";
+		};
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9D5318432306D75800EEA671 /* GameObject.swift */,
-				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
-				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
-				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
+				9D53184B230830AE00EEA671 /* CanoingGame */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,10 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
 				9D5318442306D75800EEA671 /* GameObject.swift in Sources */,
+				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
 				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,
 				9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */,

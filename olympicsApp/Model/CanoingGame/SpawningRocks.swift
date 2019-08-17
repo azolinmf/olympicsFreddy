@@ -13,6 +13,9 @@ class SpawningRocks: GameObject {
     var timer: TimeInterval = 0
     var rocksArray: [CanoingRocks] = []
     var node: SKNode
+    var updateVel = Double(0)
+    var lowerRange = Double(2)
+    var upperRange = Double(6)
     
     init(node: SKNode) {
         self.node = node
@@ -22,19 +25,23 @@ class SpawningRocks: GameObject {
         timer -= deltaTime
         
         if timer <= 0 {
+            
             spawn()
-            timer = TimeInterval.random(in: (2...6))
+            timer = TimeInterval(Double.random(in: lowerRange...upperRange))
         }
         
         for rock in rocksArray {
-            rock.update(deltaTime: deltaTime)
+            rock.update(deltaTime: deltaTime + updateVel)
             
             if rock.rock.position.y <= -640 {
                 rocksArray.remove(at: 0)
                 rock.rock.removeFromParent()
             }
-            
         }
+        
+        updateVel += deltaTime/3000
+        lowerRange -= deltaTime/75
+        upperRange -= deltaTime/75
     }
 
     

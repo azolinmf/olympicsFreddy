@@ -12,8 +12,8 @@ import GameplayKit
 class CanoingGameScene: SKScene {
     
     var backgroundNode: SKNode!
-    
     var lastTimeUpdate: TimeInterval = 0
+    var spawnRock: SpawningRocks!
     
     var gameObjects = [GameObject] ()
     
@@ -22,6 +22,8 @@ class CanoingGameScene: SKScene {
         backgroundNode = childNode(withName: "backgroundNode")
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
+        
+        spawnRock = SpawningRocks(node: self)
 
     }
     
@@ -69,6 +71,8 @@ class CanoingGameScene: SKScene {
         for gameObject in gameObjects {
             gameObject.update(deltaTime: deltaTime)
         }
+        
+        spawnRock.update(deltaTime: deltaTime)
         
         
     }

@@ -17,7 +17,7 @@ class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         tbvSportsList.delegate = self
         tbvSportsList.dataSource = self
-        tbvSportsList.rowHeight = 200
+        tbvSportsList.rowHeight = self.view.frame.height * 0.3
     }
     
     

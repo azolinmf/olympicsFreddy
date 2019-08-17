@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1B58768295D9004E5F5D5B /* Pods_olympicsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */; };
 		9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53181F23057BF800EEA671 /* AppDelegate.swift */; };
 		9D53182223057BF800EEA671 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182123057BF800EEA671 /* GameScene.sks */; };
 		9D53182423057BF800EEA671 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182323057BF800EEA671 /* Actions.sks */; };
@@ -19,9 +20,12 @@
 		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
 		D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550A2305A34E00AF0C91 /* Esporte.swift */; };
 		D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */; };
+		D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.release.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.release.xcconfig"; sourceTree = "<group>"; };
+		97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_olympicsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53181C23057BF800EEA671 /* olympicsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = olympicsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53181F23057BF800EEA671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D53182123057BF800EEA671 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
 		D120550A2305A34E00AF0C91 /* Esporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
 		D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndSportsViewController.swift; sourceTree = "<group>"; };
+		D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.debug.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F1B58768295D9004E5F5D5B /* Pods_olympicsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075B0710D0C1A39AC79E58F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */,
+				950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9D53181323057BF800EEA671 = {
 			isa = PBXGroup;
 			children = (
 				9D53181E23057BF800EEA671 /* olympicsApp */,
 				9D53181D23057BF800EEA671 /* Products */,
+				075B0710D0C1A39AC79E58F8 /* Pods */,
+				E15515220BF8C1B5537B7E26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +109,7 @@
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
 				D120550523059DCE00AF0C91 /* Games Cells */,
 			);
 			path = Model;
@@ -133,6 +153,14 @@
 			path = Telas;
 			sourceTree = "<group>";
 		};
+		E15515220BF8C1B5537B7E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D53183423057BF900EEA671 /* Build configuration list for PBXNativeTarget "olympicsApp" */;
 			buildPhases = (
+				19941F6160EB9A9352A45D1E /* [CP] Check Pods Manifest.lock */,
 				9D53181823057BF800EEA671 /* Sources */,
 				9D53181923057BF800EEA671 /* Frameworks */,
 				9D53181A23057BF800EEA671 /* Resources */,
+				77B355837B1EBEEE6D480340 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,10 +226,53 @@
 				9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */,
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
 				9D53182423057BF800EEA671 /* Actions.sks in Resources */,
+				D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19941F6160EB9A9352A45D1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-olympicsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77B355837B1EBEEE6D480340 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D53181823057BF800EEA671 /* Sources */ = {
@@ -356,10 +429,11 @@
 		};
 		9D53183523057BF900EEA671 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 725HB8W2V6;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,10 +448,11 @@
 		};
 		9D53183623057BF900EEA671 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 725HB8W2V6;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

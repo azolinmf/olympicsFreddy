@@ -13,8 +13,4 @@ protocol GameObject {
     func update(deltaTime: TimeInterval)
     
 }
-extension GameObject {
-    func update(deltaTime: TimeInterval) {
-        print("extension")
-    }
-}
+

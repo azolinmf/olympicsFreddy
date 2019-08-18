@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,11 @@
 		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
 		D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550A2305A34E00AF0C91 /* Esporte.swift */; };
 		D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */; };
+		D13BAF392308BA0E0044D687 /* DAOItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF382308BA0E0044D687 /* DAOItemsStore.swift */; };
+		D13BAF3D2308BBB90044D687 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF3C2308BBB90044D687 /* ItemStore.swift */; };
+		D13BAF402308BD9F0044D687 /* ItemStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF3F2308BD9F0044D687 /* ItemStoreCell.swift */; };
+		D13BAF422308BE300044D687 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF412308BE300044D687 /* StoreViewController.swift */; };
+		D13BAF482308C2640044D687 /* AllItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF472308C2640044D687 /* AllItems.swift */; };
 		D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,11 @@
 		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
 		D120550A2305A34E00AF0C91 /* Esporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
 		D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndSportsViewController.swift; sourceTree = "<group>"; };
+		D13BAF382308BA0E0044D687 /* DAOItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAOItemsStore.swift; sourceTree = "<group>"; };
+		D13BAF3C2308BBB90044D687 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		D13BAF3F2308BD9F0044D687 /* ItemStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStoreCell.swift; sourceTree = "<group>"; };
+		D13BAF412308BE300044D687 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		D13BAF472308C2640044D687 /* AllItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllItems.swift; sourceTree = "<group>"; };
 		D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.debug.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +72,6 @@
 				F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */,
 				950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,17 +109,45 @@
 			isa = PBXGroup;
 			children = (
 				D120550623059E4700AF0C91 /* GameCell.swift */,
+			);
+			path = "Games Cells";
+			sourceTree = "<group>";
+		};
+		D13BAF3A2308BB860044D687 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D13BAF382308BA0E0044D687 /* DAOItemsStore.swift */,
+				D13BAF3C2308BBB90044D687 /* ItemStore.swift */,
+				D13BAF472308C2640044D687 /* AllItems.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D13BAF3E2308BD3C0044D687 /* Store Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D13BAF3F2308BD9F0044D687 /* ItemStoreCell.swift */,
+			);
+			path = "Store Cells";
+			sourceTree = "<group>";
+		};
+		D13BAF492308C2970044D687 /* SportsScreen */ = {
+			isa = PBXGroup;
+			children = (
 				D12055082305A2FC00AF0C91 /* Esportes.swift */,
 				D120550A2305A34E00AF0C91 /* Esporte.swift */,
 			);
-			path = "Games Cells";
+			path = SportsScreen;
 			sourceTree = "<group>";
 		};
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
+				D13BAF492308C2970044D687 /* SportsScreen */,
+				D13BAF3A2308BB860044D687 /* Store */,
 				D120550523059DCE00AF0C91 /* Games Cells */,
+				D13BAF3E2308BD3C0044D687 /* Store Cells */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +186,7 @@
 			children = (
 				9D53182723057BF800EEA671 /* GameViewController.swift */,
 				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
+				D13BAF412308BE300044D687 /* StoreViewController.swift */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -280,11 +318,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */,
+				D13BAF392308BA0E0044D687 /* DAOItemsStore.swift in Sources */,
+				D13BAF422308BE300044D687 /* StoreViewController.swift in Sources */,
+				D13BAF3D2308BBB90044D687 /* ItemStore.swift in Sources */,
+				D13BAF482308C2640044D687 /* AllItems.swift in Sources */,
 				9D53182623057BF800EEA671 /* GameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
 				D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
 				D120550723059E4700AF0C91 /* GameCell.swift in Sources */,
+				D13BAF402308BD9F0044D687 /* ItemStoreCell.swift in Sources */,
 				D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

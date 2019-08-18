@@ -7,5 +7,6 @@ target 'olympicsApp' do
 
   # Pods for olympicsApp
 	pod 'Firebase/Core'
-
+  pod 'Firebase/Firestore'
+  
 end

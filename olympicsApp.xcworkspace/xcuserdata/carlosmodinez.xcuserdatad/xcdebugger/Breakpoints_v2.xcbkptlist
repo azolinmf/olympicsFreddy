@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Model/Store/DAOItemsStore.swift"
+            timestampString = "587870666.421301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Controller/Telas/StoreViewController.swift"
+            timestampString = "587870666.422009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "StoreViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.(itemsPerRow in _6C8625D3346A1A25EB7196F58637F0DD).getter : CoreGraphics.CGFloat"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.5433249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.(itemsPerRow in _6C8625D3346A1A25EB7196F58637F0DD).setter : CoreGraphics.CGFloat"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.545727"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.(itemsPerRow in _6C8625D3346A1A25EB7196F58637F0DD).modify : CoreGraphics.CGFloat"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.548149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.(itemsPerRow in _6C8625D3346A1A25EB7196F58637F0DD).modify : CoreGraphics.CGFloat with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.5504709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; olympicsApp.StoreViewController"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.552353"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "303">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.StoreViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;olympicsApp.StoreViewController&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/StoreViewController.swift"
+                  timestampString = "587779989.554181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "205">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Controller/Telas/StoreViewController.swift"
+            timestampString = "587870666.422093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

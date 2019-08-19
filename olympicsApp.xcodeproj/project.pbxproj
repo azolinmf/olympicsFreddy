@@ -16,6 +16,9 @@
 		9D53182B23057BF800EEA671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182923057BF800EEA671 /* Main.storyboard */; };
 		9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182C23057BF900EEA671 /* Assets.xcassets */; };
 		9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */; };
+		A5B8E4812306F35500D62923 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8E4802306F35500D62923 /* StoreViewController.swift */; };
+		A5CD68132308562E002E9918 /* StoreCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68122308562E002E9918 /* StoreCategoryCell.swift */; };
+		A5CD68152308564D002E9918 /* StoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68142308564D002E9918 /* StoreItemCell.swift */; };
 		D120550723059E4700AF0C91 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550623059E4700AF0C91 /* GameCell.swift */; };
 		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
 		D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550A2305A34E00AF0C91 /* Esporte.swift */; };
@@ -41,6 +44,9 @@
 		9D53182C23057BF900EEA671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D53182F23057BF900EEA671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D53183123057BF900EEA671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B8E4802306F35500D62923 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		A5CD68122308562E002E9918 /* StoreCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCategoryCell.swift; sourceTree = "<group>"; };
+		A5CD68142308564D002E9918 /* StoreItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCell.swift; sourceTree = "<group>"; };
 		D120550623059E4700AF0C91 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
 		D120550A2305A34E00AF0C91 /* Esporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 			children = (
 				D12055082305A2FC00AF0C91 /* Esportes.swift */,
 				D120550A2305A34E00AF0C91 /* Esporte.swift */,
+				A5CD68122308562E002E9918 /* StoreCategoryCell.swift */,
+				A5CD68142308564D002E9918 /* StoreItemCell.swift */,
 			);
 			path = SportsScreen;
 			sourceTree = "<group>";
@@ -317,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B8E4812306F35500D62923 /* StoreViewController.swift in Sources */,
 				D120550D2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift in Sources */,
 				D13BAF392308BA0E0044D687 /* DAOItemsStore.swift in Sources */,
 				D13BAF422308BE300044D687 /* StoreViewController.swift in Sources */,
@@ -325,6 +334,7 @@
 				9D53182623057BF800EEA671 /* GameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
 				D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */,
+				A5CD68132308562E002E9918 /* StoreCategoryCell.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
 				D120550723059E4700AF0C91 /* GameCell.swift in Sources */,
 				D13BAF402308BD9F0044D687 /* ItemStoreCell.swift in Sources */,

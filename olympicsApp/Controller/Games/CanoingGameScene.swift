@@ -9,6 +9,12 @@
 import SpriteKit
 import GameplayKit
 
+extension CanoingGameScene: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+
 class CanoingGameScene: SKScene {
     
     var backgroundNode: SKNode!
@@ -17,16 +23,55 @@ class CanoingGameScene: SKScene {
     var spawnFood: SpawningFood!
     
     var gameObjects = [GameObject] ()
+    var canoingPlayer: CanoingPlayer!
     
     override func didMove(to view: SKView) {
         
         backgroundNode = childNode(withName: "backgroundNode")
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
+        canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
+        canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: -440))]
+        gameObjects.append((canoingPlayer)!)
         
         spawnRock = SpawningRocks(node: self)
         spawnFood = SpawningFood(node: self)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(swipeCanoing))
+        swipeDown.direction = .down
+        swipeDown.delegate = self
+        view.addGestureRecognizer(swipeDown)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
 
+    }
+    
+    @objc func swipeCanoing(sender: UIGestureRecognizer) {
+        
+        let location = sender.location(in: self.view)
+        
+        if virtualDPadRight().contains(location){
+            canoingPlayer.moveRight()
+            
+        } else if virtualDPadLeft().contains(location){
+            canoingPlayer.moveLeft()
+        }
+        
+    }
+    
+    func virtualDPadLeft() -> CGRect {
+        // função para criar o circulo virtual para identificar onde o usuário está clicando
+        //dentro do dpadShape que é o circulo branco
+        let vDPad = CGRect(x: 0, y: 0, width: self.view!.bounds.size.width / 2, height: self.view!.bounds.size.height)
+        //        vDPad.origin.y = self.view!.bounds.size.height - vDPad.size.height - 10
+        //        vDPad.origin.x = 10
+        return vDPad
+    }
+    func virtualDPadRight() -> CGRect {
+        // função para criar o circulo virtual para identificar onde o usuário está clicando
+        //dentro do dpadShape que é o circulo branco
+        let vDPad = CGRect(x: self.view!.bounds.size.width / 2, y: 0, width: self.view!.bounds.size.width / 2, height: self.view!.bounds.size.height)
+        return vDPad
     }
     
     

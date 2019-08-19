@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F1B58768295D9004E5F5D5B /* Pods_olympicsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */; };
+		9D22C4DC230AC80100C08520 /* CanoingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */; };
 		9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53181F23057BF800EEA671 /* AppDelegate.swift */; };
 		9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182123057BF800EEA671 /* CanoingGameScene.sks */; };
 		9D53182423057BF800EEA671 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182323057BF800EEA671 /* Actions.sks */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.release.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.release.xcconfig"; sourceTree = "<group>"; };
 		97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_olympicsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingPlayer.swift; sourceTree = "<group>"; };
 		9D53181C23057BF800EEA671 /* olympicsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = olympicsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D53181F23057BF800EEA671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D53182123057BF800EEA671 /* CanoingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CanoingGameScene.sks; sourceTree = "<group>"; };
@@ -135,6 +137,27 @@
 				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
 				9D53184C230830E100EEA671 /* SpawningFood.swift */,
 				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
+			);
+			path = CanoingGame;
+			sourceTree = "<group>";
+		};
+		9D5318402306D34400EEA671 /* TileMap */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318412306D37C00EEA671 /* CanoingBackground.sks */,
+			);
+			path = TileMap;
+			sourceTree = "<group>";
+		};
+		9D53184B230830AE00EEA671 /* CanoingGame */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
+				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
+				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
+				9D53184C230830E100EEA671 /* SpawningFood.swift */,
+				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
+				9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */,
 			);
 			path = CanoingGame;
 			sourceTree = "<group>";
@@ -369,6 +392,7 @@
 				D120550723059E4700AF0C91 /* GameCell.swift in Sources */,
 				D13BAF402308BD9F0044D687 /* ItemStoreCell.swift in Sources */,
 				D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */,
+				9D22C4DC230AC80100C08520 /* CanoingPlayer.swift in Sources */,
 				9D5318442306D75800EEA671 /* GameObject.swift in Sources */,
 				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
@@ -521,7 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM34PRAQJX;
+				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM34PRAQJX;
+				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (

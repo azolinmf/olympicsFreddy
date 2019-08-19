@@ -162,35 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-1881.1594202898552" y="32.608695652173914"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="dC2-UO-icp">
-            <objects>
-                <viewController id="i2y-Xe-fig" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="adS-m0-MfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dai-o3-b2P">
-                                <rect key="frame" x="149" y="465" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="elq-3i-iEX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="GKO-kI-eHp"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ulO-QF-72k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="-299.18478260869568"/>
-        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="olympicsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="canoingGame" id="BV1-FR-VrT" customClass="GameViewController" customModule="olympicsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="465.48913043478262"/>
+            <point key="canvasLocation" x="162" y="82"/>
         </scene>
         <!--Configurations-->
         <scene sceneID="yFB-m8-jfU">
@@ -318,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTE-Aq-od5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="381.52173913043481"/>
+            <point key="canvasLocation" x="-732" y="-219"/>
         </scene>
         <!--Store View Controller-->
         <scene sceneID="aAa-SU-CXA">
@@ -438,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhz-MH-KL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="-299.18478260869568"/>
+            <point key="canvasLocation" x="-733" y="459"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lv6-RL-JKh">

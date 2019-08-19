@@ -11,8 +11,9 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
     override func viewDidLoad() {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {

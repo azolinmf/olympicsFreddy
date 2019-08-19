@@ -15,8 +15,13 @@
 		9D53182B23057BF800EEA671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182923057BF800EEA671 /* Main.storyboard */; };
 		9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182C23057BF900EEA671 /* Assets.xcassets */; };
 		9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */; };
-		9D53183C23059C5A00EEA671 /* SceneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53183B23059C5A00EEA671 /* SceneBackground.swift */; };
-		9D53183F23059DD700EEA671 /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9D53183E23059DD700EEA671 /* Background.atlas */; };
+		9D5318422306D37C00EEA671 /* CanoingBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D5318412306D37C00EEA671 /* CanoingBackground.sks */; };
+		9D5318442306D75800EEA671 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318432306D75800EEA671 /* GameObject.swift */; };
+		9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318452306D8B700EEA671 /* CanoingBackground.swift */; };
+		9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318472306EA0300EEA671 /* SpawningRocks.swift */; };
+		9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318492306EBC200EEA671 /* CanoingRocks.swift */; };
+		9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184C230830E100EEA671 /* SpawningFood.swift */; };
+		9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184E2308310B00EEA671 /* CanoingFood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +35,13 @@
 		9D53182C23057BF900EEA671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D53182F23057BF900EEA671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D53183123057BF900EEA671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D53183B23059C5A00EEA671 /* SceneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBackground.swift; sourceTree = "<group>"; };
-		9D53183E23059DD700EEA671 /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
+		9D5318412306D37C00EEA671 /* CanoingBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CanoingBackground.sks; sourceTree = "<group>"; };
+		9D5318432306D75800EEA671 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		9D5318452306D8B700EEA671 /* CanoingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingBackground.swift; sourceTree = "<group>"; };
+		9D5318472306EA0300EEA671 /* SpawningRocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawningRocks.swift; sourceTree = "<group>"; };
+		9D5318492306EBC200EEA671 /* CanoingRocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingRocks.swift; sourceTree = "<group>"; };
+		9D53184C230830E100EEA671 /* SpawningFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawningFood.swift; sourceTree = "<group>"; };
+		9D53184E2308310B00EEA671 /* CanoingFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingFood.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +83,31 @@
 			path = olympicsApp;
 			sourceTree = "<group>";
 		};
+		9D5318402306D34400EEA671 /* TileMap */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318412306D37C00EEA671 /* CanoingBackground.sks */,
+			);
+			path = TileMap;
+			sourceTree = "<group>";
+		};
+		9D53184B230830AE00EEA671 /* CanoingGame */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
+				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
+				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
+				9D53184C230830E100EEA671 /* SpawningFood.swift */,
+				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
+			);
+			path = CanoingGame;
+			sourceTree = "<group>";
+		};
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9D53183B23059C5A00EEA671 /* SceneBackground.swift */,
+				9D5318432306D75800EEA671 /* GameObject.swift */,
+				9D53184B230830AE00EEA671 /* CanoingGame */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,8 +115,8 @@
 		D198C316230592A50085A238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9D5318402306D34400EEA671 /* TileMap */,
 				9D53182C23057BF900EEA671 /* Assets.xcassets */,
-				9D53183E23059DD700EEA671 /* Background.atlas */,
 				9D53182123057BF800EEA671 /* CanoingGameScene.sks */,
 				9D53182323057BF800EEA671 /* Actions.sks */,
 				9D53182923057BF800EEA671 /* Main.storyboard */,
@@ -178,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D53182B23057BF800EEA671 /* Main.storyboard in Resources */,
-				9D53183F23059DD700EEA671 /* Background.atlas in Resources */,
+				9D5318422306D37C00EEA671 /* CanoingBackground.sks in Resources */,
 				9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */,
 				9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */,
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
@@ -193,10 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
-				9D53183C23059C5A00EEA671 /* SceneBackground.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
+				9D5318442306D75800EEA671 /* GameObject.swift in Sources */,
+				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
+				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
+				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,
+				9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

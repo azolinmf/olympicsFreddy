@@ -11,22 +11,22 @@ import GameplayKit
 
 class CanoingGameScene: SKScene {
     
-    var background :  SKSpriteNode!
-    var timerControler = 0
+    var backgroundNode: SKNode!
+    var lastTimeUpdate: TimeInterval = 0
+    var spawnRock: SpawningRocks!
+    var spawnFood: SpawningFood!
+    
+    var gameObjects = [GameObject] ()
     
     override func didMove(to view: SKView) {
         
-        background = childNode(withName: "background") as? SKSpriteNode
+        backgroundNode = childNode(withName: "backgroundNode")
+        let background = CanoingBackground(node: backgroundNode)
+        gameObjects.append(background)
         
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){_ in
-            if self.timerControler == 0 {
-                self.background.texture = SKTextureAtlas(named: "Background").textureNamed("back1")
-                self.timerControler = 1
-            } else {
-                self.background.texture = SKTextureAtlas(named: "Background").textureNamed("back2")
-                self.timerControler = 0
-            }
-        }
+        spawnRock = SpawningRocks(node: self)
+        spawnFood = SpawningFood(node: self)
+
     }
     
     
@@ -62,7 +62,20 @@ class CanoingGameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if lastTimeUpdate == 0 {
+            lastTimeUpdate = currentTime
+            return
+        }
         
+        let deltaTime = currentTime - lastTimeUpdate
+        lastTimeUpdate = currentTime
+        
+        for gameObject in gameObjects {
+            gameObject.update(deltaTime: deltaTime)
+        }
+        
+        spawnRock.update(deltaTime: deltaTime)
+        spawnFood.update(deltaTime: deltaTime)
         
     }
 }

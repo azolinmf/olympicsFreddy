@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+//DAO = Data Access Object
+
 class DAOItemsStore {
     
     func save() {

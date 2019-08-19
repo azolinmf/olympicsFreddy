@@ -32,7 +32,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemStore", for: indexPath) as! ItemStoreCell
         cell.lblItemName.text = AllItems.shared.itemsList[indexPath.row].name
-        print("oioioi")
         return cell
     }
 }

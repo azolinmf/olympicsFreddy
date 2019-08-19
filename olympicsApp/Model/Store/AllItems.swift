@@ -14,59 +14,16 @@ class AllItems {
     var itemsList : [ItemStore] = []
     
     init() {
-        itemsList.append(ItemStore(name: "Oculos",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "pijama",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "chupeta",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "sapato",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "bolsa",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "boné",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "Oculos",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "pijama",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "chupeta",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "sapato",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "bolsa",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "boné",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "Oculos",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "pijama",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "chupeta",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "sapato",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "bolsa",
-                                   inuse: false,
-                                   bought: false))
-        itemsList.append(ItemStore(name: "boné",
-                                   inuse: false,
-                                   bought: false))
+
+        //TEm outro jeito de add multiplos elementos em um array de objetos?
+        
+        itemsList.append(ItemStore(name: "Oculos"))
+        itemsList.append(ItemStore(name: "boné"))
+        itemsList.append(ItemStore(name: "gorro"))
+        itemsList.append(ItemStore(name: "Salto alto"))
+        itemsList.append(ItemStore(name: "Salto baixo"))
+        itemsList.append(ItemStore(name: "Carrinho"))
+        itemsList.append(ItemStore(name: "lancha"))
+        itemsList.append(ItemStore(name: "Cor da orelha"))
     }
 }

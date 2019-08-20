@@ -10,7 +10,7 @@ import Foundation
 
 protocol GameObject {
     
-    func update(deltaTime: TimeInterval)
+    func update(deltaTime: TimeInterval, velocity: Double)
     
 }
 

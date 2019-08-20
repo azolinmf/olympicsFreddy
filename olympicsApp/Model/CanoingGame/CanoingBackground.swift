@@ -11,22 +11,20 @@ import SpriteKit
 class CanoingBackground: GameObject {
     
     let node: SKNode
-    var updateVel = Double(0)
     
     init(node: SKNode) {
         self.node = node
         setAnimation()
     }
     
-    func update(deltaTime: TimeInterval) {
-        let velY = CGFloat((deltaTime + updateVel) * 50)
+    func update(deltaTime: TimeInterval, velocity: Double) {
+        let velY = CGFloat(velocity)
         node.position.y -= velY
         
         if node.position.y < 70 {
             node.position.y += 70
         }
         
-        updateVel += deltaTime/3000
     }
     
     func setAnimation() {

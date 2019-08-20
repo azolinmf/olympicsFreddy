@@ -14,12 +14,10 @@ class CanoingFood: GameObject {
     
     init() {
         self.food = SKSpriteNode(imageNamed: "fish")
-        
     }
     
-    func update(deltaTime: TimeInterval) {
-        let velY = CGFloat(deltaTime * 50)
-        food.position.y -= velY
+    func update(deltaTime: TimeInterval, velocity: Double) {
+        food.position.y -= CGFloat(velocity)
         
     }
     

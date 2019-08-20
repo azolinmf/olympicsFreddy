@@ -19,9 +19,8 @@ class CanoingRocks: GameObject {
         self.rock.yScale = CGFloat(randomScale)
     }
     
-    func update(deltaTime: TimeInterval) {
-        let velY = CGFloat(deltaTime * 50)
-        rock.position.y -= velY
+    func update(deltaTime: TimeInterval, velocity: Double) {
+        rock.position.y -= CGFloat(velocity)
         
     }
     

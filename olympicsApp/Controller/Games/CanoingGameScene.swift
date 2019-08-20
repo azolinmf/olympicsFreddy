@@ -19,6 +19,7 @@ class CanoingGameScene: SKScene {
     
     var backgroundNode: SKNode!
     var lastTimeUpdate: TimeInterval = 0
+    var gameVel: Double = 1.0
     var spawnRock: SpawningRocks!
     var spawnFood: SpawningFood!
     
@@ -36,6 +37,8 @@ class CanoingGameScene: SKScene {
         
         spawnRock = SpawningRocks(node: self)
         spawnFood = SpawningFood(node: self)
+        gameObjects.append(spawnFood)
+        gameObjects.append(spawnRock)
         
         let swipeDown = UISwipeGestureRecognizer(target: self,
                                                  action: #selector(swipeCanoing))
@@ -116,11 +119,10 @@ class CanoingGameScene: SKScene {
         lastTimeUpdate = currentTime
         
         for gameObject in gameObjects {
-            gameObject.update(deltaTime: deltaTime)
+            gameObject.update(deltaTime: deltaTime, velocity: gameVel)
         }
         
-        spawnRock.update(deltaTime: deltaTime)
-        spawnFood.update(deltaTime: deltaTime)
-        
+        //random parameter that can be calibrated according to the desired game difficulty
+        gameVel += deltaTime/100
     }
 }

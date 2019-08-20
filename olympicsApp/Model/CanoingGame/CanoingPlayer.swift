@@ -26,7 +26,7 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     }
     
     
-    func update(deltaTime: TimeInterval) {
+    func update(deltaTime: TimeInterval, velocity: Double) {
         
         self.zRotation = self.physicsBody!.velocity.dx * -0.0015
         

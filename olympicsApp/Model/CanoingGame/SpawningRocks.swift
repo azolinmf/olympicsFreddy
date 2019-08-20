@@ -13,25 +13,24 @@ class SpawningRocks: GameObject {
     var timer: TimeInterval = 0
     var rocksArray: [CanoingRocks] = []
     var node: SKNode
-    var updateVel = Double(0)
-    var lowerRange = Double(2)
-    var upperRange = Double(6)
+    var distance = 750.0
     
     init(node: SKNode) {
         self.node = node
     }
     
-    func update(deltaTime: TimeInterval) {
+    func update(deltaTime: TimeInterval, velocity: Double) {
         timer -= deltaTime
         
         if timer <= 0 {
-            
             spawn()
-            timer = TimeInterval(Double.random(in: lowerRange...upperRange))
+            //calcula o tempo para criar nova pedra, para que a distancia se mantenha a msm
+            //multiplica a velocidade em pixels/frame por 60 para virar pixels/segundo
+            timer = distance/(velocity*60)
         }
         
         for rock in rocksArray {
-            rock.update(deltaTime: deltaTime + updateVel)
+            rock.update(deltaTime: deltaTime, velocity: velocity)
             
             if rock.rock.position.y <= -640 {
                 rocksArray.remove(at: 0)
@@ -39,9 +38,6 @@ class SpawningRocks: GameObject {
             }
         }
         
-        updateVel += deltaTime/3000
-        lowerRange -= deltaTime/75
-        upperRange -= deltaTime/75
     }
 
     

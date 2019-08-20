@@ -115,14 +115,21 @@ class CanoingGameScene: SKScene {
             return
         }
         
-        let deltaTime = currentTime - lastTimeUpdate
+        var deltaTime = currentTime - lastTimeUpdate
         lastTimeUpdate = currentTime
         
         for gameObject in gameObjects {
             gameObject.update(deltaTime: deltaTime, velocity: gameVel)
         }
         
-        //random parameter that can be calibrated according to the desired game difficulty
-        gameVel += deltaTime/100
+        //para nao zoar o jogo quando pausa
+        if deltaTime >= 0.008 {
+            deltaTime = 0.01
+        }
+        
+        if deltaTime < 0.009 {
+            //random parameter that can be calibrated according to the desired game difficulty
+            gameVel += deltaTime/100
+        }
     }
 }

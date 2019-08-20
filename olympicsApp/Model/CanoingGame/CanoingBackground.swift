@@ -11,6 +11,7 @@ import SpriteKit
 class CanoingBackground: GameObject {
     
     let node: SKNode
+    let waterTileSize = CGFloat(70) 
     
     init(node: SKNode) {
         self.node = node
@@ -21,8 +22,8 @@ class CanoingBackground: GameObject {
         let velY = CGFloat(velocity)
         node.position.y -= velY
         
-        if node.position.y < 70 {
-            node.position.y += 70
+        if node.position.y < waterTileSize {
+            node.position.y += waterTileSize
         }
         
     }

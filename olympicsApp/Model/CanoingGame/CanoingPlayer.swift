@@ -11,6 +11,15 @@ import SpriteKit
 class CanoingPlayer: SKSpriteNode, GameObject {
     
     
+    func setUp(){
+        let body = self.physicsBody!
+        body.categoryBitMask    = BodyMasks.PlayerCategory
+        body.contactTestBitMask = BodyMasks.BorderCategory | BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
+
+        
+    }
+    
+    
     func moveRight() {
         let body = self.physicsBody!
         body.applyImpulse(CGVector(dx: -150, dy: 0))

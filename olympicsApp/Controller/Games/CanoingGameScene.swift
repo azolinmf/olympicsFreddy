@@ -15,7 +15,7 @@ extension CanoingGameScene: UIGestureRecognizerDelegate {
     }
 }
 
-class CanoingGameScene: SKScene {
+class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var backgroundNode: SKNode!
     var lastTimeUpdate: TimeInterval = 0
@@ -32,6 +32,7 @@ class CanoingGameScene: SKScene {
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
         canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
+        canoingPlayer.setUp()
         canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: -440))]
         gameObjects.append((canoingPlayer)!)
         
@@ -46,7 +47,36 @@ class CanoingGameScene: SKScene {
         swipeDown.delegate = self
         view.addGestureRecognizer(swipeDown)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
-
+        self.physicsWorld.contactDelegate = self
+        self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
+        
+        
+        
+    }
+    
+    
+    
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        // 2
+        if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
+            (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
+            print("PEDRA")            
+        } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
+            (secondBody.categoryBitMask == BodyMasks.BorderCategory) {
+            print("PAREDE")
+            
+        }
     }
     
     @objc func swipeCanoing(sender: UIGestureRecognizer) {
@@ -129,7 +159,7 @@ class CanoingGameScene: SKScene {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime/100
+            gameVel += deltaTime/100 // /100
         }
     }
 }

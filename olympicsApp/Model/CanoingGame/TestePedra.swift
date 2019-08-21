@@ -6,10 +6,12 @@
 //  Copyright © 2019 Apple Developer Academy. All rights reserved.
 //
 
+import Foundation
+
 
 import SpriteKit
 
-class CanoingRocks: SKSpriteNode, GameObject {
+class TestePedra: SKSpriteNode, GameObject {
     
     var rock =  SKSpriteNode(imageNamed: "rock")
     
@@ -18,7 +20,7 @@ class CanoingRocks: SKSpriteNode, GameObject {
         let randomScale = Int.random(in: 1...2) // 1...2
         self.rock.xScale = CGFloat(randomScale)
         self.rock.yScale = CGFloat(randomScale)
-        //        var body = rock.physicsBody
+//        var body = rock.physicsBody
         rock.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 100))
         rock.zPosition = 0 //2
         rock.position.x = CGFloat.random(in: (180...181))

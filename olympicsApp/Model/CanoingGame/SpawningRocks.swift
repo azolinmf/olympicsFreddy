@@ -11,6 +11,7 @@ import SpriteKit
 class SpawningRocks: GameObject {
     
     var timer: TimeInterval = 0
+//    var rocksArray: [CanoingRocks] = []
     var rocksArray: [CanoingRocks] = []
     var node: SKNode
     var distance = 750.0
@@ -39,16 +40,37 @@ class SpawningRocks: GameObject {
         }
         
     }
-
     
     func spawn() {
         let newRock = CanoingRocks()
-        newRock.rock.zPosition = 2
+        newRock.SetUp()
+        var body = newRock.rock.physicsBody
+        rocksArray.append(newRock)
+        newRock.rock.zPosition = 0 //2
         newRock.rock.position.x = CGFloat.random(in: (-375...375))
         newRock.rock.position.y = 645
-        rocksArray.append(newRock)
-        
-        node.addChild(newRock.rock)
+        node.addChild((newRock.rock as! SKSpriteNode))
+        print(body?.contactTestBitMask)
     }
+
+    /*
+    func spawn() {
+        let newRock = CanoingRocks()
+        var body = newRock.rock.physicsBody
+        body = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 100))
+        newRock.rock.zPosition = 0 //2
+        newRock.rock.position.x = CGFloat.random(in: (-375...375))
+        newRock.rock.position.y = 645
+        body?.categoryBitMask    = BodyMasks.ObstacleCategory
+        body?.contactTestBitMask = BodyMasks.PlayerCategory
+        body?.collisionBitMask   = BodyMasks.PlayerCategory
+        body?.mass = 2
+        body?.affectedByGravity = false
+        body?.isDynamic = true
+        rocksArray.append(newRock)
+        node.addChild((newRock.rock as! SKSpriteNode))
+        print(body?.node)
+
+    } */
     
 }

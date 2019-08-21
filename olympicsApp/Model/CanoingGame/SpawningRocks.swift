@@ -33,7 +33,7 @@ class SpawningRocks: GameObject {
         for rock in rocksArray {
             rock.update(deltaTime: deltaTime, velocity: velocity)
             
-            if rock.rock.position.y <= -640 {
+            if rock.rock.position.y <= -650 {
                 rocksArray.remove(at: 0)
                 rock.rock.removeFromParent()
             }
@@ -44,33 +44,9 @@ class SpawningRocks: GameObject {
     func spawn() {
         let newRock = CanoingRocks()
         newRock.SetUp()
-        var body = newRock.rock.physicsBody
         rocksArray.append(newRock)
-        newRock.rock.zPosition = 0 //2
-        newRock.rock.position.x = CGFloat.random(in: (-375...375))
-        newRock.rock.position.y = 645
-        node.addChild((newRock.rock as! SKSpriteNode))
-        print(body?.contactTestBitMask)
+        node.addChild(newRock.rock)
     }
 
-    /*
-    func spawn() {
-        let newRock = CanoingRocks()
-        var body = newRock.rock.physicsBody
-        body = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 100))
-        newRock.rock.zPosition = 0 //2
-        newRock.rock.position.x = CGFloat.random(in: (-375...375))
-        newRock.rock.position.y = 645
-        body?.categoryBitMask    = BodyMasks.ObstacleCategory
-        body?.contactTestBitMask = BodyMasks.PlayerCategory
-        body?.collisionBitMask   = BodyMasks.PlayerCategory
-        body?.mass = 2
-        body?.affectedByGravity = false
-        body?.isDynamic = true
-        rocksArray.append(newRock)
-        node.addChild((newRock.rock as! SKSpriteNode))
-        print(body?.node)
-
-    } */
     
 }

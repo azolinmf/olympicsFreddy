@@ -54,9 +54,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    
-    
-    
     func didBegin(_ contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
@@ -71,10 +68,11 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         // 2
         if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
-            print("PEDRA")            
+            //colisao com pedra
+            
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.BorderCategory) {
-            print("PAREDE")
+            //colisao com parede
             
         }
     }

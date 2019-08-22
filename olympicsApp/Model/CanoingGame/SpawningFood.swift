@@ -13,7 +13,7 @@ class SpawningFood: GameObject {
     var timer: TimeInterval = 0
     var foodArray: [CanoingFood] = []
     var node: SKNode
-    var distance = 1000.0
+    var distance = 100.0 //1000.0
     
     init(node: SKNode) {
         self.node = node
@@ -24,7 +24,7 @@ class SpawningFood: GameObject {
         
         if timer <= 0 {
             spawn()
-            //calcula o tempo para criar nova pedra, para que a distancia se mantenha a msm
+            //calcula o tempo para criar novo peixe, para que a distancia se mantenha a msm
             //multiplica a velocidade em pixels/frame por 60 para virar pixels/segundo
             timer = distance/(velocity*60)
         }
@@ -43,9 +43,7 @@ class SpawningFood: GameObject {
     
     func spawn() {
         let newFood = CanoingFood()
-        newFood.food.zPosition = 2
-        newFood.food.position.x = CGFloat.random(in: (-375...375))
-        newFood.food.position.y = 645
+        newFood.setUp()
         foodArray.append(newFood)
         
         node.addChild(newFood.food)

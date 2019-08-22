@@ -8,17 +8,31 @@
 
 import SpriteKit
 
-class CanoingFood: GameObject {
+class CanoingFood: SKSpriteNode, GameObject {
     
-    var food = SKSpriteNode()
+    var food = SKSpriteNode(imageNamed: "fish")
     
-    init() {
+    func setUp() {
         self.food = SKSpriteNode(imageNamed: "fish")
+        
+        food.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        food.zPosition = 0 //2
+        food.position.x = CGFloat.random(in: (-375...375))
+        food.position.y = 680
+        food.physicsBody?.categoryBitMask = BodyMasks.RewardCategory
+        food.physicsBody?.contactTestBitMask = BodyMasks.PlayerCategory
+        //food.physicsBody?.collisionBitMask = BodyMasks.PlayerCategory
+        food.physicsBody?.isDynamic = false
+        
     }
     
     func update(deltaTime: TimeInterval, velocity: Double) {
         food.position.y -= CGFloat(velocity)
         
+    }
+    
+    func remove() {
+        food.removeFromParent()
     }
     
     

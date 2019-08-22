@@ -22,6 +22,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var gameVel: Double = 1.0
     var spawnRock: SpawningRocks!
     var spawnFood: SpawningFood!
+    var gamePoints: Int = 0
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -65,14 +66,26 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        // 2
         if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
             //colisao com pedra
+            Model.instance.totalPoints += gamePoints
             
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.BorderCategory) {
             //colisao com parede
+            
+        } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
+            (secondBody.categoryBitMask == BodyMasks.RewardCategory) {
+            //colisao com peixe
+            contact.bodyB.node?.removeFromParent()
+            gamePoints += 10
+            
+//            for gameObject in gameObjects {
+//                if contact.bodyB.self == gameObject {
+//
+//                }
+//            }
             
         }
     }
@@ -157,7 +170,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime/100 // /100
+            gameVel += deltaTime/100
         }
     }
 }

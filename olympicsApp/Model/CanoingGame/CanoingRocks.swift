@@ -11,7 +11,7 @@ import SpriteKit
 
 class CanoingRocks: SKSpriteNode, GameObject {
     
-    var rock =  SKSpriteNode(imageNamed: "rock")
+    var rock = SKSpriteNode(imageNamed: "rock")
     
     func SetUp() {
         self.rock = SKSpriteNode(imageNamed: "rock")

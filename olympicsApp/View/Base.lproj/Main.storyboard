@@ -172,6 +172,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <segue destination="d5x-uB-D15" kind="presentation" identifier="GameOver" modalPresentationStyle="overCurrentContext" modalTransitionStyle="flipHorizontal" id="HSa-RM-1ej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -432,6 +435,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKf-96-lZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2788.4057971014495" y="32.608695652173914"/>
+        </scene>
+        <!--GameOver-->
+        <scene sceneID="7jf-cY-nUF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameOver" id="d5x-uB-D15" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="day-8g-2e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="80"/>
         </scene>
     </scenes>
     <resources>

@@ -26,9 +26,11 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
+    var gameViewController: GameViewController!
     
     override func didMove(to view: SKView) {
         
+
         backgroundNode = childNode(withName: "backgroundNode")
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
@@ -69,6 +71,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
             //colisao com pedra
+            let viewGameOver = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width/2, height: self.frame.size.height/2))
+            viewGameOver.center = self.view!.center
+            viewGameOver.backgroundColor = .white
+            gameViewController.gameOver()
+            isPaused = true
+//            self.view?.addSubview(viewGameOver)
+        
             Model.instance.totalPoints += gamePoints
             
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
@@ -118,35 +127,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         return vDPad
     }
     
-    
-    func touchDown(atPoint pos : CGPoint) {
-    
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
     
     
     override func update(_ currentTime: TimeInterval) {

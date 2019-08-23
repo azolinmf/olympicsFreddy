@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:olympicsApp/View/Base.lproj/GameOver.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:olympicsApp.xcodeproj">
    </FileRef>
    <FileRef

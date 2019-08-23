@@ -14,8 +14,8 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     func setUp(){
         let body = self.physicsBody!
         body.categoryBitMask = BodyMasks.PlayerCategory
-        body.contactTestBitMask = BodyMasks.BorderCategory | BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
-        body.collisionBitMask = BodyMasks.ObstacleCategory
+        body.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
+        body.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
     }
     
     

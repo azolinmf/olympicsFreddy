@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7F1B58768295D9004E5F5D5B /* Pods_olympicsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */; };
+		881367E02310155100CB8756 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881367DF2310155100CB8756 /* GameOverViewController.swift */; };
+		881367E32310284700CB8756 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881367E12310284700CB8756 /* GameOver.storyboard */; };
 		8871F402230C3240004CD4DE /* BodyMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8871F401230C3240004CD4DE /* BodyMasks.swift */; };
 		9D22C4DC230AC80100C08520 /* CanoingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */; };
 		9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53181F23057BF800EEA671 /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		881367DF2310155100CB8756 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		881367E22310284700CB8756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameOver.storyboard; sourceTree = "<group>"; };
 		8871F401230C3240004CD4DE /* BodyMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMasks.swift; sourceTree = "<group>"; };
 		950BA595E2E1C2A93038B608 /* Pods-olympicsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.release.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.release.xcconfig"; sourceTree = "<group>"; };
 		97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_olympicsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,7 @@
 			children = (
 				9D5318402306D34400EEA671 /* TileMap */,
 				9D53182C23057BF900EEA671 /* Assets.xcassets */,
+				881367E12310284700CB8756 /* GameOver.storyboard */,
 				9D53182123057BF800EEA671 /* CanoingGameScene.sks */,
 				9D53182323057BF800EEA671 /* Actions.sks */,
 				9D53182923057BF800EEA671 /* Main.storyboard */,
@@ -233,6 +238,7 @@
 				9D53182723057BF800EEA671 /* GameViewController.swift */,
 				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
 				D13BAF412308BE300044D687 /* StoreViewController.swift */,
+				881367DF2310155100CB8756 /* GameOverViewController.swift */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881367E32310284700CB8756 /* GameOver.storyboard in Resources */,
 				9D53182B23057BF800EEA671 /* Main.storyboard in Resources */,
 				9D5318422306D37C00EEA671 /* CanoingBackground.sks in Resources */,
 				9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */,
@@ -383,6 +390,7 @@
 				9D5318442306D75800EEA671 /* GameObject.swift in Sources */,
 				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
+				881367E02310155100CB8756 /* GameOverViewController.swift in Sources */,
 				9DFBEEC8230EC88000961437 /* Model.swift in Sources */,
 				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,
 				9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */,
@@ -392,6 +400,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		881367E12310284700CB8756 /* GameOver.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				881367E22310284700CB8756 /* Base */,
+			);
+			name = GameOver.storyboard;
+			sourceTree = "<group>";
+		};
 		9D53182923057BF800EEA671 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

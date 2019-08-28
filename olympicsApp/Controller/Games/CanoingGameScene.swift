@@ -13,6 +13,18 @@ extension CanoingGameScene: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive press: UIPress) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return true
+    }
 }
 
 class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
@@ -30,6 +42,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         
+        Model.instance.playAgain = false
 
         backgroundNode = childNode(withName: "backgroundNode")
         let background = CanoingBackground(node: backgroundNode)
@@ -49,11 +62,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         swipeDown.direction = .down
         swipeDown.delegate = self
         view.addGestureRecognizer(swipeDown)
+        
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
         self.physicsWorld.contactDelegate = self
         self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
-        
-        
         
     }
     
@@ -74,11 +86,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             let viewGameOver = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width/2, height: self.frame.size.height/2))
             viewGameOver.center = self.view!.center
             viewGameOver.backgroundColor = .white
+            Model.instance.totalPoints += gamePoints
+            Model.instance.currentPoints = gamePoints
             gameViewController.gameOver()
             isPaused = true
 //            self.view?.addSubview(viewGameOver)
         
-            Model.instance.totalPoints += gamePoints
+            
             
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.BorderCategory) {
@@ -91,10 +105,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             gamePoints += 10
             
 //            for gameObject in gameObjects {
-//                if contact.bodyB.self == gameObject {
-//
+//                if contact.bodyB == gameObject {
+//                    gameObjects.remove(at: )
 //                }
-//            }
+
             
         }
     }
@@ -150,7 +164,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime/100
+            gameVel += deltaTime/10  //100
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
     }
 }

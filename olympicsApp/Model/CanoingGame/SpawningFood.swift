@@ -13,7 +13,7 @@ class SpawningFood: GameObject {
     var timer: TimeInterval = 0
     var foodArray: [CanoingFood] = []
     var node: SKNode
-    var distance = 100.0 //1000.0
+    var distance = 1000.0 //1000.0
     
     init(node: SKNode) {
         self.node = node

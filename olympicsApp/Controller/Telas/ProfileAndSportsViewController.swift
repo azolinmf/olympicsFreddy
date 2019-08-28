@@ -9,7 +9,12 @@
 import UIKit
 
 
-class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, GameDelegate {
+   
+    func displayShop() {
+        self.performSegue(withIdentifier: "shopSegue", sender: self)
+    }
+    
     
     @IBOutlet weak var tbvSportsList: UITableView!
     var sportsList = Esportes.shared.sportsList
@@ -39,9 +44,16 @@ class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //inserir aqui  o caminho para o jogo
         if indexPath.row == 0 {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
-                self.navigationController?.show(vc, sender: self)
-            }
+            self.performSegue(withIdentifier: "presentGame", sender: self)
+//            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
+//                self.navigationController?.show(vc, sender: self)
+//            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? GameViewController{
+            dest.delegate = self
         }
     }
     

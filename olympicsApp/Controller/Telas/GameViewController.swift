@@ -10,12 +10,38 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+protocol GameDelegate {
+    func displayShop()
+}
+
+class GameViewController: UIViewController, GameOverScreenDelegate {
+    
+    func gameOver(displaysStore: Bool) {
+        navigationController?.popViewController(animated: true)
+        
+        if displaysStore{
+            self.delegate?.displayShop()
+        } else {
+            if Model.instance.playAgain {
+                //provavelmente vai ter que alterar pra tdas as views estarem na mesma pilha
+                if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
+                    self.navigationController?.show(vc, sender: self)
+//                    self.navigationController?.pushViewController(vc, animated: false)
+                    
+                }
+                
+            }
+        }
+    }
+    
+    
+    var delegate: GameDelegate?
     
     override func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         var scene: CanoingGameScene!
+        
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'CanoingGameScene.sks'
@@ -53,6 +79,15 @@ class GameViewController: UIViewController {
     func gameOver() {
         self.performSegue(withIdentifier: "GameOver", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.destination is GameOverViewController{
+            guard let dest = segue.destination as? GameOverViewController else { return }
+            dest.delegate = self
+        }
+    }
+    
     
     
 }

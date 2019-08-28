@@ -18,7 +18,7 @@ class CanoingFood: SKSpriteNode, GameObject {
         food.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         food.zPosition = 0 //2
         food.position.x = CGFloat.random(in: (-375...375))
-        food.position.y = 680
+        food.position.y = 1794
         food.physicsBody?.categoryBitMask = BodyMasks.RewardCategory
         food.physicsBody?.contactTestBitMask = BodyMasks.PlayerCategory
         //food.physicsBody?.collisionBitMask = BodyMasks.PlayerCategory

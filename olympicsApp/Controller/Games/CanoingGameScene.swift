@@ -35,6 +35,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var spawnRock: SpawningRocks!
     var spawnFood: SpawningFood!
     var gamePoints: Int = 0
+    var boardProportion = CGFloat(0)
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -49,9 +50,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         gameObjects.append(background)
         canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
         canoingPlayer.setUp()
-        canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: -440))]
+        canoingPlayer.buildCanoingTexture()
+        canoingPlayer.texture = SKTexture(imageNamed: "CanoaFreedyC1")
+        canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: 230))]
         gameObjects.append((canoingPlayer)!)
-        
+        boardProportion = self.view!.frame.width / frame.width
+
         spawnRock = SpawningRocks(node: self)
         spawnFood = SpawningFood(node: self)
         gameObjects.append(spawnFood)
@@ -114,14 +118,15 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func swipeCanoing(sender: UIGestureRecognizer) {
-        
         let location = sender.location(in: self.view)
+        canoingPlayer.animatePlayer(direction: 0)
         
-        if virtualDPadRight().contains(location){
+        if location.x > canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveRight()
             
-        } else if virtualDPadLeft().contains(location){
+        } else if location.x < canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveLeft()
+
         }
         
     }

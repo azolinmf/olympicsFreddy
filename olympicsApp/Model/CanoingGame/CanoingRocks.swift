@@ -18,11 +18,10 @@ class CanoingRocks: SKSpriteNode, GameObject {
         let randomScale = Int.random(in: 1...2)
         self.rock.xScale = CGFloat(randomScale)
         self.rock.yScale = CGFloat(randomScale)
-        
-        rock.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 100))
+        rock.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: rock.size.width, height: rock.size.width/2), center: rock.anchorPoint) // CGSize(width: 100, height: 100))
         rock.zPosition = 0 //2
-        rock.position.x = CGFloat.random(in: (-375...375))
-        rock.position.y = 680
+        rock.position.x = CGFloat.random(in: (0...375))
+        rock.position.y = 1794
         rock.physicsBody?.categoryBitMask = BodyMasks.ObstacleCategory
         rock.physicsBody?.contactTestBitMask = BodyMasks.PlayerCategory
         rock.physicsBody?.collisionBitMask = BodyMasks.PlayerCategory

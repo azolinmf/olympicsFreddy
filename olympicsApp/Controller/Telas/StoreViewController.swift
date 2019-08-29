@@ -142,7 +142,9 @@ extension StoreViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
-    
+    func buyItem (categoryPosition : Int, itemPosition : Int) {
+        
+    }
     
 }
 

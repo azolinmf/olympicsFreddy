@@ -13,7 +13,7 @@ import FirebaseUI
 class ItemStoreCell: UICollectionViewCell {
     @IBOutlet weak var lblItemName: UILabel!
     @IBOutlet weak var imgImageItem: UIImageView!
-    
+
     
     func setCell (for itemStore: ItemStore) {
         

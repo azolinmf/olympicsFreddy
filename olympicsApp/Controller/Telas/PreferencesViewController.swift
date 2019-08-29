@@ -32,7 +32,12 @@ class PreferencesViewController: UIViewController {
         super.viewDidLoad()
         
         self.refreshPref()
+        self.navigationController?.navigationBar.isHidden = false
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // Refreshes the status indicators

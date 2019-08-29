@@ -16,10 +16,10 @@ class AllItems {
     
     init() {
         categories.append(StoreCategories(name: "t-shirts"))
-        categories.append(StoreCategories(name: "shoes"))
+        categories.append(StoreCategories(name: "hats"))
         categories.append(StoreCategories(name: "glasses"))
         categories.append(StoreCategories(name: "pants"))
-        categories.append(StoreCategories(name: "hats"))
+        categories.append(StoreCategories(name: "mustaches"))
     }
     
     func insertItemInCategory() {

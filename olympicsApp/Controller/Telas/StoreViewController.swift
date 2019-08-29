@@ -95,13 +95,13 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         if buttonPressed == 0 {
             storeGameScene.changeShirt()
         } else if buttonPressed == 1 {
-            //funcao  trocar outro objeto
+            storeGameScene.changeHats()
         } else if buttonPressed == 2 {
-            //funcao  trocar outro objeto
+            storeGameScene.changeGlasses()
         } else if buttonPressed == 3 {
             storeGameScene.changePants()
         } else {
-            //funcao  trocar outro objeto
+            storeGameScene.changeMustache()
         }
         
         setButtons(item: itemSelected)

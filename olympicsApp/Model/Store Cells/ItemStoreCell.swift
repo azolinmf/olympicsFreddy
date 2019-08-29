@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class ItemStoreCell: UICollectionViewCell {
     @IBOutlet weak var lblItemName: UILabel!
+    @IBOutlet weak var imgImageItem: UIImageView!
     
+    
+    func setCell (for itemStore: ItemStore) {
+        
+        let referencia = Storage.storage().reference(withPath: "\(itemStore.category)/\(itemStore.imageName)")
+        
+        //cell.imgImageItem.sd_setImage(with: referencia, placeholderImage: "placeholder")
+        self.imgImageItem.sd_setImage(with: referencia)
+        self.lblItemName.text = itemStore.name
+    }
 }

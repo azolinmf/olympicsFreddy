@@ -11,19 +11,31 @@ import Foundation
 class AllItems {
     
     static var shared = AllItems()
-    var itemsList : [ItemStore] = []
+    var categories : [StoreCategories] = []
+    var allItemsStore : [ItemStore] = []
     
     init() {
-
-        //TEm outro jeito de add multiplos elementos em um array de objetos?
-        
-        itemsList.append(ItemStore(name: "Oculos"))
-        itemsList.append(ItemStore(name: "boné"))
-        itemsList.append(ItemStore(name: "gorro"))
-        itemsList.append(ItemStore(name: "Salto alto"))
-        itemsList.append(ItemStore(name: "Salto baixo"))
-        itemsList.append(ItemStore(name: "Carrinho"))
-        itemsList.append(ItemStore(name: "lancha"))
-        itemsList.append(ItemStore(name: "Cor da orelha"))
+        categories.append(StoreCategories(name: "t-shirts"))
+        categories.append(StoreCategories(name: "shoes"))
+        categories.append(StoreCategories(name: "glasses"))
+        categories.append(StoreCategories(name: "pants"))
+        categories.append(StoreCategories(name: "hats"))
+    }
+    
+    func insertItemInCategory() {
+        for i in 0..<self.allItemsStore.count {
+            for j in 0..<self.categories.count {
+                if self.categories[j].name == self.allItemsStore[i].category {
+                    categories[j].items.append(allItemsStore[i])
+                }
+            }
+        }
+        AllItems.shared.allItemsStore.removeAll()
+    }
+    
+    func clearItemsFromCategories() {
+        for i in 0..<self.categories.count {
+            self.categories[i].items.removeAll()
+        }
     }
 }

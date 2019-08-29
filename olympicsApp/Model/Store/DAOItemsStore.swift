@@ -13,11 +13,36 @@ import Firebase
 
 class DAOItemsStore {
     
-    func save() {
-        //nao vamos usar agora
-    }
     
-    func load() {
+    static func load(completion : @escaping ()  -> ()) {
+        let db = Firestore.firestore()
+        
+        db.collection("AllItems").getDocuments() { (querySnapshot, err) in
+            
+            if let err = err {
+                print("//////////////////////: \(err)")
+            } else {
+                
+                AllItems.shared.allItemsStore.removeAll()
+                AllItems.shared.clearItemsFromCategories()
+                
+                var item : ItemStore
+                
+                
+                //For que pega todos os elementos da colecao Store do FireBase
+                for document in querySnapshot!.documents {
+                    
+                    //Cria um ItemStore a partir do dicionário o coloca no vetor de todos os itens
+                    item = ItemStore.mapToObject(dict: document.data())
+                    AllItems.shared.allItemsStore.append(item)
+                    
+                }
+                completion()
+            }
+            AllItems.shared.insertItemInCategory()
+        }
+        
         
     }
+    
 }

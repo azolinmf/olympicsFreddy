@@ -4,9 +4,11 @@
 target 'olympicsApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for olympicsApp
-	pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
   
+  # Pods for olympicsApp
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Protobuf'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI'
 end

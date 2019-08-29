@@ -39,6 +39,12 @@
 		D13BAF422308BE300044D687 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF412308BE300044D687 /* StoreViewController.swift */; };
 		D13BAF482308C2640044D687 /* AllItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BAF472308C2640044D687 /* AllItems.swift */; };
 		D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */; };
+		D1D3B6752317568C00B7303E /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B6742317568C00B7303E /* ToolbarPickerView.swift */; };
+		D1D3B677231756BE00B7303E /* StoreCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B676231756BE00B7303E /* StoreCategories.swift */; };
+		D1D3B6792317575600B7303E /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B6782317575600B7303E /* PreferencesViewController.swift */; };
+		D1D3B67B2317579A00B7303E /* StoreGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D1D3B67A2317579A00B7303E /* StoreGameScene.sks */; };
+		D1D3B67D23175C1700B7303E /* StoreGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B67C23175C1700B7303E /* StoreGameScene.swift */; };
+		D1D3B67F23175E8100B7303E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B67E23175E8100B7303E /* Preferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +83,12 @@
 		D13BAF412308BE300044D687 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		D13BAF472308C2640044D687 /* AllItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllItems.swift; sourceTree = "<group>"; };
 		D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D1D3B6742317568C00B7303E /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		D1D3B676231756BE00B7303E /* StoreCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCategories.swift; sourceTree = "<group>"; };
+		D1D3B6782317575600B7303E /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		D1D3B67A2317579A00B7303E /* StoreGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreGameScene.sks; sourceTree = "<group>"; };
+		D1D3B67C23175C1700B7303E /* StoreGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreGameScene.swift; sourceTree = "<group>"; };
+		D1D3B67E23175E8100B7303E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.debug.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +179,7 @@
 				D13BAF382308BA0E0044D687 /* DAOItemsStore.swift */,
 				D13BAF3C2308BBB90044D687 /* ItemStore.swift */,
 				D13BAF472308C2640044D687 /* AllItems.swift */,
+				D1D3B676231756BE00B7303E /* StoreCategories.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -191,15 +204,17 @@
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D1D3B6732317565300B7303E /* Interface */,
 				8871F401230C3240004CD4DE /* BodyMasks.swift */,
 				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
 				9DFBEEC7230EC88000961437 /* Model.swift */,
-				D13BAF492308C2970044D687 /* SportsScreen */,
 				D13BAF3A2308BB860044D687 /* Store */,
+				D13BAF492308C2970044D687 /* SportsScreen */,
 				D120550523059DCE00AF0C91 /* Games Cells */,
 				D13BAF3E2308BD3C0044D687 /* Store Cells */,
 				9D5318432306D75800EEA671 /* GameObject.swift */,
 				9D53184B230830AE00EEA671 /* CanoingGame */,
+				D1D3B67E23175E8100B7303E /* Preferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +226,7 @@
 				9D53182C23057BF900EEA671 /* Assets.xcassets */,
 				881367E12310284700CB8756 /* GameOver.storyboard */,
 				9D53182123057BF800EEA671 /* CanoingGameScene.sks */,
+				D1D3B67A2317579A00B7303E /* StoreGameScene.sks */,
 				9D53182323057BF800EEA671 /* Actions.sks */,
 				9D53182923057BF800EEA671 /* Main.storyboard */,
 				9D53182E23057BF900EEA671 /* LaunchScreen.storyboard */,
@@ -231,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				9D53182523057BF800EEA671 /* CanoingGameScene.swift */,
+				D1D3B67C23175C1700B7303E /* StoreGameScene.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -242,8 +259,17 @@
 				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
 				D13BAF412308BE300044D687 /* StoreViewController.swift */,
 				881367DF2310155100CB8756 /* GameOverViewController.swift */,
+				D1D3B6782317575600B7303E /* PreferencesViewController.swift */,
 			);
 			path = Telas;
+			sourceTree = "<group>";
+		};
+		D1D3B6732317565300B7303E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D1D3B6742317568C00B7303E /* ToolbarPickerView.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		E15515220BF8C1B5537B7E26 /* Frameworks */ = {
@@ -266,6 +292,7 @@
 				9D53181923057BF800EEA671 /* Frameworks */,
 				9D53181A23057BF800EEA671 /* Resources */,
 				77B355837B1EBEEE6D480340 /* [CP] Embed Pods Frameworks */,
+				12514199F6AD66C52059E443 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,6 +349,7 @@
 				9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */,
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
 				9D53182423057BF800EEA671 /* Actions.sks in Resources */,
+				D1D3B67B2317579A00B7303E /* StoreGameScene.sks in Resources */,
 				D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +357,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12514199F6AD66C52059E443 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-olympicsApp/Pods-olympicsApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		19941F6160EB9A9352A45D1E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,11 +426,14 @@
 				D13BAF3D2308BBB90044D687 /* ItemStore.swift in Sources */,
 				D13BAF482308C2640044D687 /* AllItems.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
+				D1D3B6752317568C00B7303E /* ToolbarPickerView.swift in Sources */,
+				D1D3B677231756BE00B7303E /* StoreCategories.swift in Sources */,
 				9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
 				D120550B2305A34E00AF0C91 /* Esporte.swift in Sources */,
 				9D53182023057BF800EEA671 /* AppDelegate.swift in Sources */,
+				D1D3B67D23175C1700B7303E /* StoreGameScene.swift in Sources */,
 				D120550723059E4700AF0C91 /* GameCell.swift in Sources */,
 				8871F402230C3240004CD4DE /* BodyMasks.swift in Sources */,
 				D13BAF402308BD9F0044D687 /* ItemStoreCell.swift in Sources */,
@@ -394,6 +442,8 @@
 				9D5318442306D75800EEA671 /* GameObject.swift in Sources */,
 				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
+				D1D3B67F23175E8100B7303E /* Preferences.swift in Sources */,
+				D1D3B6792317575600B7303E /* PreferencesViewController.swift in Sources */,
 				881367E02310155100CB8756 /* GameOverViewController.swift in Sources */,
 				9DFBEEC8230EC88000961437 /* Model.swift in Sources */,
 				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,

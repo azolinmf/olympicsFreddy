@@ -16,6 +16,7 @@ class Outfit {
         if checkMoney(item: item) == true {
             item.bought = true
             item.inuse = true
+            Model.instance.totalPoints -= item.value
             return true
         }
             

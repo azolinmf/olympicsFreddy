@@ -29,6 +29,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var gameView: SKView!
     
     var buttonPressed = 0
+    var itemChoiced = 0
+    
     var storeGameScene: StoreGameScene!
     
     @IBOutlet weak var cltItems: UICollectionView!
@@ -87,6 +89,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         //        ref = Database.database().reference()
         //        ref.child("AllItems/\(itemSelected.key)/inuse").setValue("true")
         //        print("Trocando para true")
+        
+        itemChoiced = indexPath.row
         storeGameScene.selectedItem = itemSelected
         if buttonPressed == 0 {
             storeGameScene.changeShirt()

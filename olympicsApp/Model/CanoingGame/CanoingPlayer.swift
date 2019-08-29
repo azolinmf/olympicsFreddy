@@ -21,10 +21,10 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         print(self.texture?.size())
         print(self.size)
         
-        
+        let CanoingTexture = SKTexture(imageNamed: "Canoa.png")
         
         self.scale(to: CGSize(width: (self.texture?.size().width)! * 0.2, height: (self.texture?.size().height)! * 0.2))
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, alphaThreshold: 0.8, size: self.size)
+        self.physicsBody = SKPhysicsBody(texture: CanoingTexture, alphaThreshold: 0.8, size: CGSize(width: self.size.width + 20, height: self.size.height + 80))
         //self.physicsBody! = SKPhysicsBody(texture: AnimatedAtlas.textureNamed("CanoaFreedyC1"), size: CGSize(width: self.size.width * CGFloat(1.1), height: self.size.height * CGFloat(1.1)))
         self.physicsBody?.usesPreciseCollisionDetection = false
         self.physicsBody!.affectedByGravity = false
@@ -56,7 +56,9 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     func update(deltaTime: TimeInterval, velocity: Double) {
         
         self.zRotation = self.physicsBody!.velocity.dx * -0.0015
-
+        
+        // direita é negativo
+        // esquerda é positivo
     }
     
     
@@ -91,15 +93,27 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     }
     
     func animatePlayer(direction: Int) {
+        let padling = SKAction.repeatForever(
+            SKAction.animate(with: CanoingFrames,
+                             timePerFrame: 0.2,
+                             resize: false,
+                             restore: true))
+        let padlingRight = SKAction.animate(with: CanoingRight,
+                                            timePerFrame: 0.2,
+                                            resize: false,
+                                            restore: true)
+        let padlingLeft = SKAction.animate(with: CanoingLeft,
+                                            timePerFrame: 0.2,
+                                            resize: false,
+                                            restore: true)
         // função para a animação do player usando as texturas
         if direction == 0 {
-            self.run(SKAction.repeatForever(
-                SKAction.animate(with: CanoingFrames,
-                                 timePerFrame: 0.2,
-                                 resize: false,
-                                 restore: true)),
+            self.run(padling,
                      withKey:"walkingInPlacePlayer")
-        } else {
+        } else if direction == 1{
+            self.run(SKAction.sequence([padlingRight,padling]))
+        } else if direction == 2 {
+            self.run(SKAction.sequence([padlingLeft,padling]))
         }
         self.direction = direction
     }

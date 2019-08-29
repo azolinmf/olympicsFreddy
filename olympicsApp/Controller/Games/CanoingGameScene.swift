@@ -50,7 +50,8 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         gameObjects.append(background)
         canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
         canoingPlayer.buildCanoingTexture()
-        canoingPlayer.setUp()
+//        canoingPlayer.setUp()
+        canoingPlayer.animatePlayer(direction: 0)
 //        canoingPlayer.texture = SKTexture(imageNamed: "CanoaFreedyC1")
         canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: 230))]
         gameObjects.append((canoingPlayer)!)
@@ -119,13 +120,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     @objc func swipeCanoing(sender: UIGestureRecognizer) {
         let location = sender.location(in: self.view)
-        canoingPlayer.animatePlayer(direction: 0)
-        
         if location.x > canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveRight()
-            
+            canoingPlayer.animatePlayer(direction: 2)
+
         } else if location.x < canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveLeft()
+            canoingPlayer.animatePlayer(direction: 1)
 
         }
         

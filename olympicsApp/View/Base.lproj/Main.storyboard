@@ -404,6 +404,31 @@
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms5-UX-ipo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="311"/>
                             </skView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOe-Sr-3Zn">
+                                <rect key="frame" x="332" y="342" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="btnBuyItemPressed:" destination="ylo-w8-36f" eventType="touchUpInside" id="VOt-gg-M6d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXG-HJ-G2T">
+                                <rect key="frame" x="332" y="304" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.38823529410000002" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Use"/>
+                                <connections>
+                                    <action selector="btnUseItemPressed:" destination="ylo-w8-36f" eventType="touchUpInside" id="CoE-dE-cBd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-6Y-H5f">
+                                <rect key="frame" x="186" y="100" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -430,6 +455,7 @@
                         <outlet property="btnCategoryTwo" destination="gKC-Bc-T0R" id="i0I-44-0C2"/>
                         <outlet property="cltItems" destination="Cct-Cf-7fh" id="hM9-n0-24W"/>
                         <outlet property="gameView" destination="Ms5-UX-ipo" id="JgS-zh-1PK"/>
+                        <outlet property="lblTotalPoints" destination="jfA-6Y-H5f" id="f2G-KN-SI5"/>
                         <outlet property="viewCollectionBackGround" destination="CkH-1h-vk0" id="eRb-Y4-lt6"/>
                     </connections>
                 </viewController>

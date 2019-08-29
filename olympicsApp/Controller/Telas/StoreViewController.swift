@@ -20,6 +20,12 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var btnCategoryThree: UIButton!
     @IBOutlet weak var btnCategoryFour: UIButton!
     @IBOutlet weak var btnCategoryFive: UIButton!
+    @IBOutlet weak var btnBuyItem: UIButton!
+    @IBOutlet weak var btnUseButton: UIButton!
+    
+    
+    @IBOutlet weak var lblTotalPoints: UILabel!
+    
     @IBOutlet weak var gameView: SKView!
     
     var buttonPressed = 0
@@ -40,6 +46,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             storeGameScene.scaleMode = .aspectFill
             storeGameScene.vc = self
             view.presentScene(storeGameScene)
+            Model.instance.totalPoints = 100
         }
         
         self.navigationController?.navigationBar.isHidden = false
@@ -50,11 +57,17 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         // A colecao so atualiza apos carregar as informacoes do banco de dado
         
         DAOItemsStore.load {
-            self.cltItems.reloadData()
+            self.updateScreen()
         }
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    func updateScreen() {
+        self.cltItems.reloadData()
+        lblTotalPoints.text = String(Model.instance.totalPoints)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return AllItems.shared.categories[buttonPressed].items.count
@@ -86,35 +99,77 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         } else {
             //funcao  trocar outro objeto
         }
+        
+        setButtons(item: itemSelected)
+        updateScreen()
     }
     
+    
+    func setButtons(item : ItemStore){
+        if item.bought == true {
+            showUseButton()
+        }
+        else {
+            showBuyButton()
+        }
+    }
     
     @IBAction func btnCategoryOnePressed(_ sender: Any) {
         buttonPressed = 0
-        cltItems.reloadData()
+        updateScreen()
     }
     @IBAction func btnCategoryTwoPressed(_ sender: Any) {
         buttonPressed = 1
-        cltItems.reloadData()
+        updateScreen()
     }
     
     @IBAction func btnCategoryThreePressed(_ sender: Any) {
         buttonPressed = 2
-        cltItems.reloadData()
+        updateScreen()
     }
     
     @IBAction func btnCategoryFourPressed(_ sender: Any) {
         buttonPressed = 3
-        cltItems.reloadData()
+        updateScreen()
     }
     
     @IBAction func btnCategoryFivePressed(_ sender: Any) {
         buttonPressed = 4
-        cltItems.reloadData()
+        updateScreen()
     }
     
+    @IBAction func btnBuyItemPressed(_ sender: Any) {
+        
+        if Outfit.buyItem(categoryPosition: buttonPressed, itemPosition: itemChoiced) == true {
+            print("Comprado")
+            showUseButton()
+        }
+        else {
+            print("Voce  nao tem  dinheiro o suficiente")
+        }
+        
+        updateScreen()
+    }
     
+    @IBAction func btnUseItemPressed(_ sender: Any) {
+        Outfit.useItem(categoryPosition: buttonPressed, itemPosition: itemChoiced)
+        updateScreen()
+    }
     
+    func showBuyButton (){
+        btnBuyItem.isHidden = false
+        btnBuyItem.isEnabled = true
+        
+        btnUseButton.isHidden = true
+        btnUseButton.isEnabled = false
+    }
+    func showUseButton (){
+        btnBuyItem.isHidden = true
+        btnBuyItem.isEnabled = false
+        
+        btnUseButton.isHidden = false
+        btnUseButton.isEnabled = true
+    }
 }
 
 extension StoreViewController : UICollectionViewDelegateFlowLayout {

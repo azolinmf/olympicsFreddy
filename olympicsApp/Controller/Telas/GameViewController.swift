@@ -20,19 +20,17 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         navigationController?.popViewController(animated: true)
         
         if displaysStore {
-            print("entrou no if da loja")
             self.delegate?.displayShop()
         } else {
             if Model.instance.playAgain {
-                //provavelmente vai ter que alterar pra tdas as views estarem na mesma pilha
                 if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
+                    vc.delegate = delegate
                     self.navigationController?.show(vc, sender: self)
 //                    self.navigationController?.pushViewController(vc, animated: false)
-                    
                 }
-                
             }
         }
+        
     }
     
     
@@ -59,6 +57,7 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             view.showsFPS = false
             view.showsNodeCount = false
         }
+        
     }
     
     override var shouldAutorotate: Bool {

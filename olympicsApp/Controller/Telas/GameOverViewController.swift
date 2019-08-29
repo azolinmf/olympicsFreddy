@@ -130,7 +130,6 @@ class GameOverViewController: UIViewController {
     
     
     @IBAction func didPressStoreButton(_ sender: Any) {
-        print("apertou o botao de loja")
         dismiss(animated: true, completion: {() in
             self.delegate?.gameOver(displaysStore: true)
         }
@@ -147,6 +146,7 @@ class GameOverViewController: UIViewController {
     
     @IBAction func didPressPlayAgain(_ sender: Any) {
         Model.instance.playAgain = true
+        
         dismiss(animated: false, completion: {() in
             self.delegate?.gameOver(displaysStore: false)
         }

@@ -12,7 +12,6 @@ import UIKit
 class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource,  GameDelegate {
     
     func displayShop() {
-        print("entrou na funcao display shop")
         self.performSegue(withIdentifier: "shopSegue", sender: self)
     }
     

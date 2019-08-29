@@ -39,7 +39,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
-    var gameViewController: GameViewController!
+    weak var gameViewController: GameViewController!
     
     override func didMove(to view: SKView) {
         
@@ -169,7 +169,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime/10  //100
+            gameVel += deltaTime * 10  //100
         }
     }
     

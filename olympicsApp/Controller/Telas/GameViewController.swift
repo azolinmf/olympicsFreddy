@@ -19,7 +19,8 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
     func gameOver(displaysStore: Bool) {
         navigationController?.popViewController(animated: true)
         
-        if displaysStore{
+        if displaysStore {
+            print("entrou no if da loja")
             self.delegate?.displayShop()
         } else {
             if Model.instance.playAgain {

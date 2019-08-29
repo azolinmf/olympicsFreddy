@@ -108,7 +108,7 @@ extension UIView {
     }
 }
 
-protocol GameOverScreenDelegate{
+protocol GameOverScreenDelegate {
     func gameOver(displaysStore: Bool)
 }
 
@@ -130,6 +130,7 @@ class GameOverViewController: UIViewController {
     
     
     @IBAction func didPressStoreButton(_ sender: Any) {
+        print("apertou o botao de loja")
         dismiss(animated: true, completion: {() in
             self.delegate?.gameOver(displaysStore: true)
         }

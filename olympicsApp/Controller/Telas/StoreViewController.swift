@@ -41,6 +41,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             storeGameScene.vc = self
             view.presentScene(storeGameScene)
         }
+        
+        self.navigationController?.navigationBar.isHidden = false
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -50,6 +52,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         DAOItemsStore.load {
             self.cltItems.reloadData()
         }
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

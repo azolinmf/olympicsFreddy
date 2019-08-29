@@ -9,7 +9,13 @@
 import UIKit
 
 
-class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource,  GameDelegate {
+    
+    func displayShop() {
+        print("entrou na funcao display shop")
+        self.performSegue(withIdentifier: "shopSegue", sender: self)
+    }
+    
     
     @IBOutlet weak var configurationButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
@@ -62,12 +68,28 @@ class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UI
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //inserir aqui  o caminho para o jogo
+//        if indexPath.row == 0 {
+//            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
+//                self.navigationController?.show(vc, sender: self)
+//            }
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //inserir aqui  o caminho para o jogo
         if indexPath.row == 0 {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
-                self.navigationController?.show(vc, sender: self)
-            }
+            self.performSegue(withIdentifier: "presentGame", sender: self)
+            //            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
+            //                self.navigationController?.show(vc, sender: self)
+            //            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? GameViewController{
+            dest.delegate = self
         }
     }
 }

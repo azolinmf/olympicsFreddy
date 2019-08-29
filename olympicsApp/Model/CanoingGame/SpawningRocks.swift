@@ -14,7 +14,7 @@ class SpawningRocks: GameObject {
 //    var rocksArray: [CanoingRocks] = []
     var rocksArray: [CanoingRocks] = []
     var node: SKNode
-    var distance = 600.0
+    var distance = 500.0
     
     init(node: SKNode) {
         self.node = node

@@ -169,7 +169,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime * 10  //100
+            gameVel += deltaTime   //100
         }
     }
     

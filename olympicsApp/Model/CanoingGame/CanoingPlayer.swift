@@ -13,10 +13,28 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     var direction = 0
     
     func setUp(){
-        let body = self.physicsBody!
-        body.categoryBitMask = BodyMasks.PlayerCategory
-        body.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
-        body.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
+        
+//        var body = self.physicsBody!
+//        self.physicsBody! = SKPhysicsBody(circleOfRadius: CGFloat(30))
+//        self.texture = AnimatedAtlas.textureNamed("CanoaFreedy1")
+        print("sizes;")
+        print(self.texture?.size())
+        print(self.size)
+        
+        
+        
+        self.scale(to: CGSize(width: (self.texture?.size().width)! * 0.2, height: (self.texture?.size().height)! * 0.2))
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, alphaThreshold: 0.8, size: self.size)
+        //self.physicsBody! = SKPhysicsBody(texture: AnimatedAtlas.textureNamed("CanoaFreedyC1"), size: CGSize(width: self.size.width * CGFloat(1.1), height: self.size.height * CGFloat(1.1)))
+        self.physicsBody?.usesPreciseCollisionDetection = false
+        self.physicsBody!.affectedByGravity = false
+        self.physicsBody!.isDynamic = true
+        self.physicsBody!.allowsRotation = true
+        self.physicsBody!.categoryBitMask = BodyMasks.PlayerCategory
+        self.physicsBody!.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
+        self.physicsBody!.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
+        
+        
     }
     
     
@@ -38,7 +56,7 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     func update(deltaTime: TimeInterval, velocity: Double) {
         
         self.zRotation = self.physicsBody!.velocity.dx * -0.0015
-        
+
     }
     
     
@@ -54,19 +72,22 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         var canoingFrames: [SKTexture] = []
         var canoingRight : [SKTexture] = []
         var canoingLeft  : [SKTexture] = []
-        for i in 1...3 {
-            let PlayerTextureName  = "CanoaFreedyC\(i)"
-            let PlayerTextureRight = "CanoaFreedy D\(i)"
-            let PlayerTextureLeft  = "CanoaFreedy E\(i)"
-            canoingFrames.append(AnimatedAtlas.textureNamed(PlayerTextureName))
-            canoingRight.append(AnimatedAtlas.textureNamed(PlayerTextureRight))
-            canoingLeft.append(AnimatedAtlas.textureNamed(PlayerTextureLeft))
+        for i in 1...10 {
+            let PlayerTexture  = "CanoaFreedy\(i)"
+            canoingFrames.append(AnimatedAtlas.textureNamed(PlayerTexture))
+            if i < 6 {
+                canoingLeft.append(AnimatedAtlas.textureNamed(PlayerTexture))
+            } else if i > 5 {
+                canoingRight.append(AnimatedAtlas.textureNamed(PlayerTexture))
+            }
         }
         CanoingFrames = canoingFrames
         CanoingRight  = canoingRight
         CanoingLeft   = canoingLeft
-            let firstFrameTexture = AnimatedAtlas.textureNamed("CanoaFreedyC1")
-            self.texture = firstFrameTexture
+//            let firstFrameTexture = AnimatedAtlas.textureNamed("CanoaFreedy1")
+//            self.texture = firstFrameTexture
+        self.texture = AnimatedAtlas.textureNamed("CanoaFreedy1")
+        setUp()
     }
     
     func animatePlayer(direction: Int) {

@@ -49,9 +49,9 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
         canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
-        canoingPlayer.setUp()
         canoingPlayer.buildCanoingTexture()
-        canoingPlayer.texture = SKTexture(imageNamed: "CanoaFreedyC1")
+        canoingPlayer.setUp()
+//        canoingPlayer.texture = SKTexture(imageNamed: "CanoaFreedyC1")
         canoingPlayer.constraints = [SKConstraint.positionY(SKRange(constantValue: 230))]
         gameObjects.append((canoingPlayer)!)
         boardProportion = self.view!.frame.width / frame.width

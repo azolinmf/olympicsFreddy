@@ -36,25 +36,14 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var spawnFood: SpawningFood!
     var gamePoints: Int = 0
     var boardProportion = CGFloat(0)
-    var hideLabel = false
-    var instructionLabel: SKLabelNode!
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
     weak var gameViewController: GameViewController!
     
-    
     override func didMove(to view: SKView) {
         
         Model.instance.playAgain = false
-        
-        instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
-        
-        let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
-        let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
-        let sequence = SKAction.sequence([flashLabelIn, flashLabelOut])
-        
-        instructionLabel.run(SKAction.repeatForever(sequence))
 
         backgroundNode = childNode(withName: "backgroundNode")
         let background = CanoingBackground(node: backgroundNode)
@@ -181,20 +170,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime/5   //100
+            gameVel += deltaTime   //100
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
-        if !hideLabel {
-            _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false, block: { timer in
-                self.instructionLabel.isHidden = true
-            })
-            hideLabel = true
-        }
-        
         
     }
 }

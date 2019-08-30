@@ -26,6 +26,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var lblTotalPoints: UILabel!
     
+    @IBOutlet weak var lblItemName: UILabel!
+    
     @IBOutlet weak var gameView: SKView!
     
     var buttonPressed = 0
@@ -55,7 +57,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     override func viewWillAppear(_ animated: Bool) {
         
-        viewCollectionBackGround.layer.cornerRadius = 50
+        cltItems.roundCorners([.topLeft,.topRight], radius: 20)
         // A colecao so atualiza apos carregar as informacoes do banco de dado
         
         DAOItemsStore.load {
@@ -77,7 +79,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemStore", for: indexPath) as! ItemStoreCell
-        
+        cell.layer.cornerRadius = 15
         let item = AllItems.shared.categories[buttonPressed].items[indexPath.row]
         cell.setCell(for: item)
         return cell
@@ -103,7 +105,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         } else {
             storeGameScene.changeMustache()
         }
-        
+        lblItemName.text = itemSelected.name
         setButtons(item: itemSelected)
         updateScreen()
     }
@@ -205,5 +207,13 @@ extension StoreViewController : UICollectionViewDelegateFlowLayout {
         
     }
     
+    
 }
-
+extension UICollectionView {
+    func roundCorners(_ corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}

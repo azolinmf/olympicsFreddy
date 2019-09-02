@@ -8,7 +8,7 @@ target 'olympicsApp' do
   # Pods for olympicsApp
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-  pod 'Protobuf'
+  pod 'Protobuf', :inhibit_warnings => true
   pod 'Firebase/Storage'
   pod 'FirebaseUI'
 end

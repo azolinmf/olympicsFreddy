@@ -9,25 +9,45 @@
 import UIKit
 
 
-class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource,  GameDelegate {
+class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  GameDelegate {
+    
+    @IBOutlet weak var configurationButton: UIButton!
+    @IBOutlet weak var storeButton: UIButton!
+    @IBOutlet weak var cltSports: UICollectionView!
+    
+    var sportsList = Esportes.shared.sportsList
+    
+    override func viewDidLoad() {
+        cltSports.delegate = self
+        cltSports.dataSource = self
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        updateInterface()
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sportsList.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
+        cell.lblSportName.text = sportsList[indexPath.row].name
+        //Remove os separadores de celulas
+        return cell
+    }
+    
     
     func displayShop() {
         self.performSegue(withIdentifier: "shopSegue", sender: self)
     }
     
-    @IBOutlet weak var configurationButton: UIButton!
-    @IBOutlet weak var storeButton: UIButton!
-    @IBOutlet weak var tbvSportsList: UITableView!
-    var sportsList = Esportes.shared.sportsList
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tbvSportsList.delegate = self
-        tbvSportsList.dataSource = self
-        tbvSportsList.rowHeight = self.view.frame.height * 0.3
-        
-        updateInterface()
-        
-    }
     
     func updateInterface(){
         
@@ -49,41 +69,14 @@ class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UI
         v.layer.shadowColor = UIColor.lightGray.cgColor
         v.layer.shadowOpacity = opacity
     }
+
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sportsList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
-        cell.lblSportDescription.text = sportsList[indexPath.row].description
-        cell.lblSportName.text = sportsList[indexPath.row].name
-        
-        viewshadow(v: cell.viewBackgroundCell, blur: 7, y: 2, opacity: 0.6)
-        //Remove os separadores de celulas
-        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
-        return cell
-    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //inserir aqui  o caminho para o jogo
-//        if indexPath.row == 0 {
-//            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
-//                self.navigationController?.show(vc, sender: self)
-//            }
-//        }
-//    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //inserir aqui  o caminho para o jogo
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "presentGame", sender: self)
-            //            if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
-            //                self.navigationController?.show(vc, sender: self)
-            //            }
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? GameViewController{

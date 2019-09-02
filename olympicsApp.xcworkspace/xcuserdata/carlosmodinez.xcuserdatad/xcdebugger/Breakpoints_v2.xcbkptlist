@@ -2,4 +2,315 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+            timestampString = "589124827.997912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ProfileAndSportsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; olympicsApp.ProfileAndSportsViewController"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.705641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; olympicsApp.ProfileAndSportsViewController"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.708365"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;olympicsApp.ProfileAndSportsViewController&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.7105629"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;olympicsApp.ProfileAndSportsViewController&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.7124389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.__deallocating_deinit"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.714221"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+            timestampString = "589124827.999532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ProfileAndSportsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.configurationButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.373546"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.configurationButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.375146"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.configurationButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.376838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.configurationButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.378317"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; olympicsApp.ProfileAndSportsViewController"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.380107"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;olympicsApp.ProfileAndSportsViewController&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589122833.381845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+            timestampString = "589124827.999918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ProfileAndSportsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.cltSports.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.7233911"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.cltSports.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.725628"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.cltSports.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.727933"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.cltSports.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.72967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; olympicsApp.ProfileAndSportsViewController"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.731612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "425">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "olympicsApp.ProfileAndSportsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;olympicsApp.ProfileAndSportsViewController&gt;"
+                  moduleName = "olympicsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carlosmodinez/Desktop/Mini%20Challenge/olympicsFreddy/olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
+                  timestampString = "589123046.733703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "345">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

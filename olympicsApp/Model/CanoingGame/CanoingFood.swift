@@ -13,9 +13,10 @@ class CanoingFood: SKSpriteNode, GameObject {
     var food = SKSpriteNode(imageNamed: "fish")
     
     func setUp() {
-        self.food = SKSpriteNode(imageNamed: "fish")
+        let foodTexture = SKTexture(imageNamed: "fish")
         
-        food.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+//        food.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        food.physicsBody = SKPhysicsBody(texture: foodTexture, alphaThreshold: 0.8, size: CGSize(width: food.size.width, height: food.size.height))
         food.zPosition = 0 //2
         food.position.x = CGFloat.random(in: (0...740))
         food.position.y = 1794

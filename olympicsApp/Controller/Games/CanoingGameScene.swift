@@ -30,6 +30,7 @@ extension CanoingGameScene: UIGestureRecognizerDelegate {
 class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var backgroundNode: SKNode!
+    var grama: SKNode!
     var lastTimeUpdate: TimeInterval = 0
     var gameVel: Double = 1.0
     var spawnRock: SpawningRocks!
@@ -46,6 +47,8 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         Model.instance.playAgain = false
 
         backgroundNode = childNode(withName: "backgroundNode")
+//        grama = childNode(withName: "grama")
+//        grama.physicsBody!.collisionBitMask = BodyMasks.PlayerCategory
         let background = CanoingBackground(node: backgroundNode)
         gameObjects.append(background)
         canoingPlayer = childNode(withName: "CanoingPlayer") as? CanoingPlayer
@@ -71,6 +74,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
         self.physicsWorld.contactDelegate = self
         self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
+        self.physicsBody!.restitution = 0.6
         
     }
     
@@ -102,19 +106,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.BorderCategory) {
             //colisao com parede
-            
+            canoingPlayer.zRotation = 0.0
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.RewardCategory) {
             //colisao com peixe
             contact.bodyB.node?.removeFromParent()
             gamePoints += 10
-            
-//            for gameObject in gameObjects {
-//                if contact.bodyB == gameObject {
-//                    gameObjects.remove(at: )
-//                }
-
-            
         }
     }
     
@@ -122,12 +119,9 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         let location = sender.location(in: self.view)
         if location.x > canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveRight()
-            canoingPlayer.animatePlayer(direction: 2)
 
         } else if location.x < canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveLeft()
-            canoingPlayer.animatePlayer(direction: 1)
-
         }
         
     }
@@ -170,7 +164,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         if deltaTime < 0.05 {
             //random parameter that can be calibrated according to the desired game difficulty
-            gameVel += deltaTime   //100
+            gameVel += deltaTime/8  //100
         }
     }
     

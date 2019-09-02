@@ -2,7 +2,7 @@
 //  CanoingPlayer.swift
 //  olympicsApp
 //
-//  Created by Maria Fernanda Azolin on 19/08/19.
+//  Created by Matheus Cavasin on 19/08/19.
 //  Copyright © 2019 Apple Developer Academy. All rights reserved.
 //
 
@@ -24,30 +24,32 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         let CanoingTexture = SKTexture(imageNamed: "Canoa.png")
         
         self.scale(to: CGSize(width: (self.texture?.size().width)! * 0.2, height: (self.texture?.size().height)! * 0.2))
-        self.physicsBody = SKPhysicsBody(texture: CanoingTexture, alphaThreshold: 0.8, size: CGSize(width: self.size.width + 20, height: self.size.height + 80))
+        self.physicsBody = SKPhysicsBody(texture: CanoingTexture, alphaThreshold: 0.8, size: CGSize(width: self.size.width + 20, height: self.size.height + 20))
         //self.physicsBody! = SKPhysicsBody(texture: AnimatedAtlas.textureNamed("CanoaFreedyC1"), size: CGSize(width: self.size.width * CGFloat(1.1), height: self.size.height * CGFloat(1.1)))
         self.physicsBody?.usesPreciseCollisionDetection = false
         self.physicsBody!.affectedByGravity = false
         self.physicsBody!.isDynamic = true
         self.physicsBody!.allowsRotation = true
         self.physicsBody!.categoryBitMask = BodyMasks.PlayerCategory
-        self.physicsBody!.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory
+        self.physicsBody!.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory | BodyMasks.BorderCategory
         self.physicsBody!.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
+        self.physicsBody!.restitution = 0.8
         
-        
+        // hook.ink
     }
     
     
     func moveRight() {
         let body = self.physicsBody!
-        body.applyImpulse(CGVector(dx: -150, dy: 0))
-        
+        body.applyImpulse(CGVector(dx: -190, dy: 0))
+        animatePlayer(direction: 2)
         //body.applyImpulse(CGVector(dx: 0, dy: 0), at: CGPoint(x: 50.0, y: 0))
     }
     
     func moveLeft() {
         let body = self.physicsBody!
-        body.applyImpulse(CGVector(dx: 150, dy: 0))
+        body.applyImpulse(CGVector(dx: 190, dy: 0))
+        animatePlayer(direction: 1)
         //body.applyImpulse(CGVector(dx: 0, dy: 100), at: CGPoint(x: -50.0, y: 0))
 
     }
@@ -56,9 +58,7 @@ class CanoingPlayer: SKSpriteNode, GameObject {
     func update(deltaTime: TimeInterval, velocity: Double) {
         
         self.zRotation = self.physicsBody!.velocity.dx * -0.0015
-        
-        // direita é negativo
-        // esquerda é positivo
+
     }
     
     
@@ -86,8 +86,6 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         CanoingFrames = canoingFrames
         CanoingRight  = canoingRight
         CanoingLeft   = canoingLeft
-//            let firstFrameTexture = AnimatedAtlas.textureNamed("CanoaFreedy1")
-//            self.texture = firstFrameTexture
         self.texture = AnimatedAtlas.textureNamed("CanoaFreedy1")
         setUp()
     }

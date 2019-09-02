@@ -45,6 +45,7 @@
 		D1D3B67B2317579A00B7303E /* StoreGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D1D3B67A2317579A00B7303E /* StoreGameScene.sks */; };
 		D1D3B67D23175C1700B7303E /* StoreGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B67C23175C1700B7303E /* StoreGameScene.swift */; };
 		D1D3B67F23175E8100B7303E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B67E23175E8100B7303E /* Preferences.swift */; };
+		D1D3B6812317F7D500B7303E /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D3B6802317F7D400B7303E /* Outfit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		D1D3B67A2317579A00B7303E /* StoreGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreGameScene.sks; sourceTree = "<group>"; };
 		D1D3B67C23175C1700B7303E /* StoreGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreGameScene.swift; sourceTree = "<group>"; };
 		D1D3B67E23175E8100B7303E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		D1D3B6802317F7D400B7303E /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		F4A700BC825E266A6C09248E /* Pods-olympicsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olympicsApp.debug.xcconfig"; path = "Target Support Files/Pods-olympicsApp/Pods-olympicsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				8871F401230C3240004CD4DE /* BodyMasks.swift */,
 				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
 				9DFBEEC7230EC88000961437 /* Model.swift */,
+				D1D3B6802317F7D400B7303E /* Outfit.swift */,
 				D13BAF3A2308BB860044D687 /* Store */,
 				D13BAF492308C2970044D687 /* SportsScreen */,
 				D120550523059DCE00AF0C91 /* Games Cells */,
@@ -444,6 +447,7 @@
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
 				D1D3B67F23175E8100B7303E /* Preferences.swift in Sources */,
 				D1D3B6792317575600B7303E /* PreferencesViewController.swift in Sources */,
+				D1D3B6812317F7D500B7303E /* Outfit.swift in Sources */,
 				881367E02310155100CB8756 /* GameOverViewController.swift in Sources */,
 				9DFBEEC8230EC88000961437 /* Model.swift in Sources */,
 				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,

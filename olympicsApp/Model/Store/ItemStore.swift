@@ -10,7 +10,7 @@ import Foundation
 
 class ItemStore {
     var name : String
-    var value : Float
+    var value : Int
     var inuse : Bool
     var bought : Bool
     var imageName : String
@@ -20,7 +20,7 @@ class ItemStore {
     
     //sobrecarga de contrutor - dessa forma, eu posso criar esse objeto com qualquer uma dessas configuracoes - Falar com a equipe sobre isso
     
-    init(name : String, category : String, imageName : String, value : Float, inuse : Bool, bought : Bool, key : String) {
+    init(name : String, category : String, imageName : String, value : Int, inuse : Bool, bought : Bool, key : String) {
         self.name = name
         self.imageName = imageName
         self.category = category
@@ -34,7 +34,7 @@ class ItemStore {
     static func mapToObject(dict: [String : Any]) -> ItemStore {
         //Converte o dicionario do banco de dados para um objeto do tipo ItemStore
         let name : String = dict["name"] as! String
-        let value : Float = dict["value"] as! Float
+        let value : Int = dict["value"] as! Int
         let inuse : Bool = dict["inuse"] as! Bool
         let bought : Bool = dict["bought"] as! Bool
         let category : String = dict["category"] as! String

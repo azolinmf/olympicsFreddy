@@ -19,12 +19,19 @@ class StoreGameScene :  SKScene {
     
     var shirt : SKSpriteNode!
     var pants : SKSpriteNode!
+    var hats : SKSpriteNode!
+    var glasses : SKSpriteNode!
+    var mustaches : SKSpriteNode!
+    
     
     override func didMove(to view: SKView) {
         freddy = childNode(withName: "freddy") as? SKSpriteNode
         
         shirt = freddy.childNode(withName: "shirt") as? SKSpriteNode
         pants = freddy.childNode(withName: "pants") as? SKSpriteNode
+        hats = freddy.childNode(withName: "hats") as? SKSpriteNode
+        glasses = freddy.childNode(withName: "glasses") as? SKSpriteNode
+        mustaches = freddy.childNode(withName: "mustaches") as? SKSpriteNode
     }
     
     func changeShirt() {
@@ -49,5 +56,33 @@ class StoreGameScene :  SKScene {
         self.pants.texture = SKTexture(image: image.image as! UIImage)
     }
     
+    func  changeMustache() {
+        var image : UIImageView
+        image = UIImageView(image: UIImage(named: "rock"))
+        
+        let referencia = Storage.storage().reference(withPath: "mustaches/\(self.selectedItem.imageName)")
+        
+        image.sd_setImage(with: referencia)
+        self.pants.texture = SKTexture(image: image.image as! UIImage)
+    }
     
+    func changeHats() {
+        var image : UIImageView
+        image = UIImageView(image: UIImage(named: "rock"))
+        
+        let referencia = Storage.storage().reference(withPath: "hats/\(self.selectedItem.imageName)")
+        
+        image.sd_setImage(with: referencia)
+        self.pants.texture = SKTexture(image: image.image as! UIImage)
+    }
+    
+    func changeGlasses() {
+        var image : UIImageView
+        image = UIImageView(image: UIImage(named: "rock"))
+        
+        let referencia = Storage.storage().reference(withPath: "glasses/\(self.selectedItem.imageName)")
+        
+        image.sd_setImage(with: referencia)
+        self.pants.texture = SKTexture(image: image.image as! UIImage)
+    }
 }

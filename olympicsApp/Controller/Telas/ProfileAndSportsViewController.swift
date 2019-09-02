@@ -15,7 +15,6 @@ class ProfileAndSportsViewController : UIViewController, UITableViewDelegate, UI
         self.performSegue(withIdentifier: "shopSegue", sender: self)
     }
     
-    
     @IBOutlet weak var configurationButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var tbvSportsList: UITableView!

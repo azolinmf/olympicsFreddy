@@ -39,6 +39,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var boardProportion = CGFloat(0)
     var hideLabel = false
     var instructionLabel: SKLabelNode!
+     var currentPoints: SKLabelNode!
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -49,6 +50,8 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         Model.instance.playAgain = false
         
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
+        currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
+
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
         let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
@@ -122,6 +125,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             //colisao com peixe
             contact.bodyB.node?.removeFromParent()
             gamePoints += 10
+            currentPoints.text  = String(gamePoints)
         }
     }
     

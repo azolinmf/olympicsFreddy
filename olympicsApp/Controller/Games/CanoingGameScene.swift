@@ -39,7 +39,9 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var boardProportion = CGFloat(0)
     var hideLabel = false
     var instructionLabel: SKLabelNode!
-     var currentPoints: SKLabelNode!
+    var currentPoints: SKLabelNode!
+    var pauseButton: SKNode!
+    var playButton: SKNode!
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -51,7 +53,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
-
+        pauseButton = childNode(withName: "pause")
+        pauseButton.name = "pauseButton"
+        playButton = childNode(withName: "playButton")
+        playButton.name = "playButton"
+        playButton.isHidden = true
+        
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
         let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
@@ -124,8 +131,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             (secondBody.categoryBitMask == BodyMasks.RewardCategory) {
             //colisao com peixe
             contact.bodyB.node?.removeFromParent()
-            gamePoints += 10
-            currentPoints.text  = String(gamePoints)
+            var alreadyIncrementedPoints = false
+            if !alreadyIncrementedPoints {
+                gamePoints += 10
+                alreadyIncrementedPoints = true
+            }
+            
+            currentPoints.text = String(gamePoints)
         }
     }
     
@@ -192,6 +204,29 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             hideLabel = true
         }
         
+        let touch:UITouch = touches.first! as UITouch
+        let positionInScene = touch.location(in: self)
+        let touchedNode = self.atPoint(positionInScene)
+        
+        if let name = touchedNode.name {
+            if name == "pauseButton" {
+                if !isPaused {
+                    pauseButton.isHidden = true
+                    isPaused = true
+                    playButton.isHidden = false
+                }
+                
+            }
+            else if name == "playButton" {
+                
+                if isPaused {
+                    pauseButton.isHidden = false
+                    isPaused = false
+                    playButton.isHidden = true
+                }
+                
+            }
+        }
         
     }
     

@@ -14,7 +14,7 @@ import UIKit
 
 class StoreGameScene :  SKScene {
     var vc : StoreViewController!
-    var selectedItem : ItemStore!
+    var psvc : ProfileAndSportsViewController!
     var  freddy : SKSpriteNode!
     
     var shirt : SKSpriteNode!
@@ -32,57 +32,55 @@ class StoreGameScene :  SKScene {
         hats = freddy.childNode(withName: "hats") as? SKSpriteNode
         glasses = freddy.childNode(withName: "glasses") as? SKSpriteNode
         mustaches = freddy.childNode(withName: "mustaches") as? SKSpriteNode
-    }
-    
-    func changeShirt() {
         
+        setOutfit()
+    }
+
+    func setOutfit() {
+        let usedItem = Outfit.getOutfit()
+        for index in 0..<usedItem.count {
+            changeItem(with: usedItem[index].category, imageName: usedItem[index].imageName)
+        }
+    }
+//    func changeItem(with category: String) {
+//        var image : UIImageView
+//        image = UIImageView(image: UIImage(named: "rock"))
+//        let refe = Storage.storage().reference(withPath: "\(category)/\(self.selectedItem.imageName)")
+//        image.sd_setImage(with: refe)
+//        self.pants.texture = SKTexture(image: image.image as! UIImage)
+//    }
+    
+    func changeItem(with category: String, imageName: String) {
         var image : UIImageView
         image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "t-shirts/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.shirt.texture = SKTexture(image: image.image as! UIImage)
-        
+        let refe = Storage.storage().reference(withPath: "\(category)/\(imageName)")
+        image.sd_setImage(with: refe)
+        if category == "t-shirts" {
+            self.shirt.texture = SKTexture(image: image.image as! UIImage)
+        } else if category == "pants" {
+            self.pants.texture = SKTexture(image: image.image as! UIImage)
+        } else if category == "mustaches"{
+            self.mustaches.texture = SKTexture(image: image.image as! UIImage)
+        } else if category == "glasses" {
+            self.glasses.texture = SKTexture(image: image.image as! UIImage)
+        } else {
+            self.hats.texture = SKTexture(image: image.image as! UIImage)
+        }
     }
     
-    func changePants() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
+    func changeItem(with category : Int) {
         
-        let referencia = Storage.storage().reference(withPath: "pants/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
-    }
-    
-    func  changeMustache() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "mustaches/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
-    }
-    
-    func changeHats() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "hats/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
-    }
-    
-    func changeGlasses() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "glasses/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
+        print(category)
+        if category == 0 {
+            self.shirt.texture = nil
+        } else if category == 1 {
+            self.hats.texture = nil
+        } else if category == 2{
+            self.glasses.texture = nil
+        } else if category == 3 {
+            self.pants.texture = nil
+        } else {
+            self.mustaches.texture = nil
+        }
     }
 }

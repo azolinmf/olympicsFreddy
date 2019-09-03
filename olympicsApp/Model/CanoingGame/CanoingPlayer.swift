@@ -33,7 +33,7 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         self.physicsBody!.categoryBitMask = BodyMasks.PlayerCategory
         self.physicsBody!.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory | BodyMasks.BorderCategory
         self.physicsBody!.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
-        self.physicsBody!.restitution = 0.8
+        self.physicsBody!.restitution = 0.1
         
         // hook.ink
     }

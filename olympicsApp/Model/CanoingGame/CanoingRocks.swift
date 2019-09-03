@@ -22,8 +22,8 @@ class CanoingRocks: SKSpriteNode, GameObject {
         rock.physicsBody = SKPhysicsBody(texture: rockTexture, alphaThreshold: 0.8, size: CGSize(width: rock.size.width, height: rock.size.height))
 //        rock.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: rock.size.width, height: rock.size.width/2), center: rock.anchorPoint) // CGSize(width: 100, height: 100))
         rock.zPosition = 0 //2
-        rock.position.x = CGFloat.random(in: (10...740))
-        rock.position.y = 1794
+        rock.position.x = CGFloat.random(in: (435...1210))
+        rock.position.y = 2300
         rock.physicsBody?.categoryBitMask = BodyMasks.ObstacleCategory
         rock.physicsBody?.contactTestBitMask = BodyMasks.PlayerCategory
         rock.physicsBody?.collisionBitMask = BodyMasks.PlayerCategory

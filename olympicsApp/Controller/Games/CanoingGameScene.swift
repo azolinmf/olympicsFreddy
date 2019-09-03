@@ -91,10 +91,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         swipeDown.delegate = self
         view.addGestureRecognizer(swipeDown)
         
-        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
+//        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame) // para limitar o player até as bordas do cel
         self.physicsWorld.contactDelegate = self
-        self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
-        self.physicsBody!.restitution = 0.6
+//        self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
+//        self.physicsBody!.restitution = 0.6
         
     }
     

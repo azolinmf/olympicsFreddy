@@ -46,14 +46,15 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             // Load the SKScene from 'CanoingGameScene.sks'
             scene = SKScene(fileNamed: "CanoingGameScene") as? CanoingGameScene
             // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFit
+//            scene.scaleMode = .aspectFit
+            scene.scaleMode = .aspectFill
             scene.gameViewController = self
             // Present the scene
             view.presentScene(scene)
             
             
             view.ignoresSiblingOrder = true
-            view.showsPhysics = true
+            view.showsPhysics = false
             view.showsFPS = false
             view.showsNodeCount = false
         }

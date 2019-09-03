@@ -17,6 +17,8 @@ class Outfit {
             item.bought = true
             item.inuse = true
             Model.instance.totalPoints -= item.value
+            
+            //Editar o campo no firebase
             return true
         }
             
@@ -31,6 +33,7 @@ class Outfit {
         
         if item.bought == true {
             item.inuse = true
+            //Editar o campo no firebase
             
             //FREDDy nao pode usar dois items  de uma mesma categoria\
             for i in AllItems.shared.categories[categoryPosition].items {
@@ -56,15 +59,17 @@ class Outfit {
     static func getOutfit() -> [ItemStore] {
         var inUseItems : [ItemStore]
         inUseItems = []
-        
-        for index in 0...AllItems.shared.categories.count{
-            for index2 in 0...AllItems.shared.categories[index].items.count {
-                
-                if AllItems.shared.categories[index].items[index2].inuse == true {
-                    inUseItems.append(AllItems.shared.categories[index].items[index2])
+        if AllItems.shared.categories.count != 0 {
+            for index in 0..<AllItems.shared.categories.count {
+                for index2 in 0..<AllItems.shared.categories[index].items.count {
+                    
+                    if AllItems.shared.categories[index].items[index2].inuse == true {
+                        inUseItems.append(AllItems.shared.categories[index].items[index2])
+                    }
                 }
             }
         }
+        
         return inUseItems
     }
     

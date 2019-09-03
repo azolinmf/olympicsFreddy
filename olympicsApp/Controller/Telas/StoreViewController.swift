@@ -74,40 +74,39 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AllItems.shared.categories[buttonPressed].items.count
+        return AllItems.shared.categories[buttonPressed].items.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemStore", for: indexPath) as! ItemStoreCell
         cell.layer.cornerRadius = 15
-        let item = AllItems.shared.categories[buttonPressed].items[indexPath.row]
-        cell.setCell(for: item)
+        
+        if indexPath.row == 0{
+            cell.setCellAsEmpty()
+            for index in 0..<AllItems.shared.categories[buttonPressed].items.count {
+                AllItems.shared.categories[buttonPressed].items[index].inuse = false
+            }
+        }
+        else {
+            let item = AllItems.shared.categories[buttonPressed].items[indexPath.row-1]
+            cell.setCell(for: item)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemSelected = AllItems.shared.categories[buttonPressed].items[indexPath.row]
-        //        let ref  : DatabaseReference!
-        //        ref = Database.database().reference()
-        //        ref.child("AllItems/\(itemSelected.key)/inuse").setValue("true")
-        //        print("Trocando para true")
-        
-        itemChoiced = indexPath.row
-        storeGameScene.selectedItem = itemSelected
-        if buttonPressed == 0 {
-            storeGameScene.changeShirt()
-        } else if buttonPressed == 1 {
-            storeGameScene.changeHats()
-        } else if buttonPressed == 2 {
-            storeGameScene.changeGlasses()
-        } else if buttonPressed == 3 {
-            storeGameScene.changePants()
-        } else {
-            storeGameScene.changeMustache()
+        if indexPath.row == 0 {
+            storeGameScene.changeItem(with: buttonPressed)
+            
         }
-        lblItemName.text = itemSelected.name
-        setButtons(item: itemSelected)
-        updateScreen()
+        else {
+            let itemSelected = AllItems.shared.categories[buttonPressed].items[indexPath.row-1]
+            itemChoiced = indexPath.row - 1
+            storeGameScene.changeItem(with: itemSelected.category, imageName: itemSelected.imageName)
+            lblItemName.text = itemSelected.name
+            setButtons(item: itemSelected)
+            updateScreen()
+        }
     }
     
     
@@ -147,6 +146,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func btnBuyItemPressed(_ sender: Any) {
         
         if Outfit.buyItem(categoryPosition: buttonPressed, itemPosition: itemChoiced) == true {
+            
             print("Comprado")
             showUseButton()
         }

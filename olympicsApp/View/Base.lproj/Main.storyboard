@@ -21,23 +21,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGe-tH-Jxh">
                                 <rect key="frame" x="0.0" y="64" width="414" height="368"/>
                                 <subviews>
-<<<<<<< HEAD
-                                    <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-zA-maM">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="324"/>
-                                    </skView>
-=======
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Freddy" translatesAutoresizingMaskIntoConstraints="NO" id="EA4-U0-6DP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Freddy" translatesAutoresizingMaskIntoConstraints="NO" id="EA4-U0-6DP">
                                         <rect key="frame" x="55" y="64" width="304" height="304"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EA4-U0-6DP" secondAttribute="height" multiplier="1:1" id="GFg-LV-2d6"/>
                                         </constraints>
                                     </imageView>
->>>>>>> master
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6o4-PM-e9H">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F7-Xo-Owz">
-                                                <rect key="frame" x="165.66666666666663" y="0.0" width="248.33333333333337" height="44"/>
+                                                <rect key="frame" x="165.66666666666663" y="-44" width="248.33333333333337" height="44"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-Ob-SYw">
                                                 <rect key="frame" x="0.0" y="0.0" width="165.66666666666666" height="44"/>
@@ -99,14 +93,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="27Z-zA-maM" secondAttribute="bottom" id="0PL-6m-8mT"/>
                                     <constraint firstItem="6o4-PM-e9H" firstAttribute="top" secondItem="GGe-tH-Jxh" secondAttribute="top" id="JNM-Tt-7sJ"/>
-                                    <constraint firstItem="27Z-zA-maM" firstAttribute="top" secondItem="1F7-Xo-Owz" secondAttribute="bottom" id="eNq-vV-4Fn"/>
+                                    <constraint firstAttribute="top" secondItem="1F7-Xo-Owz" secondAttribute="bottom" id="eNq-vV-4Fn"/>
                                     <constraint firstItem="6o4-PM-e9H" firstAttribute="width" secondItem="GGe-tH-Jxh" secondAttribute="width" id="jym-6p-TFe"/>
                                     <constraint firstItem="6o4-PM-e9H" firstAttribute="centerX" secondItem="GGe-tH-Jxh" secondAttribute="centerX" id="n0w-hn-xRa"/>
                                     <constraint firstItem="6o4-PM-e9H" firstAttribute="height" secondItem="GGe-tH-Jxh" secondAttribute="height" multiplier="0.12" id="q5I-pg-MHm"/>
-                                    <constraint firstItem="27Z-zA-maM" firstAttribute="leading" secondItem="GGe-tH-Jxh" secondAttribute="leading" id="rC8-Wg-NLF"/>
-                                    <constraint firstAttribute="trailing" secondItem="27Z-zA-maM" secondAttribute="trailing" id="tpG-et-TgZ"/>
+                                    <constraint firstAttribute="leading" secondItem="GGe-tH-Jxh" secondAttribute="leading" id="rC8-Wg-NLF"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fS9-Uq-kNB">
@@ -184,7 +176,6 @@
                     <connections>
                         <outlet property="cltSports" destination="fS9-Uq-kNB" id="wA4-r6-BCh"/>
                         <outlet property="configurationButton" destination="i67-il-agg" id="etq-9F-hJI"/>
-                        <outlet property="gameView" destination="27Z-zA-maM" id="Jxd-Bw-gaP"/>
                         <outlet property="storeButton" destination="ZeM-dN-jrm" id="NTV-dn-vpf"/>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="presentGame" id="jvp-br-MHd"/>
                     </connections>
@@ -223,24 +214,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQf-1j-Hal" userLabel="Margins">
                                 <rect key="frame" x="41.333333333333343" y="97.666666666666686" width="331.33333333333326" height="604.66666666666652"/>
                                 <subviews>
-<<<<<<< HEAD
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Urso Fred" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-Dx-1Og">
-                                        <rect key="frame" x="23.333333333333343" y="0.0" width="285" height="285"/>
-=======
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Freddy" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-Dx-1Og">
                                         <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="331"/>
->>>>>>> master
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CGX-Dx-1Og" secondAttribute="height" multiplier="1:1" id="1ad-zo-zXK"/>
                                         </constraints>
                                     </imageView>
-<<<<<<< HEAD
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="yZQ-z3-VV6" userLabel="Menu">
-                                        <rect key="frame" x="0.0" y="305" width="331.33333333333331" height="143"/>
-=======
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-mC-dMf">
                                         <rect key="frame" x="0.0" y="331" width="331.33333333333331" height="62"/>
->>>>>>> master
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4vo-1Q-Vha">
                                                 <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="62"/>
@@ -251,13 +232,8 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-<<<<<<< HEAD
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-lY-khh">
-                                                <rect key="frame" x="0.0" y="111.99999999999994" width="331.33333333333331" height="31"/>
-=======
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Bv-mc-RBX">
                                                 <rect key="frame" x="282.33333333333337" y="0.0" width="49" height="62"/>
->>>>>>> master
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-a4-mDP">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -768,6 +744,7 @@
     </scenes>
     <resources>
         <image name="ConfigurationIcon" width="1080" height="1080"/>
+        <image name="Freddy" width="2019" height="2010"/>
         <image name="HomeButton" width="1080" height="1080"/>
         <image name="RestartButton" width="3141" height="1080"/>
         <image name="StoreIcon" width="1080" height="1080"/>

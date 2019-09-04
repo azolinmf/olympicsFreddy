@@ -45,13 +45,15 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     override func viewDidLoad() {
+        
+        
         if let view = gameView {
             storeGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             storeGameScene.scaleMode = .aspectFill
             storeGameScene.vc = self
             view.presentScene(storeGameScene)
-            Model.instance.totalPoints = 100
         }
+        
         
         self.navigationController?.navigationBar.isHidden = false
     }
@@ -59,6 +61,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cltItems.roundCorners([.topLeft,.topRight], radius: 20)
         // A colecao so atualiza apos carregar as informacoes do banco de dado
+        
+        
         
         DAOItemsStore.load {
             self.updateScreen()
@@ -74,40 +78,37 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AllItems.shared.categories[buttonPressed].items.count
+        return AllItems.shared.categories[buttonPressed].items.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemStore", for: indexPath) as! ItemStoreCell
         cell.layer.cornerRadius = 15
-        let item = AllItems.shared.categories[buttonPressed].items[indexPath.row]
-        cell.setCell(for: item)
+        
+        if indexPath.row == 0{
+            cell.setCellAsEmpty()
+        }
+        else {
+            let item = AllItems.shared.categories[buttonPressed].items[indexPath.row-1]
+            cell.setCell(for: item)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemSelected = AllItems.shared.categories[buttonPressed].items[indexPath.row]
-        //        let ref  : DatabaseReference!
-        //        ref = Database.database().reference()
-        //        ref.child("AllItems/\(itemSelected.key)/inuse").setValue("true")
-        //        print("Trocando para true")
+        itemChoiced = indexPath.row - 1
         
-        itemChoiced = indexPath.row
-        storeGameScene.selectedItem = itemSelected
-        if buttonPressed == 0 {
-            storeGameScene.changeShirt()
-        } else if buttonPressed == 1 {
-            storeGameScene.changeHats()
-        } else if buttonPressed == 2 {
-            storeGameScene.changeGlasses()
-        } else if buttonPressed == 3 {
-            storeGameScene.changePants()
+        if indexPath.row == 0 {
+            Outfit.undressItem(categoryPosition: buttonPressed)
+            storeGameScene.changeItem(with: buttonPressed)
+            
         } else {
-            storeGameScene.changeMustache()
+            let itemSelected = AllItems.shared.categories[buttonPressed].items[itemChoiced]
+            storeGameScene.changeItem(with: itemSelected.category, imageName: itemSelected.imageName)
+            lblItemName.text = itemSelected.name
+            setButtons(item: itemSelected)
+            updateScreen()
         }
-        lblItemName.text = itemSelected.name
-        setButtons(item: itemSelected)
-        updateScreen()
     }
     
     
@@ -147,13 +148,14 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func btnBuyItemPressed(_ sender: Any) {
         
         if Outfit.buyItem(categoryPosition: buttonPressed, itemPosition: itemChoiced) == true {
+            
             print("Comprado")
+            
             showUseButton()
         }
         else {
             print("Voce  nao tem  dinheiro o suficiente")
         }
-        
         updateScreen()
     }
     
@@ -203,9 +205,6 @@ extension StoreViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
-    func buyItem (categoryPosition : Int, itemPosition : Int) {
-        
-    }
     
     
 }

@@ -14,7 +14,7 @@ import UIKit
 
 class StoreGameScene :  SKScene {
     var vc : StoreViewController!
-    var selectedItem : ItemStore!
+    var psvc : ProfileAndSportsViewController!
     var  freddy : SKSpriteNode!
     
     var shirt : SKSpriteNode!
@@ -32,57 +32,78 @@ class StoreGameScene :  SKScene {
         hats = freddy.childNode(withName: "hats") as? SKSpriteNode
         glasses = freddy.childNode(withName: "glasses") as? SKSpriteNode
         mustaches = freddy.childNode(withName: "mustaches") as? SKSpriteNode
+        
+        setOutfit()
+    }
+
+    func setOutfit() {
+        Outfit.getOutfit()
+        let inUsedItem = AllItems.shared.inUseItems
+        
+        for index in 0..<inUsedItem.count {
+            if inUsedItem[index].inuse == true {
+                changeItem(with: inUsedItem[index].category, imageName: inUsedItem[index].imageName)
+            }
+            else {
+                changeItem(with: inUsedItem[index].category)
+            }
+        }
     }
     
-    func changeShirt() {
-        
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "t-shirts/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.shirt.texture = SKTexture(image: image.image as! UIImage)
-        
-    }
+        func changeItem(with category: String, imageName: String) {
+            
+            let pathReference = Storage.storage().reference(withPath: "\(category)")
+            let islandRed = pathReference.child("\(imageName)")
+           
+            islandRed.getData (maxSize: 1 * 1024 * 1024) { (data, error) in
+                if let error = error {
+                    print("\n\n\n\n\(error.localizedDescription)")
+                } else {
+                    let image = UIImage(data: data!)
+                    
+                    if category == "t-shirts" {
+                        self.shirt.texture = SKTexture(image: image!)
+                    } else if category == "pants" {
+                        self.pants.texture = SKTexture(image: image!)
+                    } else if category == "mustaches"{
+                        self.mustaches.texture = SKTexture(image: image!)
+                    } else if category == "glasses" {
+                        self.glasses.texture = SKTexture(image: image!)
+                    } else {
+                        self.hats.texture = SKTexture(image: image!)
+                    }
+                }
+            }
+            
+            
+            
+        }
     
-    func changePants() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "pants/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
+    func changeItem (with category : String) {
+        if category == "t-shirts" {
+            self.shirt.texture = nil
+        } else if category == "hats" {
+            self.hats.texture = nil
+        } else if category == "glasses"{
+            self.glasses.texture = nil
+        } else if category == "pants" {
+            self.pants.texture = nil
+        } else {
+            self.mustaches.texture = nil
+        }
     }
-    
-    func  changeMustache() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "mustaches/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
-    }
-    
-    func changeHats() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "hats/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
-    }
-    
-    func changeGlasses() {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        
-        let referencia = Storage.storage().reference(withPath: "glasses/\(self.selectedItem.imageName)")
-        
-        image.sd_setImage(with: referencia)
-        self.pants.texture = SKTexture(image: image.image as! UIImage)
+    func changeItem(with category : Int) {
+        print(category)
+        if category == 0 {
+            self.shirt.texture = nil
+        } else if category == 1 {
+            self.hats.texture = nil
+        } else if category == 2{
+            self.glasses.texture = nil
+        } else if category == 3 {
+            self.pants.texture = nil
+        } else {
+            self.mustaches.texture = nil
+        }
     }
 }

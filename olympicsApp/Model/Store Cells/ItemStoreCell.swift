@@ -23,4 +23,8 @@ class ItemStoreCell: UICollectionViewCell {
         self.imgImageItem.sd_setImage(with: referencia)
         self.lblItemName.text = itemStore.name
     }
+    func setCellAsEmpty () {
+        self.imgImageItem.image = UIImage(named: "nullIcon")
+        self.lblItemName.text = "nenhum"
+    }
 }

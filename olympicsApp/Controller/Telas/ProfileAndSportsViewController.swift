@@ -7,26 +7,42 @@
 //
 
 import UIKit
-
+import SpriteKit
 
 class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  GameDelegate {
     
     @IBOutlet weak var configurationButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var cltSports: UICollectionView!
+    @IBOutlet weak var gameView: SKView!
+    
+    var profileGameScene: StoreGameScene!
+    
     
     var sportsList = Esportes.shared.sportsList
     
     override func viewDidLoad() {
+
         cltSports.delegate = self
         cltSports.dataSource = self
-        self.navigationController?.isNavigationBarHidden = true
+        
+        DAOItemsStore.initialLoad(){
+            self.profileGameScene.setOutfit()
+        }
+        
+        if let view = gameView {
+            profileGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
+            profileGameScene.scaleMode = .aspectFill
+            profileGameScene.psvc = self
+            view.presentScene(profileGameScene)
+        }
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         updateInterface()
+        self.profileGameScene.setOutfit()
     }
     
     

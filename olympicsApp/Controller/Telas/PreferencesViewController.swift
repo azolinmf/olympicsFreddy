@@ -13,10 +13,9 @@ class PreferencesViewController: UIViewController {
     
     @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var musicSwitch: UISwitch!
-    @IBOutlet weak var languageTextField: UITextField!
     
     // TESTE: Isso substitui uma pickerview criada pelo storyboard?
-    fileprivate let languagePickerView = ToolbarPickerView()
+    //fileprivate let languagePickerView = ToolbarPickerView()
     
     @IBAction func soundChanged(_ sender: UISwitch) {
         self.pref.isSoundOn = sender.isOn
@@ -44,20 +43,27 @@ class PreferencesViewController: UIViewController {
     func refreshPref() {
         self.soundSwitch.isOn = pref.isSoundOn
         self.musicSwitch.isOn = pref.isMusicOn
-        self.languageTextField.text = pref.languages[pref.setLanguage]
-        self.setPickerViewButtons()
+        //self.languageTextField.text = pref.languages[pref.setLanguage]
+        //self.setPickerViewButtons()
     }
     
-    func setPickerViewButtons(){
-        self.languageTextField.inputView = self.languagePickerView
-        self.languageTextField.inputAccessoryView = self.languagePickerView.toolbar
-        
-        self.languagePickerView.dataSource = self
-        self.languagePickerView.delegate = self
-        self.languagePickerView.toolbarDelegate = self
-        
-        self.languagePickerView.reloadAllComponents()
-    }
+    
+    
+    
+//*********************
+    //CODIGO RELATIVO A PICKER VIEW - DESABILITADO POR ENQUANTO
+    
+    
+//    func setPickerViewButtons(){
+//        self.languageTextField.inputView = self.languagePickerView
+//        self.languageTextField.inputAccessoryView = self.languagePickerView.toolbar
+//
+//        self.languagePickerView.dataSource = self
+//        self.languagePickerView.delegate = self
+//        self.languagePickerView.toolbarDelegate = self
+//
+//        self.languagePickerView.reloadAllComponents()
+//    }
     
     /*
      // MARK: - Navigation
@@ -73,43 +79,43 @@ class PreferencesViewController: UIViewController {
 
 // MARK : - PickerView
 
-extension PreferencesViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.pref.languages.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pref.languages[row]
-    }
-    
-    // Capture the picker view selection
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        self.pref.setLanguage = row
-    }
-    
-}
+//extension PreferencesViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
-extension PreferencesViewController: ToolbarPickerViewDelegate {
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return self.pref.languages.count
+//    }
     
-    func didTapDone() {
-        let row = self.languagePickerView.selectedRow(inComponent: 0)
-        self.languagePickerView.selectRow(row, inComponent: 0, animated: false)
-        self.languageTextField.text = self.pref.languages[row]
-        self.pref.setLanguage = row
-        quitPickerView()
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return self.pref.languages[row]
+//    }
+//
+//    // Capture the picker view selection
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        // This method is triggered whenever the user makes a change to the picker selection.
+//        self.pref.setLanguage = row
+//    }
     
-    func didTapCancel() {
-        quitPickerView()
-    }
+//}
+
+//extension PreferencesViewController: ToolbarPickerViewDelegate {
+
+//    func didTapDone() {
+//        let row = self.languagePickerView.selectedRow(inComponent: 0)
+//        self.languagePickerView.selectRow(row, inComponent: 0, animated: false)
+//        self.languageTextField.text = self.pref.languages[row]
+//        self.pref.setLanguage = row
+//        quitPickerView()
+//    }
+//
+//    func didTapCancel() {
+//        quitPickerView()
+//    }
     
-    func quitPickerView(){
-        self.languageTextField.resignFirstResponder()
-    }
-}
+//    func quitPickerView(){
+//        self.languageTextField.resignFirstResponder()
+//    }
+//}

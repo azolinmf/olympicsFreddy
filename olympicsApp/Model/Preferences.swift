@@ -16,13 +16,13 @@ class Preferences {
     var isMusicOn : Bool = true
     
     // Languages associated with the Strings as they are shown in the Preferences Screen.
-    let languages : [String] =
-        [
-            "English",
-            "Português",
-            "Língua do P"
-    ]
+//    let languages : [String] =
+//        [
+//            "English",
+//            "Português",
+//            "Língua do P"
+//    ]
     // Index of the Language array
-    var setLanguage : Int = 1
+//    var setLanguage : Int = 1
     
 }

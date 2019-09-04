@@ -21,10 +21,10 @@ class ItemStoreCell: UICollectionViewCell {
         
         //cell.imgImageItem.sd_setImage(with: referencia, placeholderImage: "placeholder")
         self.imgImageItem.sd_setImage(with: referencia)
-        self.lblItemName.text = itemStore.name
+        self.lblItemName.text = String(itemStore.value)
     }
     func setCellAsEmpty () {
         self.imgImageItem.image = UIImage(named: "nullIcon")
-        self.lblItemName.text = "nenhum"
+        self.lblItemName.text = "None"
     }
 }

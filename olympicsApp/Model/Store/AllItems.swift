@@ -13,6 +13,7 @@ class AllItems {
     static var shared = AllItems()
     var categories : [StoreCategories] = []
     var allItemsStore : [ItemStore] = []
+    var inUseItems : [ItemStore] = []
     
     init() {
         categories.append(StoreCategories(name: "t-shirts"))

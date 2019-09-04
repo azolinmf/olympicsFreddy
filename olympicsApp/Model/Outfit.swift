@@ -7,18 +7,65 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseUI
 
 class Outfit {
     
     static func buyItem(categoryPosition : Int,  itemPosition : Int) -> Bool {
-        
+    
         let item = AllItems.shared.categories[categoryPosition].items[itemPosition]
+        
         if checkMoney(item: item) == true {
             item.bought = true
             item.inuse = true
+            AllItems.shared.inUseItems.append(item)
             Model.instance.totalPoints -= item.value
+            let DBRef = Firestore.firestore()
             
-            //Editar o campo no firebase
+            DBRef.collection("AllItems")
+                .whereField("key", isEqualTo: item.key)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        // Some error occured
+                    } else if querySnapshot!.documents.count != 1 {
+                        // Perhaps this is an error for you?
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                            "bought": true,
+                            "inuse" : true
+                            ])
+                    }
+                    
+                    
+            }
+            
+            //FREDDy nao pode usar dois items  de uma mesma categoria\
+            for i in AllItems.shared.categories[categoryPosition].items {
+                
+                if i.key != item.key {
+                    i.inuse = false
+                    
+                    DBRef.collection("AllItems")
+                        .whereField("key", isEqualTo: i.key)
+                        .getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                // Some error occured
+                            } else if querySnapshot!.documents.count != 1 {
+                                // Perhaps this is an error for you?
+                            } else {
+                                let document = querySnapshot!.documents.first
+                                document!.reference.updateData([
+                                    "inuse": false
+                                    ])
+                            }
+                    }
+                    
+                }
+            }
+            
+            
             return true
         }
             
@@ -27,19 +74,86 @@ class Outfit {
         }
     }
     
-    
     static func useItem (categoryPosition : Int , itemPosition : Int) {
-        let item = AllItems.shared.categories[categoryPosition].items[itemPosition]
-        
-        if item.bought == true {
-            item.inuse = true
-            //Editar o campo no firebase
+        if  itemPosition >= 0 {
+            let item = AllItems.shared.categories[categoryPosition].items[itemPosition]
+            let DBRef = Firestore.firestore()
             
-            //FREDDy nao pode usar dois items  de uma mesma categoria\
-            for i in AllItems.shared.categories[categoryPosition].items {
+            //        FIRDatabase.database().reference().child("feed-items")
+            if item.bought == true {
+                item.inuse = true
+                AllItems.shared.inUseItems.append(item)
+                DBRef.collection("AllItems")
+                    .whereField("key", isEqualTo: item.key)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            // Some error occured
+                        } else if querySnapshot!.documents.count != 1 {
+                            // Perhaps this is an error for you?
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "inuse": true
+                            ])
+                        }
+                }
                 
-                if i.key != item.key {
-                    i.inuse = false
+                //FREDDy nao pode usar dois items  de uma mesma categoria\
+                for i in AllItems.shared.categories[categoryPosition].items {
+        
+                    if i.key != item.key {
+                        i.inuse = false
+                        
+                        DBRef.collection("AllItems")
+                            .whereField("key", isEqualTo: i.key)
+                            .getDocuments() { (querySnapshot, err) in
+                                if let err = err {
+                                    // Some error occured
+                                } else if querySnapshot!.documents.count != 1 {
+                                    // Perhaps this is an error for you?
+                                } else {
+                                    let document = querySnapshot!.documents.first
+                                    document!.reference.updateData([
+                                        "inuse": false
+                                        ])
+                                }
+                        }
+                        
+                    }
+                }
+            }
+        
+        }
+        else {
+            self.undressItem(categoryPosition: categoryPosition)
+        }
+    }
+    
+    static func undressItem(categoryPosition : Int) {
+        
+        let DBRef = Firestore.firestore()
+        
+        for item in AllItems.shared.categories[categoryPosition].items {
+            if item.inuse == true {
+                item.inuse = false
+                for  i in AllItems.shared.inUseItems{
+                    if item.key == i.key {
+                        i.inuse  = false
+                    }
+                }
+                DBRef.collection("AllItems")
+                    .whereField("key", isEqualTo: item.key)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print(err.localizedDescription)
+                        } else if querySnapshot!.documents.count != 1 {
+
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "inuse": false
+                            ])
+                        }
                 }
             }
         }
@@ -54,23 +168,18 @@ class Outfit {
         }
     }
     
-    
     //Nao  está otimizado
-    static func getOutfit() -> [ItemStore] {
-        var inUseItems : [ItemStore]
-        inUseItems = []
-        if AllItems.shared.categories.count != 0 {
-            for index in 0..<AllItems.shared.categories.count {
-                for index2 in 0..<AllItems.shared.categories[index].items.count {
+    static func getOutfit() {
+        var inUseItems = AllItems.shared.inUseItems
+       
+        for index in 0..<AllItems.shared.categories.count {
+            for item in AllItems.shared.categories[index].items {
                     
-                    if AllItems.shared.categories[index].items[index2].inuse == true {
-                        inUseItems.append(AllItems.shared.categories[index].items[index2])
-                    }
+                if item.inuse == true {
+                    inUseItems.append(item)
                 }
             }
         }
-        
-        return inUseItems
     }
     
 }

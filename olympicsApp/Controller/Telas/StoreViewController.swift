@@ -45,13 +45,15 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     override func viewDidLoad() {
+        
+        
         if let view = gameView {
             storeGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             storeGameScene.scaleMode = .aspectFill
             storeGameScene.vc = self
             view.presentScene(storeGameScene)
-            Model.instance.totalPoints = 100
         }
+        
         
         self.navigationController?.navigationBar.isHidden = false
     }
@@ -59,6 +61,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cltItems.roundCorners([.topLeft,.topRight], radius: 20)
         // A colecao so atualiza apos carregar as informacoes do banco de dado
+        
+        
         
         DAOItemsStore.load {
             self.updateScreen()
@@ -83,9 +87,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         if indexPath.row == 0{
             cell.setCellAsEmpty()
-            for index in 0..<AllItems.shared.categories[buttonPressed].items.count {
-                AllItems.shared.categories[buttonPressed].items[index].inuse = false
-            }
         }
         else {
             let item = AllItems.shared.categories[buttonPressed].items[indexPath.row-1]
@@ -95,13 +96,14 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        itemChoiced = indexPath.row - 1
+        
         if indexPath.row == 0 {
+            Outfit.undressItem(categoryPosition: buttonPressed)
             storeGameScene.changeItem(with: buttonPressed)
             
-        }
-        else {
-            let itemSelected = AllItems.shared.categories[buttonPressed].items[indexPath.row-1]
-            itemChoiced = indexPath.row - 1
+        } else {
+            let itemSelected = AllItems.shared.categories[buttonPressed].items[itemChoiced]
             storeGameScene.changeItem(with: itemSelected.category, imageName: itemSelected.imageName)
             lblItemName.text = itemSelected.name
             setButtons(item: itemSelected)
@@ -148,12 +150,12 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         if Outfit.buyItem(categoryPosition: buttonPressed, itemPosition: itemChoiced) == true {
             
             print("Comprado")
+            
             showUseButton()
         }
         else {
             print("Voce  nao tem  dinheiro o suficiente")
         }
-        
         updateScreen()
     }
     
@@ -203,9 +205,6 @@ extension StoreViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
-    func buyItem (categoryPosition : Int, itemPosition : Int) {
-        
-    }
     
     
 }

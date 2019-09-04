@@ -37,39 +37,62 @@ class StoreGameScene :  SKScene {
     }
 
     func setOutfit() {
-        let usedItem = Outfit.getOutfit()
-        for index in 0..<usedItem.count {
-            changeItem(with: usedItem[index].category, imageName: usedItem[index].imageName)
-        }
-    }
-//    func changeItem(with category: String) {
-//        var image : UIImageView
-//        image = UIImageView(image: UIImage(named: "rock"))
-//        let refe = Storage.storage().reference(withPath: "\(category)/\(self.selectedItem.imageName)")
-//        image.sd_setImage(with: refe)
-//        self.pants.texture = SKTexture(image: image.image as! UIImage)
-//    }
-    
-    func changeItem(with category: String, imageName: String) {
-        var image : UIImageView
-        image = UIImageView(image: UIImage(named: "rock"))
-        let refe = Storage.storage().reference(withPath: "\(category)/\(imageName)")
-        image.sd_setImage(with: refe)
-        if category == "t-shirts" {
-            self.shirt.texture = SKTexture(image: image.image as! UIImage)
-        } else if category == "pants" {
-            self.pants.texture = SKTexture(image: image.image as! UIImage)
-        } else if category == "mustaches"{
-            self.mustaches.texture = SKTexture(image: image.image as! UIImage)
-        } else if category == "glasses" {
-            self.glasses.texture = SKTexture(image: image.image as! UIImage)
-        } else {
-            self.hats.texture = SKTexture(image: image.image as! UIImage)
-        }
-    }
-    
-    func changeItem(with category : Int) {
+        Outfit.getOutfit()
+        let inUsedItem = AllItems.shared.inUseItems
         
+        for index in 0..<inUsedItem.count {
+            if inUsedItem[index].inuse == true {
+                changeItem(with: inUsedItem[index].category, imageName: inUsedItem[index].imageName)
+            }
+            else {
+                changeItem(with: inUsedItem[index].category)
+            }
+        }
+    }
+    
+        func changeItem(with category: String, imageName: String) {
+            
+            let pathReference = Storage.storage().reference(withPath: "\(category)")
+            let islandRed = pathReference.child("\(imageName)")
+           
+            islandRed.getData (maxSize: 1 * 1024 * 1024) { (data, error) in
+                if let error = error {
+                    print("\n\n\n\n\(error.localizedDescription)")
+                } else {
+                    let image = UIImage(data: data!)
+                    
+                    if category == "t-shirts" {
+                        self.shirt.texture = SKTexture(image: image!)
+                    } else if category == "pants" {
+                        self.pants.texture = SKTexture(image: image!)
+                    } else if category == "mustaches"{
+                        self.mustaches.texture = SKTexture(image: image!)
+                    } else if category == "glasses" {
+                        self.glasses.texture = SKTexture(image: image!)
+                    } else {
+                        self.hats.texture = SKTexture(image: image!)
+                    }
+                }
+            }
+            
+            
+            
+        }
+    
+    func changeItem (with category : String) {
+        if category == "t-shirts" {
+            self.shirt.texture = nil
+        } else if category == "hats" {
+            self.hats.texture = nil
+        } else if category == "glasses"{
+            self.glasses.texture = nil
+        } else if category == "pants" {
+            self.pants.texture = nil
+        } else {
+            self.mustaches.texture = nil
+        }
+    }
+    func changeItem(with category : Int) {
         print(category)
         if category == 0 {
             self.shirt.texture = nil

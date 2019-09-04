@@ -22,25 +22,27 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
     var sportsList = Esportes.shared.sportsList
     
     override func viewDidLoad() {
+
         cltSports.delegate = self
         cltSports.dataSource = self
         
-        
+        DAOItemsStore.initialLoad(){
+            self.profileGameScene.setOutfit()
+        }
         
         if let view = gameView {
             profileGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             profileGameScene.scaleMode = .aspectFill
             profileGameScene.psvc = self
-            
             view.presentScene(profileGameScene)
-            Model.instance.totalPoints = 100
         }
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        profileGameScene.setOutfit()
         updateInterface()
+        self.profileGameScene.setOutfit()
     }
     
     

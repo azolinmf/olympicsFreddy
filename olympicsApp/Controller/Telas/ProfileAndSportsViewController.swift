@@ -26,15 +26,17 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
         cltSports.delegate = self
         cltSports.dataSource = self
         
-        DAOItemsStore.initialLoad(){
-            self.profileGameScene.setOutfit()
-        }
+        
         
         if let view = gameView {
             profileGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             profileGameScene.scaleMode = .aspectFill
             profileGameScene.psvc = self
             view.presentScene(profileGameScene)
+            
+            DAOItemsStore.initialLoad(){
+                self.profileGameScene.setOutfit()
+            }
         }
         
         

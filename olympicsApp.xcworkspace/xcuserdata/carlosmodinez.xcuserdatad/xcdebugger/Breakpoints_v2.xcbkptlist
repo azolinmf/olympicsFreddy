@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
-            timestampString = "589292717.790659"
+            timestampString = "589295402.736595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -103,7 +103,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
-            timestampString = "589292717.793256"
+            timestampString = "589295402.737041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -211,7 +211,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
-            timestampString = "589292717.793398"
+            timestampString = "589295402.737258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -335,7 +335,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.793771"
+            timestampString = "589295193.706408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -351,7 +351,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.793975"
+            timestampString = "589295193.706919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -367,13 +367,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Model/Outfit.swift"
-            timestampString = "589292717.79492"
+            timestampString = "589295402.737512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "undressItem(categoryPosition:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -399,11 +399,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
-            timestampString = "589292717.798213"
+            timestampString = "589295402.738271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -415,13 +415,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Model/Outfit.swift"
-            timestampString = "589292717.798355"
+            timestampString = "589295402.738508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getOutfit()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -431,13 +431,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Model/Outfit.swift"
-            timestampString = "589292717.799903"
+            timestampString = "589295402.739141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
             endingLineNumber = "175"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getOutfit()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -447,7 +447,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.800945"
+            timestampString = "589295193.709813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -463,7 +463,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.801044"
+            timestampString = "589295193.710234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -479,7 +479,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.8011481"
+            timestampString = "589295193.710568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -495,7 +495,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.80158"
+            timestampString = "589295193.710791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -511,7 +511,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.801675"
+            timestampString = "589295193.711079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -559,7 +559,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.802004"
+            timestampString = "589295193.711567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -575,7 +575,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.802089"
+            timestampString = "589295193.711836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -591,7 +591,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Controller/Games/StoreGameScene.swift"
-            timestampString = "589292717.8021621"
+            timestampString = "589295193.712051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -606,13 +606,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "olympicsApp/Controller/Telas/ProfileAndSportsViewController.swift"
-            timestampString = "589292717.8022341"
+            filePath = "olympicsApp/Model/Outfit.swift"
+            timestampString = "589295402.739779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "getOutfit()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -623,29 +623,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "olympicsApp/Model/Outfit.swift"
-            timestampString = "589292717.802313"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "olympicsApp/Model/Outfit.swift"
-            timestampString = "589292717.802974"
+            timestampString = "589295402.740541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
             endingLineNumber = "173"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getOutfit()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

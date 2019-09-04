@@ -25,6 +25,6 @@ class ItemStoreCell: UICollectionViewCell {
     }
     func setCellAsEmpty () {
         self.imgImageItem.image = UIImage(named: "nullIcon")
-        self.lblItemName.text = ""
+        self.lblItemName.text = "None"
     }
 }

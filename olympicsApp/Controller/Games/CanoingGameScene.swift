@@ -32,7 +32,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var backgroundNode: SKNode!
     var grama: SKNode!
     var lastTimeUpdate: TimeInterval = 0
-    var gameVel: Double = 1.0
+    var gameVel: Double = 6.0
     var spawnRock: SpawningRocks!
     var spawnFood: SpawningFood!
     var gamePoints: Int = 0
@@ -117,8 +117,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             viewGameOver.backgroundColor = .white
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
+            vibrate()
             gameViewController.gameOver()
             isPaused = true
+            
 //            self.view?.addSubview(viewGameOver)
         
             
@@ -151,6 +153,16 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
+    
+    func vibrate(){
+        
+//        let generator = UIImpactFeedbackGenerator(style: .medium)
+//        generator.impactOccurred()
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+        
+    }
+    
     
     func virtualDPadLeft() -> CGRect {
         // função para criar o circulo virtual para identificar onde o usuário está clicando

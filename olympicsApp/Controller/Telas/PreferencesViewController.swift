@@ -9,23 +9,12 @@ import UIKit
 
 class PreferencesViewController: UIViewController {
     
-    let pref = Preferences.shared
+    let preferences = Preferences.shared
     
-    @IBOutlet weak var soundSwitch: UISwitch!
-    @IBOutlet weak var musicSwitch: UISwitch!
+    @IBOutlet weak var soundButton: UIButton!
+    @IBOutlet weak var musicButton: UIButton!
+    @IBOutlet weak var vibrationButton: UIButton!
     
-    // TESTE: Isso substitui uma pickerview criada pelo storyboard?
-    //fileprivate let languagePickerView = ToolbarPickerView()
-    
-    @IBAction func soundChanged(_ sender: UISwitch) {
-        self.pref.isSoundOn = sender.isOn
-    }
-    
-    @IBAction func musicChanged(_ sender: UISwitch) {
-        self.pref.isMusicOn = sender.isOn
-    }
-    
-    // MARK: - Screen Lifecicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +28,47 @@ class PreferencesViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @IBAction func didPressSoundButton(_ sender: Any) {
+        if preferences.isSoundOn {
+            soundButton.setImage(UIImage(named: "SoundOffButton"), for: .normal)
+            preferences.isSoundOn = false
+        }
+        else {
+            soundButton.setImage(UIImage(named: "SoundButton"), for: .normal)
+            preferences.isSoundOn = true
+        }
+    }
+    
+    
+    @IBAction func didPressMusicButton(_ sender: Any) {
+        if preferences.isMusicOn {
+            musicButton.setImage(UIImage(named: "MusicOffButton"), for: .normal)
+            preferences.isMusicOn = false
+        }
+        else {
+            musicButton.setImage(UIImage(named: "MusicButton"), for: .normal)
+            preferences.isMusicOn = true
+        }
+    }
+    
+    
+    @IBAction func didPressVibrationButton(_ sender: Any) {
+        if preferences.isVibrationOn {
+            vibrationButton.setImage(UIImage(named: "VibrationOffButton"), for: .normal)
+            preferences.isVibrationOn = false
+        }
+        else {
+            vibrationButton.setImage(UIImage(named: "VibrationButton"), for: .normal)
+            preferences.isVibrationOn = true
+        }
+        
+    }
+    
+    
     // Refreshes the status indicators
     func refreshPref() {
-        self.soundSwitch.isOn = pref.isSoundOn
-        self.musicSwitch.isOn = pref.isMusicOn
+//        self.soundSwitch.isOn = pref.isSoundOn
+//        self.musicSwitch.isOn = pref.isMusicOn
         //self.languageTextField.text = pref.languages[pref.setLanguage]
         //self.setPickerViewButtons()
     }

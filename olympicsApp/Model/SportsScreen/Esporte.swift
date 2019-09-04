@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class Esporte {
     
     var name : String
     var description : String
+    var imagem : UIImage
     
-    init(name:String, description: String) {
+    init(name:String, description: String, imagem: UIImage) {
         self.name = name
         self.description = description
+        self.imagem = imagem
     }
 }

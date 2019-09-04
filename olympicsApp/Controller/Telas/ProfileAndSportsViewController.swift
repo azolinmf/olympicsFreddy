@@ -26,8 +26,6 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
         cltSports.delegate = self
         cltSports.dataSource = self
         
-        
-        
         if let view = gameView {
             profileGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             profileGameScene.scaleMode = .aspectFill
@@ -39,12 +37,13 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
             }
         }
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateInterface()
         self.profileGameScene.setOutfit()
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -56,8 +55,13 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
-        cell.lblSportName.text = sportsList[indexPath.row].name
-        //Remove os separadores de celulas
+        //cell.lblSportName.text = sportsList[indexPath.row].name
+        cell.imgSport.image = sportsList[indexPath.row].imagem
+        
+        if indexPath.row != 0 {
+            cell.imgSport.alpha = 0.5
+        }
+        
         return cell
     }
     

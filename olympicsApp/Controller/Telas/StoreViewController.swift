@@ -46,7 +46,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         
-        
         if let view = gameView {
             storeGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
             storeGameScene.scaleMode = .aspectFill
@@ -61,9 +60,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cltItems.roundCorners([.topLeft,.topRight], radius: 20)
         // A colecao so atualiza apos carregar as informacoes do banco de dado
-        
-        
-        
+
         DAOItemsStore.load {
             self.updateScreen()
         }
@@ -85,7 +82,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemStore", for: indexPath) as! ItemStoreCell
         cell.layer.cornerRadius = 15
         
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             cell.setCellAsEmpty()
         }
         else {

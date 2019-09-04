@@ -218,53 +218,83 @@
                                 <rect key="frame" x="41.5" y="126.5" width="331" height="697"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Freddy" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-Dx-1Og">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="331.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="CGX-Dx-1Og" secondAttribute="height" multiplier="1:1" id="1ad-zo-zXK"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="358.5"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-mC-dMf">
-                                        <rect key="frame" x="0.0" y="331.5" width="331" height="62"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cas-gz-Gwg">
+                                        <rect key="frame" x="0.0" y="383.5" width="331" height="104.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4vo-1Q-Vha">
-                                                <rect key="frame" x="0.0" y="0.0" width="282" height="62"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-pb-GgL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="282" height="62"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Bv-mc-RBX">
-                                                <rect key="frame" x="282" y="0.0" width="49" height="62"/>
-                                                <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-a4-mDP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.0" green="0.64095252749999998" blue="0.60997480150000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <connections>
-                                                            <action selector="musicChanged:" destination="s0q-UE-dEZ" eventType="valueChanged" id="odc-X4-f4n"/>
-                                                        </connections>
-                                                    </switch>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4l1-Qs-chB">
-                                                        <rect key="frame" x="0.0" y="31" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.0" green="0.64095252749999998" blue="0.60997480150000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <connections>
-                                                            <action selector="soundChanged:" destination="s0q-UE-dEZ" eventType="valueChanged" id="Bga-b9-wMw"/>
-                                                        </connections>
-                                                    </switch>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaj-RB-lE8">
+                                                <rect key="frame" x="124" y="10.5" width="83" height="83.5"/>
+                                                <state key="normal" image="SoundButton"/>
+                                                <connections>
+                                                    <action selector="didPressSoundButton:" destination="s0q-UE-dEZ" eventType="touchUpInside" id="4cp-W8-r6c"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vaj-RB-lE8" firstAttribute="height" secondItem="Cas-gz-Gwg" secondAttribute="height" multiplier="0.8" id="HER-fU-YV3"/>
+                                            <constraint firstItem="vaj-RB-lE8" firstAttribute="centerY" secondItem="Cas-gz-Gwg" secondAttribute="centerY" id="hm7-pe-Gr4"/>
+                                            <constraint firstItem="vaj-RB-lE8" firstAttribute="width" secondItem="Cas-gz-Gwg" secondAttribute="width" multiplier="0.25" id="i3e-g2-Mcy"/>
+                                            <constraint firstItem="vaj-RB-lE8" firstAttribute="centerX" secondItem="Cas-gz-Gwg" secondAttribute="centerX" id="tq5-S2-xSO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4U-B9-DPF">
+                                        <rect key="frame" x="0.0" y="503" width="331" height="104.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tso-mr-EvN">
+                                                <rect key="frame" x="124" y="10.5" width="83" height="83.5"/>
+                                                <state key="normal" image="MusicButton"/>
+                                                <connections>
+                                                    <action selector="didPressMusicButton:" destination="s0q-UE-dEZ" eventType="touchUpInside" id="UEI-SG-N41"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Tso-mr-EvN" firstAttribute="width" secondItem="M4U-B9-DPF" secondAttribute="width" multiplier="0.25" id="M0x-dE-cY7"/>
+                                            <constraint firstItem="Tso-mr-EvN" firstAttribute="centerX" secondItem="M4U-B9-DPF" secondAttribute="centerX" id="lbP-Cm-aQn"/>
+                                            <constraint firstItem="Tso-mr-EvN" firstAttribute="centerY" secondItem="M4U-B9-DPF" secondAttribute="centerY" id="lde-XL-UnL"/>
+                                            <constraint firstItem="Tso-mr-EvN" firstAttribute="height" secondItem="M4U-B9-DPF" secondAttribute="height" multiplier="0.8" id="xqm-bh-fzt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zin-vb-Bzd">
+                                        <rect key="frame" x="0.0" y="622.5" width="331" height="104.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-7K-tfK">
+                                                <rect key="frame" x="124" y="10.5" width="83" height="83.5"/>
+                                                <state key="normal" image="VibrationOffButton"/>
+                                                <connections>
+                                                    <action selector="didPressVibrationButton:" destination="s0q-UE-dEZ" eventType="touchUpInside" id="Nuq-C0-gEh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ocO-7K-tfK" firstAttribute="width" secondItem="Zin-vb-Bzd" secondAttribute="width" multiplier="0.25" id="Jc4-fG-rwi"/>
+                                            <constraint firstItem="ocO-7K-tfK" firstAttribute="centerY" secondItem="Zin-vb-Bzd" secondAttribute="centerY" id="POw-ra-3FF"/>
+                                            <constraint firstItem="ocO-7K-tfK" firstAttribute="centerX" secondItem="Zin-vb-Bzd" secondAttribute="centerX" id="bOG-PR-A4c"/>
+                                            <constraint firstItem="ocO-7K-tfK" firstAttribute="height" secondItem="Zin-vb-Bzd" secondAttribute="height" multiplier="0.8" id="bRm-YI-Tt3"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Cas-gz-Gwg" firstAttribute="top" secondItem="CGX-Dx-1Og" secondAttribute="bottom" constant="25" id="34T-N1-USr"/>
+                                    <constraint firstItem="Cas-gz-Gwg" firstAttribute="height" secondItem="nQf-1j-Hal" secondAttribute="height" multiplier="0.15" id="A5z-5h-jVR"/>
+                                    <constraint firstItem="M4U-B9-DPF" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="Ahm-aD-HQ4"/>
                                     <constraint firstItem="CGX-Dx-1Og" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="FFF-K3-dWU"/>
-                                    <constraint firstItem="FMT-mC-dMf" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="Rrm-MI-sEN"/>
+                                    <constraint firstItem="Zin-vb-Bzd" firstAttribute="height" secondItem="nQf-1j-Hal" secondAttribute="height" multiplier="0.15" id="RIZ-rw-2co"/>
+                                    <constraint firstItem="Zin-vb-Bzd" firstAttribute="width" secondItem="nQf-1j-Hal" secondAttribute="width" id="XL1-Lg-yHu"/>
+                                    <constraint firstItem="M4U-B9-DPF" firstAttribute="top" secondItem="Cas-gz-Gwg" secondAttribute="bottom" constant="15" id="Xhk-y0-CBF"/>
                                     <constraint firstItem="CGX-Dx-1Og" firstAttribute="width" secondItem="nQf-1j-Hal" secondAttribute="width" id="dvG-cH-msk"/>
                                     <constraint firstItem="CGX-Dx-1Og" firstAttribute="top" secondItem="nQf-1j-Hal" secondAttribute="top" id="iUj-Vs-aeQ"/>
-                                    <constraint firstItem="FMT-mC-dMf" firstAttribute="top" secondItem="CGX-Dx-1Og" secondAttribute="bottom" id="luZ-SM-V5O"/>
-                                    <constraint firstItem="FMT-mC-dMf" firstAttribute="width" secondItem="nQf-1j-Hal" secondAttribute="width" id="uFP-WR-0n0"/>
+                                    <constraint firstItem="M4U-B9-DPF" firstAttribute="width" secondItem="nQf-1j-Hal" secondAttribute="width" id="iu8-Mf-cTb"/>
+                                    <constraint firstItem="Cas-gz-Gwg" firstAttribute="width" secondItem="nQf-1j-Hal" secondAttribute="width" id="j1a-RV-37g"/>
+                                    <constraint firstItem="Zin-vb-Bzd" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="n61-EF-eke"/>
+                                    <constraint firstItem="Cas-gz-Gwg" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="sAh-UF-U5l"/>
+                                    <constraint firstItem="Zin-vb-Bzd" firstAttribute="top" secondItem="M4U-B9-DPF" secondAttribute="bottom" constant="15" id="ybK-C9-8nu"/>
+                                    <constraint firstItem="M4U-B9-DPF" firstAttribute="height" secondItem="nQf-1j-Hal" secondAttribute="height" multiplier="0.15" id="zmV-mx-Fg2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -272,19 +302,21 @@
                         <constraints>
                             <constraint firstItem="nQf-1j-Hal" firstAttribute="width" secondItem="dGv-1i-cEh" secondAttribute="width" multiplier="0.8" id="67p-JM-Egn"/>
                             <constraint firstItem="dGv-1i-cEh" firstAttribute="centerY" secondItem="nQf-1j-Hal" secondAttribute="centerY" id="Wtd-KM-tDR"/>
+                            <constraint firstItem="CGX-Dx-1Og" firstAttribute="height" secondItem="bba-cW-32z" secondAttribute="height" multiplier="0.4" id="bMi-w9-bJW"/>
                             <constraint firstItem="dGv-1i-cEh" firstAttribute="centerX" secondItem="nQf-1j-Hal" secondAttribute="centerX" id="bah-LI-GYb"/>
                             <constraint firstItem="nQf-1j-Hal" firstAttribute="height" secondItem="dGv-1i-cEh" secondAttribute="height" multiplier="0.9" id="gHx-rD-YDM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dGv-1i-cEh"/>
                     </view>
                     <connections>
-                        <outlet property="musicSwitch" destination="6PM-a4-mDP" id="0eN-Iw-eOK"/>
-                        <outlet property="soundSwitch" destination="4l1-Qs-chB" id="L2P-0c-eLg"/>
+                        <outlet property="musicButton" destination="Tso-mr-EvN" id="lBQ-Nt-jjy"/>
+                        <outlet property="soundButton" destination="vaj-RB-lE8" id="yA0-OK-k4c"/>
+                        <outlet property="vibrationButton" destination="ocO-7K-tfK" id="wK5-3z-AIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTE-Aq-od5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733.33333333333337" y="-220.10869565217394"/>
+            <point key="canvasLocation" x="-733.33333333333337" y="-220.3125"/>
         </scene>
         <!--Store View Controller-->
         <scene sceneID="aAa-SU-CXA">
@@ -800,10 +832,13 @@
         <image name="GlassButton" width="1080" height="1080"/>
         <image name="HatButton" width="1080" height="1080"/>
         <image name="HomeButton" width="1080" height="1080"/>
+        <image name="MusicButton" width="1080" height="1080"/>
         <image name="PantsButton" width="1080" height="1080"/>
         <image name="RestartButton" width="3141" height="1080"/>
         <image name="ShirtButton" width="1080" height="1080"/>
+        <image name="SoundButton" width="1080" height="1080"/>
         <image name="StoreIcon" width="1080" height="1080"/>
+        <image name="VibrationOffButton" width="1080" height="1080"/>
         <image name="fish" width="95" height="70"/>
         <image name="gameOverPopUp" width="274" height="358"/>
     </resources>

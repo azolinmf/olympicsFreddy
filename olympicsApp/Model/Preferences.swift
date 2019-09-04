@@ -14,6 +14,7 @@ class Preferences {
     
     var isSoundOn : Bool = true
     var isMusicOn : Bool = true
+    var isVibrationOn : Bool = false
     
     // Languages associated with the Strings as they are shown in the Preferences Screen.
 //    let languages : [String] =

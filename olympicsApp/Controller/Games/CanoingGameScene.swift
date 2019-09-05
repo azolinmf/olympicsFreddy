@@ -124,12 +124,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             viewGameOver.backgroundColor = .white
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
-//            vibrate()
-//            AudioServicesPlaySystemSound(1521) // Actuate "Pop" feedback (strong boom)
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-
-
-            
+            vibrate()
             
             gameViewController.gameOver()
             isPaused = true
@@ -173,9 +168,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     func vibrate(){
 
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
-        
+        if Preferences.shared.isVibrationOn {
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+    
     }
     
     

@@ -176,7 +176,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     }
         
-    func didPressUseItemButton(_ sender: Any) {
+    @IBAction func didPressUseItemButton(_ sender: Any) {
         Outfit.useItem(categoryPosition: buttonPressed, itemPosition: itemChoiced)
         updateScreen()
     }

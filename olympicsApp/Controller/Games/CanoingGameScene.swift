@@ -119,9 +119,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
             //colisao com pedra
-//            let viewGameOver = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width/2, height: self.frame.size.height/2))
-//            viewGameOver.center = self.view!.center
-//            viewGameOver.backgroundColor = .white
+
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
             vibrate()
@@ -307,11 +305,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             if name == "pauseButton" {
                 if !isPaused {
                     pauseButton.isHidden = true
-                    //isPaused = true
-                    //playButton.isHidden = false
+                    isPaused = true
+                    playButton.isHidden = false
                     
-                    gameViewController.gameOver()
-                    //isPaused = true
+                    
                 }
                 
             }

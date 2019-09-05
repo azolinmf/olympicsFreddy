@@ -85,13 +85,20 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         self.performSegue(withIdentifier: "GameOver", sender: self)
     }
     
+    func pauseGame() {
+        self.performSegue(withIdentifier: "GameOver", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.destination is GameOverViewController{
             guard let dest = segue.destination as? GameOverViewController else { return }
             dest.delegate = self
         }
+        
     }
+    
+    
     
     
     

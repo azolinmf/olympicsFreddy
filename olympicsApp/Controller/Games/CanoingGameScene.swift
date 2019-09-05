@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 extension CanoingGameScene: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -46,6 +47,10 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
     weak var gameViewController: GameViewController!
+    
+    var rowingSound = AVAudioPlayer()
+    var fishSound = AVAudioPlayer()
+    var firstTimePlayingSound = true
     
     override func didMove(to view: SKView) {
         
@@ -96,6 +101,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
 //        self.physicsBody?.categoryBitMask = BodyMasks.BorderCategory
 //        self.physicsBody!.restitution = 0.6
         
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -117,6 +123,8 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             viewGameOver.backgroundColor = .white
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
+            let a = UIImpactFeedbackGenerator(style: .heavy)
+            a.impactOccurred()
             gameViewController.gameOver()
             isPaused = true
 //            self.view?.addSubview(viewGameOver)
@@ -137,6 +145,8 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
                 alreadyIncrementedPoints = true
             }
             
+            playFishSound()
+            
             currentPoints.text = String(gamePoints)
         }
     }
@@ -145,9 +155,83 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         let location = sender.location(in: self.view)
         if location.x > canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveRight()
+            playRowingSound()
 
         } else if location.x < canoingPlayer.position.x * boardProportion {
             canoingPlayer.moveLeft()
+            playRowingSound()
+        }
+        
+    }
+    
+    func playRowingSound() {
+        
+        if Preferences.shared.isSoundOn {
+            
+            if !firstTimePlayingSound {
+                
+                if !rowingSound.isPlaying {
+                    do {
+                        rowingSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                            Bundle.main.path(forResource: "RowingSound", ofType: "wav")!))
+                        rowingSound.prepareToPlay()
+                        let audioSession = AVAudioSession.sharedInstance()
+                        do {
+                            try audioSession.setCategory(AVAudioSession.Category.playback)
+                        }
+                        catch {
+                        }
+                    }
+                    catch {
+                        print(error)
+                    }
+                    rowingSound.play()
+                }
+                
+            }
+            else {
+                //primeira vez que entrou na funcao, toca o som anyway
+                do {
+                    rowingSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                        Bundle.main.path(forResource: "RowingSound", ofType: "wav")!))
+                    rowingSound.prepareToPlay()
+                    let audioSession = AVAudioSession.sharedInstance()
+                    do {
+                        try audioSession.setCategory(AVAudioSession.Category.playback)
+                    }
+                    catch {
+                    }
+                }
+                catch {
+                    print(error)
+                }
+                rowingSound.play()
+                
+                firstTimePlayingSound = false
+            }
+            
+        }
+        
+    }
+    
+    func playFishSound() {
+        
+        if Preferences.shared.isSoundOn {
+            do {
+                fishSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "FishReward", ofType: "wav")!))
+                fishSound.prepareToPlay()
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print(error)
+            }
+            fishSound.play()
         }
         
     }

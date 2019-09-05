@@ -26,6 +26,28 @@ class PreferencesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        if preferences.isMusicOn {
+            musicButton.setImage(UIImage(named: "MusicButton"), for: .normal)
+        }
+        else {
+            musicButton.setImage(UIImage(named: "MusicOffButton"), for: .normal)
+        }
+        
+        if preferences.isSoundOn {
+            soundButton.setImage(UIImage(named: "SoundButton"), for: .normal)
+        }
+        else {
+            soundButton.setImage(UIImage(named: "SoundOffButton"), for: .normal)
+        }
+        
+        if preferences.isVibrationOn {
+            vibrationButton.setImage(UIImage(named: "VibrationButton"), for: .normal)
+        }
+        else {
+            vibrationButton.setImage(UIImage(named: "VibrationOffButton"), for: .normal)
+        }
+        
     }
     
     @IBAction func didPressSoundButton(_ sender: Any) {

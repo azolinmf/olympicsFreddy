@@ -17,9 +17,6 @@ class CanoingPlayer: SKSpriteNode, GameObject {
 //        var body = self.physicsBody!
 //        self.physicsBody! = SKPhysicsBody(circleOfRadius: CGFloat(30))
 //        self.texture = AnimatedAtlas.textureNamed("CanoaFreedy1")
-        print("sizes;")
-        print(self.texture?.size())
-        print(self.size)
         
         let CanoingTexture = SKTexture(imageNamed: "Canoa.png")
         
@@ -34,6 +31,8 @@ class CanoingPlayer: SKSpriteNode, GameObject {
         self.physicsBody!.contactTestBitMask = BodyMasks.ObstacleCategory | BodyMasks.RewardCategory | BodyMasks.BorderCategory
         self.physicsBody!.collisionBitMask = BodyMasks.ObstacleCategory | BodyMasks.BorderCategory
         self.physicsBody!.restitution = 0.1
+        
+      
         
         // hook.ink
     }

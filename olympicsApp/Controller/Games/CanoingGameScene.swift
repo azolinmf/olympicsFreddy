@@ -8,7 +8,9 @@
 
 import SpriteKit
 import GameplayKit
+import AudioToolbox
 import AVFoundation
+
 
 extension CanoingGameScene: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -28,12 +30,13 @@ extension CanoingGameScene: UIGestureRecognizerDelegate {
     }
 }
 
+
 class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var backgroundNode: SKNode!
     var grama: SKNode!
     var lastTimeUpdate: TimeInterval = 0
-    var gameVel: Double = 1.0
+    var gameVel: Double = 6.0
     var spawnRock: SpawningRocks!
     var spawnFood: SpawningFood!
     var gamePoints: Int = 0
@@ -55,7 +58,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         Model.instance.playAgain = false
-        
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
         pauseButton = childNode(withName: "pause")
@@ -63,7 +65,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         playButton = childNode(withName: "playButton")
         playButton.name = "playButton"
         playButton.isHidden = true
-        
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
         let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
@@ -123,10 +124,16 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             viewGameOver.backgroundColor = .white
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
-            let a = UIImpactFeedbackGenerator(style: .heavy)
-            a.impactOccurred()
+//            vibrate()
+//            AudioServicesPlaySystemSound(1521) // Actuate "Pop" feedback (strong boom)
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+
+
+            
+            
             gameViewController.gameOver()
             isPaused = true
+            
 //            self.view?.addSubview(viewGameOver)
         
             
@@ -163,6 +170,14 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
+    
+    func vibrate(){
+
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+        
+    }
+    
     
     func playRowingSound() {
         

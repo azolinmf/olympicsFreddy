@@ -20,15 +20,19 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         navigationController?.popViewController(animated: true)
         
         if displaysStore {
+            //vai pra loja
             self.delegate?.displayShop()
         } else {
+            //nao vai pra loja
             if Model.instance.playAgain {
+                //joga de novo
                 if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
                     vc.delegate = delegate
                     self.navigationController?.show(vc, sender: self)
 //                    self.navigationController?.pushViewController(vc, animated: false)
                 }
             }
+            //vai pra home
         }
         
     }

@@ -8,6 +8,8 @@
 
 import SpriteKit
 import GameplayKit
+import AudioToolbox
+
 
 extension CanoingGameScene: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -26,6 +28,7 @@ extension CanoingGameScene: UIGestureRecognizerDelegate {
         return true
     }
 }
+
 
 class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -50,7 +53,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         Model.instance.playAgain = false
-        
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
         pauseButton = childNode(withName: "pause")
@@ -58,7 +60,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         playButton = childNode(withName: "playButton")
         playButton.name = "playButton"
         playButton.isHidden = true
-        
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
         let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
@@ -117,7 +118,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             viewGameOver.backgroundColor = .white
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
-            vibrate()
+//            vibrate()
+//            AudioServicesPlaySystemSound(1521) // Actuate "Pop" feedback (strong boom)
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+
+
+            
+            
             gameViewController.gameOver()
             isPaused = true
             
@@ -155,9 +162,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func vibrate(){
-        
-//        let generator = UIImpactFeedbackGenerator(style: .medium)
-//        generator.impactOccurred()
+
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
         

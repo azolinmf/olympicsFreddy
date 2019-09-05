@@ -28,6 +28,8 @@
 		9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5318492306EBC200EEA671 /* CanoingRocks.swift */; };
 		9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184C230830E100EEA671 /* SpawningFood.swift */; };
 		9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53184E2308310B00EEA671 /* CanoingFood.swift */; };
+		9DE4534023213933004E93AA /* FishReward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4533E23213930004E93AA /* FishReward.wav */; };
+		9DE4534123213933004E93AA /* RowingSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4533F23213933004E93AA /* RowingSound.wav */; };
 		9DFBEEC8230EC88000961437 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBEEC7230EC88000961437 /* Model.swift */; };
 		D120550723059E4700AF0C91 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550623059E4700AF0C91 /* GameCell.swift */; };
 		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
@@ -73,6 +75,8 @@
 		9D5318492306EBC200EEA671 /* CanoingRocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingRocks.swift; sourceTree = "<group>"; };
 		9D53184C230830E100EEA671 /* SpawningFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawningFood.swift; sourceTree = "<group>"; };
 		9D53184E2308310B00EEA671 /* CanoingFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoingFood.swift; sourceTree = "<group>"; };
+		9DE4533E23213930004E93AA /* FishReward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FishReward.wav; sourceTree = "<group>"; };
+		9DE4533F23213933004E93AA /* RowingSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RowingSound.wav; sourceTree = "<group>"; };
 		9DFBEEC7230EC88000961437 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D120550623059E4700AF0C91 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		9D53181E23057BF800EEA671 /* olympicsApp */ = {
 			isa = PBXGroup;
 			children = (
+				9DE4533D23213914004E93AA /* music */,
 				9D53183123057BF900EEA671 /* Info.plist */,
 				9D53181F23057BF800EEA671 /* AppDelegate.swift */,
 				D198C3132305924D0085A238 /* Model */,
@@ -165,6 +170,15 @@
 				9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */,
 			);
 			path = CanoingGame;
+			sourceTree = "<group>";
+		};
+		9DE4533D23213914004E93AA /* music */ = {
+			isa = PBXGroup;
+			children = (
+				9DE4533E23213930004E93AA /* FishReward.wav */,
+				9DE4533F23213933004E93AA /* RowingSound.wav */,
+			);
+			path = music;
 			sourceTree = "<group>";
 		};
 		D120550523059DCE00AF0C91 /* Games Cells */ = {
@@ -346,6 +360,7 @@
 			files = (
 				885742A62316069A00CB9D13 /* CanoingPlayer.atlas in Resources */,
 				881367E32310284700CB8756 /* GameOver.storyboard in Resources */,
+				9DE4534023213933004E93AA /* FishReward.wav in Resources */,
 				9D53182B23057BF800EEA671 /* Main.storyboard in Resources */,
 				9D5318422306D37C00EEA671 /* CanoingBackground.sks in Resources */,
 				9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */,
@@ -353,6 +368,7 @@
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
 				9D53182423057BF800EEA671 /* Actions.sks in Resources */,
 				D1D3B67B2317579A00B7303E /* StoreGameScene.sks in Resources */,
+				9DE4534123213933004E93AA /* RowingSound.wav in Resources */,
 				D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

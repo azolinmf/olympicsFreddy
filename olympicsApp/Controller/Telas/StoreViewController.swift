@@ -156,12 +156,27 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             showUseButton()
         }
         else {
-            print("Voce  nao tem  dinheiro o suficiente")
+            noMoney()
         }
         updateScreen()
     }
     
-    @IBAction func didPressUseItemButton(_ sender: Any) {
+    
+    
+    func noMoney() {
+        let alert = UIAlertController(title: "😢", message: "You do not have enough money",         preferredStyle: UIAlertController.Style.alert)
+        
+
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                        //Sign out action
+        }))
+        self.present(alert, animated: true, completion: nil)
+    
+    }
+        
+    func didPressUseItemButton(_ sender: Any) {
         Outfit.useItem(categoryPosition: buttonPressed, itemPosition: itemChoiced)
         updateScreen()
     }
@@ -189,6 +204,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         useItemButton.isHidden = true
         useItemButton.isEnabled = false
     }
+
     
 }
 

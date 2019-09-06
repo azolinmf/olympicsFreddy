@@ -12,11 +12,12 @@ class Model {
     static let instance = Model()
     
     var playAgain: Bool
-    
+    var stop: Bool
     internal init() {
         totalPoints = UserDefaults.standard.integer(forKey: "totalPoints")
         currentPoints = UserDefaults.standard.integer(forKey: "currentPoints")
         playAgain = false
+        stop = false
     }
     
     var totalPoints: Int{

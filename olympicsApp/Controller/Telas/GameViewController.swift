@@ -16,6 +16,9 @@ protocol GameDelegate {
 
 class GameViewController: UIViewController, GameOverScreenDelegate {
     
+    
+    var scene: CanoingGameScene!
+    
     func gameOver(displaysStore: Bool) {
         navigationController?.popViewController(animated: true)
         
@@ -33,14 +36,18 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         
     }
     
+    func pauseGame(pause: Bool) {
+        scene.pauseGame(pause: pause)
+    }
+    
     
     var delegate: GameDelegate?
     
     override func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
-        var scene: CanoingGameScene!
         
+
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'CanoingGameScene.sks'
@@ -57,12 +64,13 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             view.showsPhysics = false
             view.showsFPS = false
             view.showsNodeCount = false
+            
         }
         
     }
     
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -77,9 +85,21 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         return true
     }
     
-    func gameOver() {
-        self.performSegue(withIdentifier: "GameOver", sender: self)
+    func gameOver(stop: Bool) {
+        
+        if stop {
+            Model.instance.stop = true
+            self.performSegue(withIdentifier: "GameOver", sender: self)
+        } else if !stop {
+            Model.instance.stop = false
+            self.performSegue(withIdentifier: "GameOver", sender: self)
+        }
+        
     }
+    
+
+        
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

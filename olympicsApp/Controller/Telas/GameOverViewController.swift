@@ -153,5 +153,8 @@ class GameOverViewController: UIViewController {
         )
     }
     
+    func changeIcons() {
+        print("hehe")
+    }
     
 }

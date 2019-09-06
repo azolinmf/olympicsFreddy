@@ -123,9 +123,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
             (secondBody.categoryBitMask == BodyMasks.ObstacleCategory) {
             //colisao com pedra
-            let viewGameOver = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width/2, height: self.frame.size.height/2))
-            viewGameOver.center = self.view!.center
-            viewGameOver.backgroundColor = .white
+
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
             vibrate()
@@ -303,6 +301,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
+    
         if !hideLabel {
             _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false, block: { timer in
                 self.instructionLabel.isHidden = true

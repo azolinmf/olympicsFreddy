@@ -23,15 +23,19 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         navigationController?.popViewController(animated: true)
         
         if displaysStore {
+            //vai pra loja
             self.delegate?.displayShop()
         } else {
+            //nao vai pra loja
             if Model.instance.playAgain {
+                //joga de novo
                 if let vc = storyboard?.instantiateViewController(withIdentifier: "canoingGame") as? GameViewController {
                     vc.delegate = delegate
                     self.navigationController?.show(vc, sender: self)
 //                    self.navigationController?.pushViewController(vc, animated: false)
                 }
             }
+            //vai pra home
         }
         
     }
@@ -58,8 +62,6 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             scene.gameViewController = self
             // Present the scene
             view.presentScene(scene)
-            
-            
             view.ignoresSiblingOrder = true
             view.showsPhysics = false
             view.showsFPS = false
@@ -103,11 +105,15 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
         if segue.destination is GameOverViewController{
             guard let dest = segue.destination as? GameOverViewController else { return }
             dest.delegate = self
         }
+        
     }
+    
+    
     
     
     

@@ -27,7 +27,7 @@ class Outfit {
                 .whereField("key", isEqualTo: item.key)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
-                        // Some error occured
+                        print(err.localizedDescription)
                     } else if querySnapshot!.documents.count != 1 {
                         // Perhaps this is an error for you?
                     } else {
@@ -37,8 +37,6 @@ class Outfit {
                             "inuse" : true
                             ])
                     }
-                    
-                    
             }
             
             //FREDDy nao pode usar dois items  de uma mesma categoria\
@@ -51,7 +49,7 @@ class Outfit {
                         .whereField("key", isEqualTo: i.key)
                         .getDocuments() { (querySnapshot, err) in
                             if let err = err {
-                                // Some error occured
+                                print(err.localizedDescription)
                             } else if querySnapshot!.documents.count != 1 {
                                 // Perhaps this is an error for you?
                             } else {
@@ -61,10 +59,15 @@ class Outfit {
                                     ])
                             }
                     }
-                    
                 }
             }
             
+            let inUseItemsSize = AllItems.shared.inUseItems.count-1
+            for i in stride(from: inUseItemsSize, to: -1, by: -1) {
+                if item.category == AllItems.shared.inUseItems[i].category && item.key != AllItems.shared.inUseItems[i].key {
+                    AllItems.shared.inUseItems.remove(at: i)
+                }
+            }
             
             return true
         }
@@ -83,11 +86,13 @@ class Outfit {
             if item.bought == true {
                 item.inuse = true
                 AllItems.shared.inUseItems.append(item)
+                
+                
                 DBRef.collection("AllItems")
                     .whereField("key", isEqualTo: item.key)
                     .getDocuments() { (querySnapshot, err) in
                         if let err = err {
-                            // Some error occured
+                            print(err.localizedDescription)
                         } else if querySnapshot!.documents.count != 1 {
                             // Perhaps this is an error for you?
                         } else {
@@ -108,7 +113,7 @@ class Outfit {
                             .whereField("key", isEqualTo: i.key)
                             .getDocuments() { (querySnapshot, err) in
                                 if let err = err {
-                                    // Some error occured
+                                    print(err.localizedDescription)
                                 } else if querySnapshot!.documents.count != 1 {
                                     // Perhaps this is an error for you?
                                 } else {
@@ -121,11 +126,15 @@ class Outfit {
                         
                     }
                 }
+                
+                let inUseItemsSize = AllItems.shared.inUseItems.count-1
+                
+                for i in stride(from: inUseItemsSize, to: -1, by: -1) {
+                    if item.category == AllItems.shared.inUseItems[i].category && item.key != AllItems.shared.inUseItems[i].key {
+                        AllItems.shared.inUseItems.remove(at: i)
+                    }
+                }
             }
-        
-        }
-        else {
-            self.undressItem(categoryPosition: categoryPosition)
         }
     }
     
@@ -136,11 +145,16 @@ class Outfit {
         for item in AllItems.shared.categories[categoryPosition].items {
             if item.inuse == true {
                 item.inuse = false
-                for  i in AllItems.shared.inUseItems{
-                    if item.key == i.key {
-                        i.inuse  = false
+                
+                
+                let inUseItemsSize = AllItems.shared.inUseItems.count
+                for i in 0..<inUseItemsSize {
+                    if item.key == AllItems.shared.inUseItems[i].key {
+                        AllItems.shared.inUseItems.remove(at: i)
                     }
                 }
+                
+                
                 DBRef.collection("AllItems")
                     .whereField("key", isEqualTo: item.key)
                     .getDocuments() { (querySnapshot, err) in
@@ -157,6 +171,9 @@ class Outfit {
                 }
             }
         }
+        
+        
+        
     }
     
     static func checkMoney(item : ItemStore) -> Bool {
@@ -167,6 +184,12 @@ class Outfit {
             return false
         }
     }
+    
+    
+    static func removeInUseItems(item : ItemStore, category : Category) {
+        
+    }
+    
     
     //Nao  está otimizado
     static func getOutfit() {

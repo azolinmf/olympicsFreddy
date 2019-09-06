@@ -528,7 +528,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="didPressUseItemButton:" destination="ylo-w8-36f" eventType="touchUpInside" id="cF1-5l-Toy"/>
+                                            <action selector="didPressUseItemButton:" destination="ylo-w8-36f" eventType="touchUpInside" id="7dR-gE-7Mk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRT-39-YaN">
@@ -639,6 +639,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKf-96-lZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2788.4057971014495" y="32.608695652173914"/>
+        </scene>
+        <!--Pause View Controller-->
+        <scene sceneID="6RA-dK-TC7">
+            <objects>
+                <viewController storyboardIdentifier="pause" id="qB8-L2-0Bj" customClass="PauseViewController" customModule="olympicsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kb-26-Zer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtQ-w4-frL">
+                                <rect key="frame" x="116" y="363.5" width="182" height="179"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameOverPopUp" translatesAutoresizingMaskIntoConstraints="NO" id="9D0-GN-JUq">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="179"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-C6-OAb">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="89.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLq-fC-dRm">
+                                                <rect key="frame" x="62.5" y="22.5" width="57" height="44.5"/>
+                                                <state key="normal" image="HomeButton"/>
+                                                <connections>
+                                                    <action selector="didPressHomeButton:" destination="qB8-L2-0Bj" eventType="touchUpInside" id="XbS-Kx-z5I"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XLq-fC-dRm" firstAttribute="width" secondItem="ncc-C6-OAb" secondAttribute="height" multiplier="70:110" id="EUI-Zj-XLS"/>
+                                            <constraint firstItem="XLq-fC-dRm" firstAttribute="height" secondItem="ncc-C6-OAb" secondAttribute="height" multiplier="0.5" id="bgG-OE-BqF"/>
+                                            <constraint firstItem="XLq-fC-dRm" firstAttribute="centerX" secondItem="ncc-C6-OAb" secondAttribute="centerX" id="nVq-eO-SWO"/>
+                                            <constraint firstItem="XLq-fC-dRm" firstAttribute="centerY" secondItem="ncc-C6-OAb" secondAttribute="centerY" id="ty7-kq-115"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-Rp-ooy">
+                                        <rect key="frame" x="0.0" y="89.5" width="182" height="89.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2y-qr-i3C">
+                                                <rect key="frame" x="38.5" y="22.5" width="105" height="44.5"/>
+                                                <state key="normal" image="PlayButton-1"/>
+                                                <connections>
+                                                    <action selector="didPressPlayButton:" destination="qB8-L2-0Bj" eventType="touchUpInside" id="gue-G9-wpy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="b2y-qr-i3C" firstAttribute="centerY" secondItem="m0S-Rp-ooy" secondAttribute="centerY" id="a6q-BZ-BfD"/>
+                                            <constraint firstItem="b2y-qr-i3C" firstAttribute="height" secondItem="m0S-Rp-ooy" secondAttribute="height" multiplier="0.5" id="cGb-a5-A72"/>
+                                            <constraint firstItem="b2y-qr-i3C" firstAttribute="centerX" secondItem="m0S-Rp-ooy" secondAttribute="centerX" id="gKh-Ee-b4a"/>
+                                            <constraint firstItem="b2y-qr-i3C" firstAttribute="width" secondItem="m0S-Rp-ooy" secondAttribute="height" multiplier="70:60" id="kwD-XQ-mhQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9D0-GN-JUq" firstAttribute="top" secondItem="QtQ-w4-frL" secondAttribute="top" id="2Qr-K6-xrp"/>
+                                    <constraint firstItem="ncc-C6-OAb" firstAttribute="top" secondItem="QtQ-w4-frL" secondAttribute="top" id="30E-F3-bEm"/>
+                                    <constraint firstItem="9D0-GN-JUq" firstAttribute="width" secondItem="QtQ-w4-frL" secondAttribute="width" id="4oD-tI-Yvg"/>
+                                    <constraint firstItem="9D0-GN-JUq" firstAttribute="height" secondItem="QtQ-w4-frL" secondAttribute="height" id="EnW-5p-kIm"/>
+                                    <constraint firstItem="m0S-Rp-ooy" firstAttribute="centerY" secondItem="QtQ-w4-frL" secondAttribute="centerY" id="I9O-ez-416"/>
+                                    <constraint firstAttribute="bottom" secondItem="m0S-Rp-ooy" secondAttribute="bottom" id="JKC-YK-Hmb"/>
+                                    <constraint firstAttribute="bottom" secondItem="9D0-GN-JUq" secondAttribute="bottom" id="TrO-fU-W7z"/>
+                                    <constraint firstItem="ncc-C6-OAb" firstAttribute="height" secondItem="QtQ-w4-frL" secondAttribute="height" multiplier="0.5" id="WwO-qX-bSA"/>
+                                    <constraint firstAttribute="trailing" secondItem="9D0-GN-JUq" secondAttribute="trailing" id="Ylq-QJ-Q5b"/>
+                                    <constraint firstItem="m0S-Rp-ooy" firstAttribute="width" secondItem="QtQ-w4-frL" secondAttribute="width" id="caU-yS-yFw"/>
+                                    <constraint firstItem="m0S-Rp-ooy" firstAttribute="height" secondItem="QtQ-w4-frL" secondAttribute="height" multiplier="0.5" id="gVx-7K-NrK"/>
+                                    <constraint firstItem="ncc-C6-OAb" firstAttribute="centerY" secondItem="QtQ-w4-frL" secondAttribute="centerY" id="jUu-Af-rZ8"/>
+                                    <constraint firstItem="ncc-C6-OAb" firstAttribute="width" secondItem="QtQ-w4-frL" secondAttribute="width" id="mJC-jT-rhk"/>
+                                    <constraint firstItem="9D0-GN-JUq" firstAttribute="leading" secondItem="QtQ-w4-frL" secondAttribute="leading" id="rK7-Lz-hF8"/>
+                                    <constraint firstItem="m0S-Rp-ooy" firstAttribute="centerX" secondItem="QtQ-w4-frL" secondAttribute="centerX" id="zrA-f0-6DB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QtQ-w4-frL" firstAttribute="centerY" secondItem="yvR-vq-2WF" secondAttribute="centerY" id="3Th-Tf-Ldj"/>
+                            <constraint firstItem="QtQ-w4-frL" firstAttribute="height" secondItem="8kb-26-Zer" secondAttribute="height" multiplier="0.2" id="Hf2-y5-5MH"/>
+                            <constraint firstItem="QtQ-w4-frL" firstAttribute="width" secondItem="8kb-26-Zer" secondAttribute="width" multiplier="0.44" id="Na6-YK-Iid"/>
+                            <constraint firstItem="QtQ-w4-frL" firstAttribute="centerX" secondItem="yvR-vq-2WF" secondAttribute="centerX" id="uQh-a5-oMa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yvR-vq-2WF"/>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="XLq-fC-dRm" id="xJZ-dZ-Q32"/>
+                        <outlet property="playButton" destination="b2y-qr-i3C" id="kak-vJ-ueI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7Z-5w-8Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073.913043478261" y="-252.45535714285714"/>
         </scene>
         <!--GameOver-->
         <scene sceneID="7jf-cY-nUF">
@@ -834,6 +926,7 @@
         <image name="HomeButton" width="1080" height="1080"/>
         <image name="MusicButton" width="1080" height="1080"/>
         <image name="PantsButton" width="1080" height="1080"/>
+        <image name="PlayButton-1" width="3141" height="1080"/>
         <image name="RestartButton" width="3141" height="1080"/>
         <image name="ShirtButton" width="1080" height="1080"/>
         <image name="SoundButton" width="1080" height="1080"/>

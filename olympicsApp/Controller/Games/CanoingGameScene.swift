@@ -45,7 +45,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var instructionLabel: SKLabelNode!
     var currentPoints: SKLabelNode!
     var pauseButton: SKNode!
-    var playButton: SKNode!
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -64,9 +63,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
         pauseButton = childNode(withName: "pause")
         pauseButton.name = "pauseButton"
-        playButton = childNode(withName: "playButton")
-        playButton.name = "playButton"
-        playButton.isHidden = true
         
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
@@ -323,15 +319,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
             }
-            else if name == "playButton" {
-                
-                if isPaused {
-                    pauseButton.isHidden = false
-                    isPaused = false
-                    playButton.isHidden = true
-                }
-                
-            }
+          
         }
         
     }

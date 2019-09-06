@@ -287,9 +287,15 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func pauseGame() {
+        gameViewController.pauseGame()
+
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
+    
         if !hideLabel {
             _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false, block: { timer in
                 self.instructionLabel.isHidden = true
@@ -307,7 +313,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
                     pauseButton.isHidden = true
                     isPaused = true
                     playButton.isHidden = false
-                    
                     
                 }
                 

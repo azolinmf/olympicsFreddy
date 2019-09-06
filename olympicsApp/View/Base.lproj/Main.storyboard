@@ -643,7 +643,7 @@
         <!--Pause View Controller-->
         <scene sceneID="6RA-dK-TC7">
             <objects>
-                <viewController id="qB8-L2-0Bj" customClass="PauseViewController" customModule="olympicsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pause" id="qB8-L2-0Bj" customClass="PauseViewController" customModule="olympicsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8kb-26-Zer">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

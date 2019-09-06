@@ -13,11 +13,13 @@ import Firebase
 
 class DAOItemsStore {
     
+    
+    
     static func initialLoad (completion : @escaping ()  -> ()) {
         AllItems.shared.inUseItems.removeAll()
         
         let db = Firestore.firestore()
-        db.collection("AllItems").getDocuments { (querySnapshot, err) in
+        db.collection(Model.instance.userID).getDocuments { (querySnapshot, err) in
             var item : ItemStore
             
             if let err = err {
@@ -36,15 +38,15 @@ class DAOItemsStore {
         }
     }
     
-    
     static func load(completion : @escaping ()  -> ()) {
         let db = Firestore.firestore()
         
-        db.collection("AllItems").getDocuments() { (querySnapshot, err) in
+        db.collection(Model.instance.userID).getDocuments() { (querySnapshot, err) in
             
             if let err = err {
                 print("//////////////////////: \(err)")
             } else {
+                
                 AllItems.shared.allItemsStore.removeAll()
                 AllItems.shared.clearItemsFromCategories()
                 var item : ItemStore
@@ -61,4 +63,7 @@ class DAOItemsStore {
             AllItems.shared.insertItemInCategory()
         }
     }
+    
+    
+    
 }

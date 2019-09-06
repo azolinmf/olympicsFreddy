@@ -188,7 +188,9 @@ PODS:
   - SDWebImage/Core (5.1.0)
 
 DEPENDENCIES:
+  - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseUI
@@ -255,6 +257,6 @@ SPEC CHECKSUMS:
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
 
-PODFILE CHECKSUM: 47f04634b110684e7331e3a09a8876a23c38dc36
+PODFILE CHECKSUM: facdc8639c97efec78dc81611bee9cd085f6a731
 
 COCOAPODS: 1.7.5

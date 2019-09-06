@@ -10,5 +10,7 @@ target 'olympicsApp' do
   pod 'Firebase/Firestore'
   pod 'Protobuf', :inhibit_warnings => true
   pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   pod 'FirebaseUI'
+  pod 'Firebase/Auth'
 end

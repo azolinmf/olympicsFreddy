@@ -23,7 +23,7 @@ class Outfit {
             Model.instance.totalPoints -= item.value
             let DBRef = Firestore.firestore()
             
-            DBRef.collection("AllItems")
+            DBRef.collection(Model.instance.userID)
                 .whereField("key", isEqualTo: item.key)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
@@ -45,7 +45,7 @@ class Outfit {
                 if i.key != item.key {
                     i.inuse = false
                     
-                    DBRef.collection("AllItems")
+                    DBRef.collection(Model.instance.userID)
                         .whereField("key", isEqualTo: i.key)
                         .getDocuments() { (querySnapshot, err) in
                             if let err = err {
@@ -88,7 +88,7 @@ class Outfit {
                 AllItems.shared.inUseItems.append(item)
                 
                 
-                DBRef.collection("AllItems")
+                DBRef.collection(Model.instance.userID)
                     .whereField("key", isEqualTo: item.key)
                     .getDocuments() { (querySnapshot, err) in
                         if let err = err {
@@ -109,7 +109,7 @@ class Outfit {
                     if i.key != item.key {
                         i.inuse = false
                         
-                        DBRef.collection("AllItems")
+                        DBRef.collection(Model.instance.userID)
                             .whereField("key", isEqualTo: i.key)
                             .getDocuments() { (querySnapshot, err) in
                                 if let err = err {
@@ -155,7 +155,7 @@ class Outfit {
                 }
                 
                 
-                DBRef.collection("AllItems")
+                DBRef.collection(Model.instance.userID)
                     .whereField("key", isEqualTo: item.key)
                     .getDocuments() { (querySnapshot, err) in
                         if let err = err {
@@ -184,8 +184,7 @@ class Outfit {
             return false
         }
     }
-    
-    
+
     static func removeInUseItems(item : ItemStore, category : Category) {
         
     }

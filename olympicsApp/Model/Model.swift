@@ -10,6 +10,7 @@ import UIKit
 class Model {
     
     static let instance = Model()
+    var userID : String!
     
     var playAgain: Bool
     var stop: Bool
@@ -18,7 +19,10 @@ class Model {
         currentPoints = UserDefaults.standard.integer(forKey: "currentPoints")
         playAgain = false
         stop = false
+        
+        self.userID = ""
     }
+
     
     var totalPoints: Int{
         didSet{

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Apple Developer Academy. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
 class Model {
     
@@ -13,6 +14,8 @@ class Model {
     
     var playAgain: Bool
     var stop: Bool
+    var music = AVAudioPlayer()
+    
     internal init() {
         totalPoints = UserDefaults.standard.integer(forKey: "totalPoints")
         currentPoints = UserDefaults.standard.integer(forKey: "currentPoints")

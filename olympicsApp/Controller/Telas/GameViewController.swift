@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 protocol GameDelegate {
     func displayShop()
@@ -51,7 +52,7 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         
-
+        playCanoeMusic()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'CanoingGameScene.sks'
@@ -67,6 +68,28 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             view.showsFPS = false
             view.showsNodeCount = false
             
+        }
+        
+    }
+    
+    func playCanoeMusic() {
+        if Preferences.shared.isMusicOn {
+            do {
+                Model.instance.music = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "TheCanoe", ofType: "wav")!))
+                Model.instance.music.prepareToPlay()
+                Model.instance.music.numberOfLoops = -1
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print("Error: could not play The Canoe music")
+            }
+            Model.instance.music.play()
         }
         
     }
@@ -100,9 +123,6 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
     }
     
 
-        
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         

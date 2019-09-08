@@ -130,6 +130,7 @@ class GameOverViewController: UIViewController {
         currentPointsLabel.text = String(Model.instance.currentPoints)
         if Model.instance.stop {
             playAgainButton.setImage(UIImage(named: "PlayButton.png"), for: .normal)
+            currentPointsLabel.text = String(Model.instance.currentPoints)
         } else {
             playAgainButton.setImage(UIImage(named: "RestartButton.png"), for: .normal)
         }

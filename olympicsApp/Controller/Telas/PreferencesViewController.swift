@@ -66,6 +66,7 @@ class PreferencesViewController: UIViewController {
         if preferences.isMusicOn {
             musicButton.setImage(UIImage(named: "MusicOffButton"), for: .normal)
             preferences.isMusicOn = false
+            Model.instance.music.stop()
         }
         else {
             musicButton.setImage(UIImage(named: "MusicButton"), for: .normal)

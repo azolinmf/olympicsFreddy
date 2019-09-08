@@ -52,13 +52,14 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var rowingSound = AVAudioPlayer()
     var fishSound = AVAudioPlayer()
+    var crashSound = AVAudioPlayer()
     var firstTimePlayingSound = true
-    
     
     
     override func didMove(to view: SKView) {
         
         Model.instance.playAgain = false
+        Model.instance.currentPoints = 0
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
         pauseButton = childNode(withName: "pause")
@@ -123,6 +124,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
             vibrate()
+            playCrashSound()
             
             gameViewController.gameOver(stop: false)
             isPaused = true
@@ -145,7 +147,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             playFishSound()
-            
+            Model.instance.currentPoints = gamePoints
             currentPoints.text = String(gamePoints)
         }
     }
@@ -242,6 +244,26 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             fishSound.play()
         }
         
+    }
+    
+    func playCrashSound() {
+        if Preferences.shared.isSoundOn {
+            do {
+                crashSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "BoatCrash", ofType: "wav")!))
+                crashSound.prepareToPlay()
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print(error)
+            }
+            crashSound.play()
+        }
     }
     
     func virtualDPadLeft() -> CGRect {

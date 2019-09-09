@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class ProfileAndSportsViewController : UIViewController, GameDelegate {
     
@@ -90,9 +91,32 @@ class ProfileAndSportsViewController : UIViewController, GameDelegate {
         
     }
     
+    func playMenuMusic() {
+        if Preferences.shared.isMusicOn {
+            do {
+                Model.instance.music = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "OlympicsMenu", ofType: "wav")!))
+                Model.instance.music.prepareToPlay()
+                Model.instance.music.numberOfLoops = -1
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print("Error: could not play menu music")
+            }
+            Model.instance.music.play()
+        }
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         updateInterface()
         self.profileGameScene.setOutfit()
+        playMenuMusic()
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }

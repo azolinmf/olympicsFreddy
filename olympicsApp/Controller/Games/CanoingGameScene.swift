@@ -45,7 +45,6 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var instructionLabel: SKLabelNode!
     var currentPoints: SKLabelNode!
     var pauseButton: SKNode!
-    var playButton: SKNode!
     
     var gameObjects = [GameObject] ()
     var canoingPlayer: CanoingPlayer!
@@ -53,18 +52,19 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     
     var rowingSound = AVAudioPlayer()
     var fishSound = AVAudioPlayer()
+    var crashSound = AVAudioPlayer()
     var firstTimePlayingSound = true
+    
     
     override func didMove(to view: SKView) {
         
         Model.instance.playAgain = false
+        Model.instance.currentPoints = 0
         instructionLabel = (childNode(withName: "instructionLabel") as? SKLabelNode)!
         currentPoints = (childNode(withName: "currentPoints") as? SKLabelNode)!
         pauseButton = childNode(withName: "pause")
         pauseButton.name = "pauseButton"
-        playButton = childNode(withName: "playButton")
-        playButton.name = "playButton"
-        playButton.isHidden = true
+        
         
         let flashLabelIn = SKAction.fadeIn(withDuration: 2.0)
         let flashLabelOut = SKAction.fadeOut(withDuration: 0.2)
@@ -103,6 +103,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
 //        self.physicsBody!.restitution = 0.6
         
         
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -123,12 +124,12 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             Model.instance.totalPoints += gamePoints
             Model.instance.currentPoints = gamePoints
             vibrate()
+            playCrashSound()
             
-            gameViewController.gameOver()
+            gameViewController.gameOver(stop: false)
             isPaused = true
             
 //            self.view?.addSubview(viewGameOver)
-        
             
             
         } else if(firstBody.categoryBitMask == BodyMasks.PlayerCategory) &&
@@ -146,7 +147,7 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             playFishSound()
-            
+            Model.instance.currentPoints = gamePoints
             currentPoints.text = String(gamePoints)
         }
     }
@@ -245,6 +246,26 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func playCrashSound() {
+        if Preferences.shared.isSoundOn {
+            do {
+                crashSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "BoatCrash", ofType: "wav")!))
+                crashSound.prepareToPlay()
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print(error)
+            }
+            crashSound.play()
+        }
+    }
+    
     func virtualDPadLeft() -> CGRect {
         // função para criar o circulo virtual para identificar onde o usuário está clicando
         //dentro do dpadShape que é o circulo branco
@@ -285,11 +306,14 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             //random parameter that can be calibrated according to the desired game difficulty
             gameVel += deltaTime/8  //100
         }
+        
+        
+        
     }
     
-    func pauseGame() {
-        gameViewController.pauseGame()
-
+    func pauseGame (pause: Bool){
+        self.isPaused = pause
+        pauseButton.isHidden = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -311,21 +335,13 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
             if name == "pauseButton" {
                 if !isPaused {
                     pauseButton.isHidden = true
-                    isPaused = true
-                    playButton.isHidden = false
-                    
+                    pauseGame(pause: true)
+//                    playButton.isHidden = false
+                    gameViewController.gameOver(stop: true)
                 }
                 
             }
-            else if name == "playButton" {
-                
-                if isPaused {
-                    pauseButton.isHidden = false
-                    isPaused = false
-                    playButton.isHidden = true
-                }
-                
-            }
+          
         }
         
     }

@@ -110,7 +110,9 @@ extension UIView {
 
 protocol GameOverScreenDelegate {
     func gameOver(displaysStore: Bool)
+    func pauseGame(pause: Bool)
 }
+
 
 class GameOverViewController: UIViewController {
 
@@ -119,13 +121,19 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     
-    
+    var a = 1
     var delegate: GameOverScreenDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         currentPointsLabel.text = String(Model.instance.currentPoints)
+        if Model.instance.stop {
+            playAgainButton.setImage(UIImage(named: "PlayButton.png"), for: .normal)
+            currentPointsLabel.text = String(Model.instance.currentPoints)
+        } else {
+            playAgainButton.setImage(UIImage(named: "RestartButton.png"), for: .normal)
+        }
     }
     
     
@@ -145,12 +153,20 @@ class GameOverViewController: UIViewController {
     }
     
     @IBAction func didPressPlayAgain(_ sender: Any) {
+        if !Model.instance.stop {
         Model.instance.playAgain = true
         
         dismiss(animated: false, completion: {() in
             self.delegate?.gameOver(displaysStore: false)
         }
         )
+        } else if Model.instance.stop {
+            self.dismiss(animated: false, completion: {() in
+                Model.instance.stop = false
+                self.delegate?.pauseGame(pause: false)
+            })
+        }
+        
     }
     
     func changeIcons() {

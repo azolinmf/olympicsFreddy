@@ -6,13 +6,15 @@
 //  Copyright © 2019 Apple Developer Academy. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
 class Model {
     
     static let instance = Model()
     
     var playAgain: Bool
-    var isPaused: Bool
+    var stop: Bool
+    var music = AVAudioPlayer()
     
     let frontImgs : [String] = [
         "Front Arremesso de peso_Prancheta 1",
@@ -39,7 +41,7 @@ class Model {
         totalPoints = UserDefaults.standard.integer(forKey: "totalPoints")
         currentPoints = UserDefaults.standard.integer(forKey: "currentPoints")
         playAgain = false
-        isPaused = false
+        stop = false
     }
     
     var totalPoints: Int{

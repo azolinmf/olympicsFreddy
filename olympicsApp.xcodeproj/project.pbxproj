@@ -31,6 +31,9 @@
 		9DE4534023213933004E93AA /* FishReward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4533E23213930004E93AA /* FishReward.wav */; };
 		9DE4534123213933004E93AA /* RowingSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4533F23213933004E93AA /* RowingSound.wav */; };
 		9DE4534723215E9E004E93AA /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4534623215E9E004E93AA /* PauseViewController.swift */; };
+		9DE4534A232560CF004E93AA /* BoatCrash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE45348232560CF004E93AA /* BoatCrash.wav */; };
+		9DE4534B232560CF004E93AA /* TheCanoe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE45349232560CF004E93AA /* TheCanoe.wav */; };
+		9DE4534D232562EC004E93AA /* OlympicsMenu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4534C232562EB004E93AA /* OlympicsMenu.wav */; };
 		9DFBEEC8230EC88000961437 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBEEC7230EC88000961437 /* Model.swift */; };
 		D120550723059E4700AF0C91 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120550623059E4700AF0C91 /* GameCell.swift */; };
 		D12055092305A2FC00AF0C91 /* Esportes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12055082305A2FC00AF0C91 /* Esportes.swift */; };
@@ -79,6 +82,9 @@
 		9DE4533E23213930004E93AA /* FishReward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FishReward.wav; sourceTree = "<group>"; };
 		9DE4533F23213933004E93AA /* RowingSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RowingSound.wav; sourceTree = "<group>"; };
 		9DE4534623215E9E004E93AA /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		9DE45348232560CF004E93AA /* BoatCrash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BoatCrash.wav; sourceTree = "<group>"; };
+		9DE45349232560CF004E93AA /* TheCanoe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TheCanoe.wav; sourceTree = "<group>"; };
+		9DE4534C232562EB004E93AA /* OlympicsMenu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OlympicsMenu.wav; sourceTree = "<group>"; };
 		9DFBEEC7230EC88000961437 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D120550623059E4700AF0C91 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		D12055082305A2FC00AF0C91 /* Esportes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esportes.swift; sourceTree = "<group>"; };
@@ -178,6 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				9DE4533E23213930004E93AA /* FishReward.wav */,
+				9DE45348232560CF004E93AA /* BoatCrash.wav */,
+				9DE4534C232562EB004E93AA /* OlympicsMenu.wav */,
+				9DE45349232560CF004E93AA /* TheCanoe.wav */,
 				9DE4533F23213933004E93AA /* RowingSound.wav */,
 			);
 			path = music;
@@ -367,10 +376,13 @@
 				9D53182B23057BF800EEA671 /* Main.storyboard in Resources */,
 				9D5318422306D37C00EEA671 /* CanoingBackground.sks in Resources */,
 				9D53182223057BF800EEA671 /* CanoingGameScene.sks in Resources */,
+				9DE4534A232560CF004E93AA /* BoatCrash.wav in Resources */,
 				9D53182D23057BF900EEA671 /* Assets.xcassets in Resources */,
 				9D53183023057BF900EEA671 /* LaunchScreen.storyboard in Resources */,
+				9DE4534B232560CF004E93AA /* TheCanoe.wav in Resources */,
 				9D53182423057BF800EEA671 /* Actions.sks in Resources */,
 				D1D3B67B2317579A00B7303E /* StoreGameScene.sks in Resources */,
+				9DE4534D232562EC004E93AA /* OlympicsMenu.wav in Resources */,
 				9DE4534123213933004E93AA /* RowingSound.wav in Resources */,
 				D13D936923089E2F00D6FB10 /* GoogleService-Info.plist in Resources */,
 			);

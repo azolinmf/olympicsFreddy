@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 protocol GameDelegate {
     func displayShop()
@@ -16,7 +17,8 @@ protocol GameDelegate {
 
 class GameViewController: UIViewController, GameOverScreenDelegate {
     
-    weak var gameOverView: GameOverViewController!
+    
+    var scene: CanoingGameScene!
     
     func gameOver(displaysStore: Bool) {
         navigationController?.popViewController(animated: true)
@@ -39,14 +41,18 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         
     }
     
+    func pauseGame(pause: Bool) {
+        scene.pauseGame(pause: pause)
+    }
+    
     
     var delegate: GameDelegate?
     
     override func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
-        var scene: CanoingGameScene!
         
+        playCanoeMusic()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'CanoingGameScene.sks'
@@ -61,12 +67,35 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
             view.showsPhysics = false
             view.showsFPS = false
             view.showsNodeCount = false
+            
+        }
+        
+    }
+    
+    func playCanoeMusic() {
+        if Preferences.shared.isMusicOn {
+            do {
+                Model.instance.music = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:
+                    Bundle.main.path(forResource: "TheCanoe", ofType: "wav")!))
+                Model.instance.music.prepareToPlay()
+                Model.instance.music.numberOfLoops = -1
+                let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                }
+            }
+            catch {
+                print("Error: could not play The Canoe music")
+            }
+            Model.instance.music.play()
         }
         
     }
     
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -81,33 +110,19 @@ class GameViewController: UIViewController, GameOverScreenDelegate {
         return true
     }
     
-    func gameOver() {
-        self.performSegue(withIdentifier: "GameOver", sender: self)
+    func gameOver(stop: Bool) {
+        
+        if stop {
+            Model.instance.stop = true
+            self.performSegue(withIdentifier: "GameOver", sender: self)
+        } else if !stop {
+            Model.instance.stop = false
+            self.performSegue(withIdentifier: "GameOver", sender: self)
+        }
+        
     }
     
-    func pauseGame() {
-//        let alert = UIAlertController(title: "⏯", message: "",preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addAction(UIAlertAction(title: "Home",
-//                                      style: UIAlertAction.Style.default,
-//                                      handler: {(_: UIAlertAction!) in
-//                                        self.navigationController?.popViewController(animated: true)
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "Resume",
-//                                      style: UIAlertAction.Style.default,
-//                                      handler: {(_: UIAlertAction!) in
-//                                        print("inferno")
-//
-//        }))
-//
-//        self.present(alert, animated: true, completion: nil)
-        
-        gameOverView.changeIcons()
-        
-        self.performSegue(withIdentifier: "GameOver", sender: self)
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         

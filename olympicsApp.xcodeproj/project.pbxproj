@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4290CCCF232669ED00F67C6B /* CollectionViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */; };
+		4290CCD0232669ED00F67C6B /* CollectionViewFrontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */; };
+		4290CCD1232669ED00F67C6B /* CollectionViewFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */; };
+		4290CCD2232669ED00F67C6B /* CollectionViewBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */; };
 		7F1B58768295D9004E5F5D5B /* Pods_olympicsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE885ACB263D2A3E39DA66 /* Pods_olympicsApp.framework */; };
 		881367E02310155100CB8756 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881367DF2310155100CB8756 /* GameOverViewController.swift */; };
 		881367E32310284700CB8756 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881367E12310284700CB8756 /* GameOver.storyboard */; };
@@ -55,6 +59,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBackground.swift; sourceTree = "<group>"; };
+		4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFrontCell.swift; sourceTree = "<group>"; };
+		4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFront.swift; sourceTree = "<group>"; };
+		4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBackgroundCell.swift; sourceTree = "<group>"; };
 		881367DF2310155100CB8756 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		881367E22310284700CB8756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameOver.storyboard; sourceTree = "<group>"; };
 		885742A52316069A00CB9D13 /* CanoingPlayer.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = CanoingPlayer.atlas; sourceTree = "<group>"; };
@@ -283,6 +291,10 @@
 		D198C319230593AE0085A238 /* Telas */ = {
 			isa = PBXGroup;
 			children = (
+				4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */,
+				4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */,
+				4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */,
+				4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */,
 				9D53182723057BF800EEA671 /* GameViewController.swift */,
 				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
 				D13BAF412308BE300044D687 /* StoreViewController.swift */,
@@ -460,8 +472,10 @@
 				D13BAF3D2308BBB90044D687 /* ItemStore.swift in Sources */,
 				D13BAF482308C2640044D687 /* AllItems.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
+				4290CCD2232669ED00F67C6B /* CollectionViewBackgroundCell.swift in Sources */,
 				D1D3B6752317568C00B7303E /* ToolbarPickerView.swift in Sources */,
 				D1D3B677231756BE00B7303E /* StoreCategories.swift in Sources */,
+				4290CCD0232669ED00F67C6B /* CollectionViewFrontCell.swift in Sources */,
 				9D53184F2308310B00EEA671 /* CanoingFood.swift in Sources */,
 				9D53182623057BF800EEA671 /* CanoingGameScene.swift in Sources */,
 				9D53182823057BF800EEA671 /* GameViewController.swift in Sources */,
@@ -478,11 +492,13 @@
 				9D53184D230830E100EEA671 /* SpawningFood.swift in Sources */,
 				9D5318462306D8B700EEA671 /* CanoingBackground.swift in Sources */,
 				D1D3B67F23175E8100B7303E /* Preferences.swift in Sources */,
+				4290CCD1232669ED00F67C6B /* CollectionViewFront.swift in Sources */,
 				D1D3B6792317575600B7303E /* PreferencesViewController.swift in Sources */,
 				D1D3B6812317F7D500B7303E /* Outfit.swift in Sources */,
 				881367E02310155100CB8756 /* GameOverViewController.swift in Sources */,
 				9DFBEEC8230EC88000961437 /* Model.swift in Sources */,
 				9D53184A2306EBC200EEA671 /* CanoingRocks.swift in Sources */,
+				4290CCCF232669ED00F67C6B /* CollectionViewBackground.swift in Sources */,
 				9D5318482306EA0300EEA671 /* SpawningRocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,7 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 725HB8W2V6;
+				DEVELOPMENT_TEAM = TYH4Y6Q3X5;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,7 +675,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 725HB8W2V6;
+				DEVELOPMENT_TEAM = TYH4Y6Q3X5;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

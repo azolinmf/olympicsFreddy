@@ -9,11 +9,10 @@
 import UIKit
 import SpriteKit
 
-class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  GameDelegate {
+class ProfileAndSportsViewController : UIViewController, GameDelegate {
     
     @IBOutlet weak var configurationButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
-    @IBOutlet weak var cltSports: UICollectionView!
     @IBOutlet weak var gameView: SKView!
     
     var profileGameScene: StoreGameScene!
@@ -21,10 +20,47 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
     
     var sportsList = Esportes.shared.sportsList
     
+    // For the cards selection. Define wich card is shown in both CollectionViews.
+    var syncIndex : Int!
+    
+    // The card selection is made with two CollectionViews, one behind (background) and one in front of Freddy.
+    @IBOutlet weak var collectionViewFront: CollectionViewFront!
+    @IBOutlet weak var collectionViewBackground: CollectionViewBackground!
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            switch sender.direction {
+                
+            case .right:
+                syncIndex = syncIndex - 1
+                
+                // A posição da cell buscada na collection view nunca poderá ser menor do que 0
+                if syncIndex < 0 {
+                    syncIndex = 0
+                }
+                refreshCards(animated: true)
+            case .left:
+                syncIndex = (syncIndex + 1) % (Model.instance.frontImgs.count * 1000)
+                refreshCards(animated: true)
+            default:
+                break
+            }
+        }
+    }
+    
+    // Move the front and the bg card CollectionView synchronous.
+    func refreshCards(animated: Bool){
+        collectionViewFront.scrollToItem(at: IndexPath(row: syncIndex, section: 0), at:  UICollectionView.ScrollPosition.centeredHorizontally, animated: animated)
+        collectionViewBackground.scrollToItem(at: IndexPath(row: syncIndex, section: 0), at:  UICollectionView.ScrollPosition.centeredHorizontally, animated: animated)
+    }
+    
     override func viewDidLoad() {
-
-        cltSports.delegate = self
-        cltSports.dataSource = self
+        
+        collectionViewFront.delegate = collectionViewFront
+        collectionViewFront.dataSource = collectionViewFront
+        collectionViewFront.profileVC = self
+        collectionViewBackground.delegate = collectionViewBackground
+        collectionViewBackground.dataSource = collectionViewBackground
         
         if let view = gameView {
             profileGameScene = SKScene(fileNamed: "StoreGameScene") as? StoreGameScene
@@ -37,6 +73,21 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
             }
         }
         
+        // Centralize the first card
+        syncIndex = Model.instance.frontImgs.count * 500
+        refreshCards(animated: false)
+        
+        // Set a RIGHT swipe recognizer. The default direction is right.
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        
+        // And the LEFT swipe as well.
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        leftSwipe.direction = .left
+        
+        // Add the Swipe Recognizer to the storyboard.
+        view.addGestureRecognizer(rightSwipe)
+        view.addGestureRecognizer(leftSwipe)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,31 +97,17 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sportsList.count
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameCell
-        //cell.lblSportName.text = sportsList[indexPath.row].name
-        cell.imgSport.image = sportsList[indexPath.row].imagem
-        
-        if indexPath.row != 0 {
-            cell.imgSport.alpha = 0.5
-        }
-        
-        return cell
-    }
-    
-    
     func displayShop() {
         self.performSegue(withIdentifier: "shopSegue", sender: self)
     }
     
-    
+    func displayGame(gameIndex: Int) {
+        if gameIndex == 0 {
+            self.performSegue(withIdentifier: "presentGame", sender: self)
+        } else {
+            print("Usuario tentando acessar jogo inexistente")
+        }
+    }
     func updateInterface(){
         
         buttonShadow(v: configurationButton, blur: 7, y: 2, opacity: 0.2)
@@ -90,13 +127,6 @@ class ProfileAndSportsViewController : UIViewController, UICollectionViewDelegat
         v.layer.shadowRadius = blur
         v.layer.shadowColor = UIColor.lightGray.cgColor
         v.layer.shadowOpacity = opacity
-    }
-
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            self.performSegue(withIdentifier: "presentGame", sender: self)
-        }
     }
     
     

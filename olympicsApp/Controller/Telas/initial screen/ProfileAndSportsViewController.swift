@@ -15,9 +15,10 @@ class ProfileAndSportsViewController : UIViewController, GameDelegate {
     @IBOutlet weak var configurationButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var gameView: SKView!
+    @IBOutlet weak var lblTotalPoints: UILabel!
+    
     
     var profileGameScene: StoreGameScene!
-    
     
     var sportsList = Esportes.shared.sportsList
     
@@ -56,7 +57,7 @@ class ProfileAndSportsViewController : UIViewController, GameDelegate {
     }
     
     override func viewDidLoad() {
-        
+        lblTotalPoints.text = String(Model.instance.totalPoints)
         collectionViewFront.delegate = collectionViewFront
         collectionViewFront.dataSource = collectionViewFront
         collectionViewFront.profileVC = self

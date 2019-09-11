@@ -27,8 +27,8 @@
                                             <constraint firstAttribute="width" constant="36" id="hQ8-qq-XnC"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="180" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S4-Rh-beh">
-                                        <rect key="frame" x="51" y="10" width="48" height="31.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" misplaced="YES" text="180" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S4-Rh-beh">
+                                        <rect key="frame" x="54" y="11" width="48" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.63921568627450975" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -227,6 +227,7 @@
                         <outlet property="collectionViewFront" destination="lIO-Vn-nFe" id="oFQ-Bp-sjo"/>
                         <outlet property="configurationButton" destination="i67-il-agg" id="etq-9F-hJI"/>
                         <outlet property="gameView" destination="HV7-E4-np3" id="Gqb-Lr-CuS"/>
+                        <outlet property="lblTotalPoints" destination="0S4-Rh-beh" id="HwH-RD-1sD"/>
                         <outlet property="storeButton" destination="ZeM-dN-jrm" id="NTV-dn-vpf"/>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="presentGame" id="jvp-br-MHd"/>
                     </connections>
@@ -266,7 +267,7 @@
                                 <rect key="frame" x="41.5" y="126.5" width="331" height="697"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Freddy" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-Dx-1Og">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="358.50000000000045"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="358.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cas-gz-Gwg">
                                         <rect key="frame" x="0.0" y="383.5" width="331" height="104.5"/>
@@ -374,6 +375,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FreddieBKG" translatesAutoresizingMaskIntoConstraints="NO" id="ZcS-L1-wpI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="337.5"/>
+                            </imageView>
+                            <skView contentMode="scaleToFill" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ms5-UX-ipo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="337.5"/>
+                            </skView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkH-1h-vk0">
                                 <rect key="frame" x="0.0" y="548.5" width="414" height="313.5"/>
                                 <subviews>
@@ -521,9 +528,6 @@
                                     <constraint firstItem="69E-ep-a41" firstAttribute="centerX" secondItem="d3y-P0-1fG" secondAttribute="centerX" id="tYb-aP-mrG"/>
                                 </constraints>
                             </view>
-                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms5-UX-ipo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="337.5"/>
-                            </skView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-XN-DYb">
                                 <rect key="frame" x="277.5" y="88" width="136.5" height="67.5"/>
                                 <subviews>
@@ -627,12 +631,13 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.87450980392156863" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="CkH-1h-vk0" firstAttribute="top" secondItem="d3y-P0-1fG" secondAttribute="bottom" constant="-10" id="4fn-mD-itw"/>
                             <constraint firstItem="CkH-1h-vk0" firstAttribute="centerX" secondItem="ESY-Di-5ml" secondAttribute="centerX" id="7Dj-MU-xFI"/>
                             <constraint firstItem="DRs-RE-XrX" firstAttribute="height" secondItem="uNk-SI-TPu" secondAttribute="height" multiplier="0.07" id="Acc-KM-iLw"/>
                             <constraint firstItem="rMR-XN-DYb" firstAttribute="height" secondItem="Ms5-UX-ipo" secondAttribute="height" multiplier="0.2" id="MJr-b5-XuD"/>
+                            <constraint firstItem="ZcS-L1-wpI" firstAttribute="centerX" secondItem="ESY-Di-5ml" secondAttribute="centerX" id="MqE-x6-MEM"/>
                             <constraint firstItem="d3y-P0-1fG" firstAttribute="width" secondItem="uNk-SI-TPu" secondAttribute="width" id="OZJ-g8-5oM"/>
                             <constraint firstItem="rMR-XN-DYb" firstAttribute="width" secondItem="Ms5-UX-ipo" secondAttribute="width" multiplier="0.33" id="SUv-ZK-3m5"/>
                             <constraint firstItem="d3y-P0-1fG" firstAttribute="top" secondItem="DRs-RE-XrX" secondAttribute="bottom" id="TMp-SU-08i"/>
@@ -646,7 +651,10 @@
                             <constraint firstItem="Ms5-UX-ipo" firstAttribute="width" secondItem="uNk-SI-TPu" secondAttribute="width" id="rdR-l2-ze4"/>
                             <constraint firstItem="Ms5-UX-ipo" firstAttribute="top" secondItem="ESY-Di-5ml" secondAttribute="top" id="sSs-cU-KCI"/>
                             <constraint firstItem="CkH-1h-vk0" firstAttribute="height" secondItem="uNk-SI-TPu" secondAttribute="height" multiplier="0.35" id="se3-VA-hSe"/>
+                            <constraint firstItem="ZcS-L1-wpI" firstAttribute="width" secondItem="uNk-SI-TPu" secondAttribute="width" id="wbX-Gt-5WR"/>
+                            <constraint firstItem="ZcS-L1-wpI" firstAttribute="height" secondItem="Ms5-UX-ipo" secondAttribute="height" id="xPE-qG-u83"/>
                             <constraint firstItem="rMR-XN-DYb" firstAttribute="top" secondItem="Ms5-UX-ipo" secondAttribute="top" id="y0l-Dp-OQu"/>
+                            <constraint firstItem="ZcS-L1-wpI" firstAttribute="top" secondItem="ESY-Di-5ml" secondAttribute="top" id="yeH-zz-tg5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ESY-Di-5ml"/>
                     </view>
@@ -969,6 +977,7 @@
         <image name="BG Arremesso de peso_Prancheta 1" width="600" height="800"/>
         <image name="BeardButton" width="1080" height="1080"/>
         <image name="ConfigurationIcon" width="1080" height="1080"/>
+        <image name="FreddieBKG" width="1125" height="834"/>
         <image name="Freddy" width="2019" height="2010"/>
         <image name="Front Card Canoeing_Prancheta 1" width="600" height="800"/>
         <image name="GlassButton" width="1080" height="1080"/>

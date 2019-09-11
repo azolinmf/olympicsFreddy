@@ -62,7 +62,7 @@
 		4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBackground.swift; sourceTree = "<group>"; };
 		4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFrontCell.swift; sourceTree = "<group>"; };
 		4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFront.swift; sourceTree = "<group>"; };
-		4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBackgroundCell.swift; sourceTree = "<group>"; };
+		4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewBackgroundCell.swift; path = "../New Group/CollectionViewBackgroundCell.swift"; sourceTree = "<group>"; };
 		881367DF2310155100CB8756 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		881367E22310284700CB8756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameOver.storyboard; sourceTree = "<group>"; };
 		885742A52316069A00CB9D13 /* CanoingPlayer.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = CanoingPlayer.atlas; sourceTree = "<group>"; };
@@ -160,6 +160,7 @@
 				9DE4533D23213914004E93AA /* music */,
 				9D53183123057BF900EEA671 /* Info.plist */,
 				9D53181F23057BF800EEA671 /* AppDelegate.swift */,
+				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
 				D198C3132305924D0085A238 /* Model */,
 				D198C317230592AE0085A238 /* Controller */,
 				D198C316230592A50085A238 /* View */,
@@ -178,12 +179,8 @@
 		9D53184B230830AE00EEA671 /* CanoingGame */ = {
 			isa = PBXGroup;
 			children = (
-				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
-				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
-				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
-				9D53184C230830E100EEA671 /* SpawningFood.swift */,
-				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
-				9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */,
+				8871F401230C3240004CD4DE /* BodyMasks.swift */,
+				D167EDE423291980002D22AD /* objects */,
 			);
 			path = CanoingGame;
 			sourceTree = "<group>";
@@ -200,31 +197,16 @@
 			path = music;
 			sourceTree = "<group>";
 		};
-		D120550523059DCE00AF0C91 /* Games Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D120550623059E4700AF0C91 /* GameCell.swift */,
-			);
-			path = "Games Cells";
-			sourceTree = "<group>";
-		};
 		D13BAF3A2308BB860044D687 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				D1D3B6802317F7D400B7303E /* Outfit.swift */,
 				D13BAF382308BA0E0044D687 /* DAOItemsStore.swift */,
 				D13BAF3C2308BBB90044D687 /* ItemStore.swift */,
 				D13BAF472308C2640044D687 /* AllItems.swift */,
 				D1D3B676231756BE00B7303E /* StoreCategories.swift */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		D13BAF3E2308BD3C0044D687 /* Store Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D13BAF3F2308BD9F0044D687 /* ItemStoreCell.swift */,
-			);
-			path = "Store Cells";
 			sourceTree = "<group>";
 		};
 		D13BAF492308C2970044D687 /* SportsScreen */ = {
@@ -236,21 +218,86 @@
 			path = SportsScreen;
 			sourceTree = "<group>";
 		};
+		D167EDDE232917B8002D22AD /* initial screen */ = {
+			isa = PBXGroup;
+			children = (
+				D167EDE223291890002D22AD /* cells */,
+				4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */,
+				4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */,
+				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
+			);
+			path = "initial screen";
+			sourceTree = "<group>";
+		};
+		D167EDDF232917F9002D22AD /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D1D3B6782317575600B7303E /* PreferencesViewController.swift */,
+				D1D3B6742317568C00B7303E /* ToolbarPickerView.swift */,
+			);
+			path = preferences;
+			sourceTree = "<group>";
+		};
+		D167EDE02329183A002D22AD /* store screen */ = {
+			isa = PBXGroup;
+			children = (
+				D167EDE3232918F9002D22AD /* cells */,
+				D1D3B67C23175C1700B7303E /* StoreGameScene.swift */,
+				D13BAF412308BE300044D687 /* StoreViewController.swift */,
+			);
+			path = "store screen";
+			sourceTree = "<group>";
+		};
+		D167EDE12329185C002D22AD /* game screens */ = {
+			isa = PBXGroup;
+			children = (
+				9D53182723057BF800EEA671 /* GameViewController.swift */,
+				881367DF2310155100CB8756 /* GameOverViewController.swift */,
+				9DE4534623215E9E004E93AA /* PauseViewController.swift */,
+			);
+			path = "game screens";
+			sourceTree = "<group>";
+		};
+		D167EDE223291890002D22AD /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */,
+				D120550623059E4700AF0C91 /* GameCell.swift */,
+				4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D167EDE3232918F9002D22AD /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D13BAF3F2308BD9F0044D687 /* ItemStoreCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D167EDE423291980002D22AD /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				9D5318452306D8B700EEA671 /* CanoingBackground.swift */,
+				9D22C4DB230AC80100C08520 /* CanoingPlayer.swift */,
+				9D5318492306EBC200EEA671 /* CanoingRocks.swift */,
+				9D53184E2308310B00EEA671 /* CanoingFood.swift */,
+				9D5318472306EA0300EEA671 /* SpawningRocks.swift */,
+				9D53184C230830E100EEA671 /* SpawningFood.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
 		D198C3132305924D0085A238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1D3B6732317565300B7303E /* Interface */,
-				8871F401230C3240004CD4DE /* BodyMasks.swift */,
-				D13D936823089E2F00D6FB10 /* GoogleService-Info.plist */,
+				D1D3B67E23175E8100B7303E /* Preferences.swift */,
 				9DFBEEC7230EC88000961437 /* Model.swift */,
-				D1D3B6802317F7D400B7303E /* Outfit.swift */,
+				9D5318432306D75800EEA671 /* GameObject.swift */,
 				D13BAF3A2308BB860044D687 /* Store */,
 				D13BAF492308C2970044D687 /* SportsScreen */,
-				D120550523059DCE00AF0C91 /* Games Cells */,
-				D13BAF3E2308BD3C0044D687 /* Store Cells */,
-				9D5318432306D75800EEA671 /* GameObject.swift */,
 				9D53184B230830AE00EEA671 /* CanoingGame */,
-				D1D3B67E23175E8100B7303E /* Preferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				9D53182523057BF800EEA671 /* CanoingGameScene.swift */,
-				D1D3B67C23175C1700B7303E /* StoreGameScene.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -291,26 +337,12 @@
 		D198C319230593AE0085A238 /* Telas */ = {
 			isa = PBXGroup;
 			children = (
-				4290CCCB232669EC00F67C6B /* CollectionViewBackground.swift */,
-				4290CCCE232669ED00F67C6B /* CollectionViewBackgroundCell.swift */,
-				4290CCCD232669EC00F67C6B /* CollectionViewFront.swift */,
-				4290CCCC232669EC00F67C6B /* CollectionViewFrontCell.swift */,
-				9D53182723057BF800EEA671 /* GameViewController.swift */,
-				D120550C2305AC0F00AF0C91 /* ProfileAndSportsViewController.swift */,
-				D13BAF412308BE300044D687 /* StoreViewController.swift */,
-				881367DF2310155100CB8756 /* GameOverViewController.swift */,
-				D1D3B6782317575600B7303E /* PreferencesViewController.swift */,
-				9DE4534623215E9E004E93AA /* PauseViewController.swift */,
+				D167EDE12329185C002D22AD /* game screens */,
+				D167EDE02329183A002D22AD /* store screen */,
+				D167EDDF232917F9002D22AD /* preferences */,
+				D167EDDE232917B8002D22AD /* initial screen */,
 			);
 			path = Telas;
-			sourceTree = "<group>";
-		};
-		D1D3B6732317565300B7303E /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				D1D3B6742317568C00B7303E /* ToolbarPickerView.swift */,
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 		E15515220BF8C1B5537B7E26 /* Frameworks */ = {
@@ -655,7 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TYH4Y6Q3X5;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -675,7 +707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TYH4Y6Q3X5;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = olympicsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

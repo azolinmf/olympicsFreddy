@@ -19,25 +19,16 @@ class Outfit {
         if checkMoney(item: item) == true {
             item.bought = true
             item.inuse = true
+            
             AllItems.shared.inUseItems.append(item)
             Model.instance.totalPoints -= item.value
+            
             let DBRef = Firestore.firestore()
             
-            DBRef.collection("AllItems")
-                .whereField("key", isEqualTo: item.key)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print(err.localizedDescription)
-                    } else if querySnapshot!.documents.count != 1 {
-                        // Perhaps this is an error for you?
-                    } else {
-                        let document = querySnapshot!.documents.first
-                        document!.reference.updateData([
-                            "bought": true,
-                            "inuse" : true
-                            ])
-                    }
-            }
+            
+            DBRef.collection("AllItems").document(item.key).setData(["bought" : true], merge: true)
+            DBRef.collection("AllItems").document(item.key).setData(["inuse" : true], merge: true)
+    
             
             //FREDDy nao pode usar dois items  de uma mesma categoria\
             for i in AllItems.shared.categories[categoryPosition].items {
@@ -62,6 +53,7 @@ class Outfit {
                 }
             }
             
+            
             let inUseItemsSize = AllItems.shared.inUseItems.count-1
             for i in stride(from: inUseItemsSize, to: -1, by: -1) {
                 if item.category == AllItems.shared.inUseItems[i].category && item.key != AllItems.shared.inUseItems[i].key {
@@ -71,7 +63,6 @@ class Outfit {
             
             return true
         }
-            
         else {
             return false
         }
@@ -87,21 +78,8 @@ class Outfit {
                 item.inuse = true
                 AllItems.shared.inUseItems.append(item)
                 
-                
-                DBRef.collection("AllItems")
-                    .whereField("key", isEqualTo: item.key)
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print(err.localizedDescription)
-                        } else if querySnapshot!.documents.count != 1 {
-                            // Perhaps this is an error for you?
-                        } else {
-                            let document = querySnapshot!.documents.first
-                            document!.reference.updateData([
-                                "inuse": true
-                            ])
-                        }
-                }
+            
+                DBRef.collection("AllItems").document(item.key).setData(["inuse" : true], merge: true)
                 
                 //FREDDy nao pode usar dois items  de uma mesma categoria\
                 for i in AllItems.shared.categories[categoryPosition].items {
@@ -123,9 +101,9 @@ class Outfit {
                                         ])
                                 }
                         }
-                        
                     }
                 }
+                
                 
                 let inUseItemsSize = AllItems.shared.inUseItems.count-1
                 
@@ -171,9 +149,6 @@ class Outfit {
                 }
             }
         }
-        
-        
-        
     }
     
     static func checkMoney(item : ItemStore) -> Bool {
@@ -183,11 +158,6 @@ class Outfit {
         else {
             return false
         }
-    }
-    
-    
-    static func removeInUseItems(item : ItemStore, category : Category) {
-        
     }
     
     

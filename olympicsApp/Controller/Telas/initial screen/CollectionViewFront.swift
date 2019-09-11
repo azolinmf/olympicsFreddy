@@ -39,7 +39,8 @@ class CollectionViewFront: UICollectionView, UICollectionViewDataSource, UIColle
     
     // Seleciona o jogo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        print(indexPath.row)
+        if indexPath.row % Model.instance.bgImgs.count == 1 {
             profileVC.performSegue(withIdentifier: "presentGame", sender: self)
         }
     }

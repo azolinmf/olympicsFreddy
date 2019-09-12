@@ -125,9 +125,10 @@ class Outfit {
                 item.inuse = false
                 
                 
-                let inUseItemsSize = AllItems.shared.inUseItems.count
-                for i in 0..<inUseItemsSize {
-                    if item.key == AllItems.shared.inUseItems[i].key {
+                let inUseItemsSize = AllItems.shared.inUseItems.count-1
+                
+                for i in stride(from: inUseItemsSize, to: -1, by: -1) {
+                    if item.category == AllItems.shared.inUseItems[i].category && item.key != AllItems.shared.inUseItems[i].key {
                         AllItems.shared.inUseItems.remove(at: i)
                     }
                 }

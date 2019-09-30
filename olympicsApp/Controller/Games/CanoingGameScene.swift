@@ -50,9 +50,9 @@ class CanoingGameScene: SKScene, SKPhysicsContactDelegate {
     var canoingPlayer: CanoingPlayer!
     weak var gameViewController: GameViewController!
     
-    var rowingSound = AVAudioPlayer()
-    var fishSound = AVAudioPlayer()
-    var crashSound = AVAudioPlayer()
+    var rowingSound: AVAudioPlayer!
+    var fishSound: AVAudioPlayer!
+    var crashSound: AVAudioPlayer!
     var firstTimePlayingSound = true
     
     

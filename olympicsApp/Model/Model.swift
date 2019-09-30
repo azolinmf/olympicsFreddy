@@ -14,7 +14,7 @@ class Model {
     
     var playAgain: Bool
     var stop: Bool
-    var music = AVAudioPlayer()
+    var music: AVAudioPlayer!
     
     let frontImgs : [String] = [
         "Front Arremesso de peso_Prancheta 1",
